@@ -9,9 +9,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
     # 1. Remove duplicates
-    before = len(df)
-    df.drop_duplicates(subset=['Player_ID'], inplace=True)
-    print(f"Duplicates removed: {before - len(df)}")
+    df = df.drop_duplicates(subset=['Player_ID']).reset_index(drop=True)
 
     # 2. Fill missing values
     for col in ['Pass_Accuracy', 'Key_Passes_per_Game', 'Fan_Popularity_Index']:
@@ -26,7 +24,7 @@ def clean_data(df: pd.DataFrame) -> pd.DataFrame:
         df['Age'],
         bins=[0, 23, 29, 99],
         labels=['Young Talent (18-23)', 'Prime Player (24-29)', 'Veteran (30+)']
-    )
+    ).astype(str)
 
     return df
 

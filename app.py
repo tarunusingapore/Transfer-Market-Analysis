@@ -70,12 +70,12 @@ st.markdown("""
 # ── Data loading (cached) ─────────────────────────────────────────────────────
 @st.cache_data(show_spinner='Loading dataset…')
 def load_data():
-    csv_path = 'players_dataset.csv'
-    if not os.path.exists(csv_path):
-        df_raw = generate_football_dataset(1000)
-        df_raw.to_csv(csv_path, index=False)
-    else:
+    script_dir = os.path.dirname(os.path.abspath(__file__))
+    csv_path = os.path.join(script_dir, 'players_dataset.csv')
+    if os.path.exists(csv_path):
         df_raw = pd.read_csv(csv_path)
+    else:
+        df_raw = generate_football_dataset(1000)
 
     df = clean_data(df_raw)
     df = engineer_features(df)
@@ -386,7 +386,7 @@ elif page == '🔍 Player Scouting Tool':
             results[display_cols]
             .reset_index(drop=True)
             .style
-            .applymap(colour_tier, subset=['Transfer_Tier'])
+            .map(colour_tier, subset=['Transfer_Tier'])
             .format({'Market_Value_Million_Euros': '€{:.1f}M',
                      'Performance_Index': '{:.1f}',
                      'Value_for_Money': '{:.3f}',
