@@ -1,311 +1,303 @@
 Player_ID,Player_Name,Age,Nationality,Position,Club,Club_Size,League,League_Quality_Index,Matches_Played,Minutes_Played,Goals,Assists,Shots_per_Game,Key_Passes_per_Game,Pass_Accuracy,Dribbles_per_Game,Tackles_per_Game,Interceptions_per_Game,Expected_Goals_xG,Expected_Assists_xA,Market_Value_Million_Euros,Weekly_Wage_Euros,Injury_Days_Last_Season,Team_League_Position,Fan_Popularity_Index,Social_Media_Followers
-P001,Erling Haaland,23,Norwegian,Forward,Manchester City,Big,Premier League,9.8,31,2728,27,5,5.1,1.4,79.2,1.8,0.3,0.1,1.52,0.28,180.0,400000,14,1,98.5,45000000
-P002,Kylian Mbappe,25,French,Forward,Real Madrid,Big,La Liga,9.5,29,2532,27,7,4.8,2.1,81.3,3.2,0.4,0.2,1.41,0.39,180.0,450000,7,1,99.2,112000000
-P003,Vinicius Junior,23,Brazilian,Forward,Real Madrid,Big,La Liga,9.5,33,2817,24,11,4.2,2.8,82.1,4.1,0.5,0.3,0.98,0.61,150.0,350000,0,1,97.8,62000000
-P004,Jude Bellingham,20,English,Midfielder,Real Madrid,Big,La Liga,9.5,32,2763,19,11,3.1,2.9,87.4,2.4,1.2,0.9,0.71,0.58,180.0,350000,0,1,96.8,33000000
-P005,Mohamed Salah,31,Egyptian,Forward,Liverpool,Big,Premier League,9.8,32,2719,18,10,4.3,2.6,80.4,2.6,0.5,0.3,0.89,0.57,80.0,320000,0,3,97.1,72000000
-P006,Harry Kane,30,English,Forward,Bayern Munich,Big,Bundesliga,9.2,32,2813,36,8,5.3,2.4,82.1,1.2,0.4,0.2,1.68,0.41,100.0,350000,0,8,94.2,21000000
-P007,Lautaro Martinez,26,Argentine,Forward,Inter Milan,Big,Serie A,8.8,33,2849,24,7,4.1,1.8,79.3,2.1,0.6,0.3,1.12,0.39,90.0,200000,5,1,88.7,16000000
-P008,Phil Foden,23,English,Midfielder,Manchester City,Big,Premier League,9.8,35,2912,19,8,3.4,3.1,88.2,3.1,0.8,0.6,0.82,0.52,150.0,280000,0,1,92.3,16000000
-P009,Bukayo Saka,22,English,Forward,Arsenal,Big,Premier League,9.8,35,3024,16,9,3.2,2.9,84.6,3.4,0.9,0.7,0.71,0.58,130.0,220000,0,2,93.1,17000000
-P010,Florian Wirtz,20,German,Midfielder,Bayer Leverkusen,Big,Bundesliga,9.2,32,2759,18,20,2.8,3.4,89.1,2.9,1.1,0.8,0.68,0.81,130.0,160000,0,1,90.4,8200000
-P011,Pedri,21,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,29,2381,4,7,1.9,3.8,92.3,2.6,1.4,1.1,0.21,0.42,90.0,180000,42,2,89.6,11000000
-P012,Declan Rice,25,English,Midfielder,Arsenal,Big,Premier League,9.8,35,3032,7,8,1.4,2.2,89.4,1.3,2.8,1.9,0.29,0.38,100.0,200000,0,2,88.9,7200000
-P013,Rodri,27,Spanish,Midfielder,Manchester City,Big,Premier League,9.8,34,2931,8,9,1.2,3.1,93.8,0.9,2.4,2.1,0.21,0.41,100.0,220000,0,1,88.1,7400000
-P014,Virgil van Dijk,32,Dutch,Defender,Liverpool,Big,Premier League,9.8,34,3060,3,2,0.7,0.9,89.2,0.4,2.1,1.8,0.14,0.09,55.0,240000,0,3,87.2,12000000
-P015,Ruben Dias,26,Portuguese,Defender,Manchester City,Big,Premier League,9.8,31,2790,4,1,0.6,0.8,91.3,0.3,2.3,2.1,0.17,0.06,75.0,200000,7,1,85.8,6100000
-P016,William Saliba,22,French,Defender,Arsenal,Big,Premier League,9.8,32,2880,3,2,0.5,0.7,89.8,0.4,2.8,2.4,0.11,0.08,70.0,120000,0,2,84.1,5400000
-P017,Achraf Hakimi,25,Moroccan,Defender,PSG,Big,Ligue 1,8.5,29,2436,4,10,1.2,2.1,85.3,2.4,1.8,1.3,0.18,0.42,70.0,180000,14,1,84.6,25000000
-P018,Trent Alexander-Arnold,25,English,Defender,Liverpool,Big,Premier League,9.8,30,2700,3,9,1.4,3.8,88.1,1.4,1.3,0.9,0.12,0.48,80.0,200000,0,3,86.8,18000000
-P019,Antoine Griezmann,32,French,Forward,Atletico Madrid,Big,La Liga,9.5,33,2695,16,9,3.1,2.2,84.1,2.1,1.1,0.7,0.78,0.49,40.0,280000,0,4,86.4,31000000
-P020,Kevin De Bruyne,32,Belgian,Midfielder,Manchester City,Big,Premier League,9.8,18,1380,3,10,2.8,4.2,90.3,1.8,0.9,0.7,0.41,0.81,90.0,400000,112,1,91.2,28000000
-P021,Bruno Fernandes,29,Portuguese,Midfielder,Manchester United,Big,Premier League,9.8,35,3063,15,8,3.1,3.2,83.4,1.9,0.9,0.6,0.62,0.51,60.0,240000,0,8,87.4,13000000
-P022,Martin Odegaard,25,Norwegian,Midfielder,Arsenal,Big,Premier League,9.8,24,1984,8,10,2.4,3.4,90.1,2.1,1.1,0.8,0.38,0.56,90.0,200000,56,2,86.9,7800000
-P023,Federico Valverde,25,Uruguayan,Midfielder,Real Madrid,Big,La Liga,9.5,36,3021,11,12,2.1,2.4,89.2,2.3,2.1,1.6,0.48,0.41,80.0,200000,0,1,83.7,7100000
-P024,Jamal Musiala,21,German,Forward,Bayern Munich,Big,Bundesliga,9.2,32,2621,12,14,3.1,2.8,88.4,3.8,0.8,0.5,0.61,0.58,100.0,180000,0,8,88.2,12000000
-P025,Bernardo Silva,29,Portuguese,Midfielder,Manchester City,Big,Premier League,9.8,38,3192,8,9,2.1,3.1,91.2,2.4,1.2,0.9,0.38,0.48,80.0,280000,0,1,86.8,9800000
-P026,Toni Kroos,34,German,Midfielder,Real Madrid,Big,La Liga,9.5,31,2697,4,9,1.1,3.8,93.4,0.6,1.1,1.4,0.18,0.41,20.0,280000,0,1,86.4,26000000
-P027,Joshua Kimmich,29,German,Midfielder,Bayern Munich,Big,Bundesliga,9.2,31,2790,5,12,1.2,3.4,92.8,1.4,2.4,2.1,0.21,0.58,80.0,280000,0,8,84.8,14000000
-P028,Nicolo Barella,27,Italian,Midfielder,Inter Milan,Big,Serie A,8.8,36,3060,9,12,1.8,3.1,88.4,1.8,2.8,2.1,0.38,0.58,80.0,180000,0,1,79.8,9200000
-P029,Marcus Rashford,26,English,Forward,Manchester United,Big,Premier League,9.8,31,2548,8,5,2.8,1.8,79.3,2.9,0.5,0.3,0.48,0.31,70.0,280000,7,8,84.1,18000000
-P030,Heung-min Son,31,South Korean,Forward,Tottenham,Big,Premier League,9.8,33,2850,17,10,3.2,2.1,81.2,2.4,0.4,0.3,0.72,0.48,60.0,200000,0,5,86.3,38000000
-P031,Alexander Isak,24,Swedish,Forward,Newcastle,Big,Premier League,9.8,27,2268,21,5,4.1,1.6,78.4,2.3,0.4,0.2,0.98,0.31,85.0,140000,21,7,82.4,5200000
-P032,Ollie Watkins,28,English,Forward,Aston Villa,Big,Premier League,9.8,37,3193,19,13,3.4,2.4,77.2,1.9,0.6,0.4,0.88,0.58,65.0,120000,0,4,80.6,2800000
-P033,Cole Palmer,22,English,Midfielder,Chelsea,Big,Premier League,9.8,33,2932,22,11,3.8,3.4,84.3,2.8,0.6,0.4,0.82,0.58,70.0,120000,0,6,84.8,7800000
-P034,Victor Osimhen,25,Nigerian,Forward,Napoli,Big,Serie A,8.8,25,2025,15,3,4.2,1.2,71.3,1.8,0.4,0.2,0.88,0.22,100.0,200000,28,10,83.2,7800000
-P035,Leroy Sane,28,German,Forward,Bayern Munich,Big,Bundesliga,9.2,28,2184,10,8,3.4,2.3,83.1,3.2,0.6,0.4,0.58,0.41,45.0,220000,21,8,82.1,9200000
-P036,Dusan Vlahovic,24,Serbian,Forward,Juventus,Big,Serie A,8.8,32,2784,16,4,3.8,1.2,74.2,1.1,0.4,0.2,0.82,0.22,70.0,140000,7,3,79.8,9200000
-P037,Jonathan David,24,Canadian,Forward,Lille,Medium,Ligue 1,8.5,32,2688,26,5,4.8,1.4,76.3,1.6,0.5,0.3,1.18,0.28,38.0,80000,0,4,72.1,3200000
-P038,Serhou Guirassy,28,Guinean,Forward,Borussia Dortmund,Big,Bundesliga,9.2,28,2296,28,5,4.9,1.1,73.1,1.1,0.4,0.2,1.21,0.22,48.0,80000,0,5,68.4,1800000
-P039,Artem Dovbyk,27,Ukrainian,Forward,Girona,Medium,La Liga,9.5,36,2988,24,7,4.1,1.4,75.2,1.2,0.5,0.3,0.98,0.31,20.0,50000,0,3,64.1,1100000
-P040,Benjamin Sesko,21,Slovenian,Forward,RB Leipzig,Big,Bundesliga,9.2,29,2030,18,4,3.2,1.1,75.4,1.8,0.4,0.2,0.81,0.22,50.0,80000,0,6,72.1,3100000
-P041,Khvicha Kvaratskhelia,23,Georgian,Forward,PSG,Big,Ligue 1,8.5,29,2262,11,11,3.1,2.8,81.2,3.8,0.6,0.4,0.61,0.58,80.0,160000,14,1,81.4,7200000
-P042,Lamine Yamal,16,Spanish,Forward,Barcelona,Big,La Liga,9.5,36,2844,7,10,2.4,2.8,82.3,3.2,0.6,0.4,0.32,0.48,90.0,30000,0,2,88.1,15000000
-P043,Nico Williams,21,Spanish,Forward,Athletic Club,Medium,La Liga,9.5,33,2772,12,13,3.1,2.8,82.4,3.8,0.7,0.5,0.52,0.58,50.0,60000,0,5,79.4,6200000
-P044,Michael Olise,22,French,Forward,Bayern Munich,Big,Bundesliga,9.2,25,1788,10,6,3.1,2.4,82.3,3.1,0.6,0.4,0.52,0.41,60.0,80000,14,8,74.8,4100000
-P045,Santiago Gimenez,23,Mexican,Forward,Feyenoord,Medium,Eredivisie,7.2,29,2400,23,6,4.4,1.3,74.1,1.4,0.5,0.3,1.11,0.28,40.0,80000,0,1,71.2,4100000
-P046,Omar Marmoush,25,Egyptian,Forward,Eintracht Frankfurt,Medium,Bundesliga,9.2,31,2604,26,14,4.1,2.8,79.2,2.8,0.6,0.4,1.18,0.62,12.0,40000,0,6,68.4,2100000
-P047,Bryan Mbeumo,24,Cameroonian,Forward,Brentford,Medium,Premier League,9.8,38,3268,20,9,3.4,2.1,81.2,2.4,0.6,0.4,0.82,0.41,28.0,60000,0,16,71.4,3200000
-P048,Antoine Semenyo,24,Ghanaian,Forward,Bournemouth,Medium,Premier League,9.8,35,2748,11,5,2.8,1.4,76.4,2.8,0.6,0.4,0.51,0.24,22.0,40000,0,12,60.4,1400000
-P049,Xavi Simons,21,Dutch,Midfielder,PSG,Big,Ligue 1,8.5,32,2688,9,12,2.4,3.1,87.4,2.8,1.1,0.8,0.41,0.58,60.0,80000,0,1,78.8,9200000
-P050,Kobbie Mainoo,19,English,Midfielder,Manchester United,Big,Premier League,9.8,27,2052,3,4,1.2,2.1,86.4,1.6,2.1,1.6,0.12,0.21,30.0,40000,0,8,72.8,3100000
-P051,Ryan Gravenberch,22,Dutch,Midfielder,Liverpool,Big,Premier League,9.8,35,2870,4,5,1.1,2.1,88.4,1.2,2.4,1.8,0.18,0.24,40.0,80000,0,3,72.8,3800000
-P052,Tijjani Reijnders,25,Dutch,Midfielder,AC Milan,Big,Serie A,8.8,35,3010,10,5,1.8,2.4,87.8,1.6,2.1,1.6,0.41,0.28,30.0,80000,0,8,68.4,3200000
-P053,Granit Xhaka,31,Swiss,Midfielder,Bayer Leverkusen,Big,Bundesliga,9.2,30,2613,6,9,1.1,2.8,89.3,1.1,2.8,2.1,0.24,0.41,20.0,100000,7,1,74.8,4800000
-P054,Enzo Fernandez,23,Argentine,Midfielder,Chelsea,Big,Premier League,9.8,30,2580,4,6,1.4,2.4,85.4,1.4,1.8,1.4,0.18,0.28,80.0,180000,0,6,76.4,11000000
-P055,Moises Caicedo,22,Ecuadorian,Midfielder,Chelsea,Big,Premier League,9.8,33,2904,2,3,0.8,1.8,86.8,1.1,3.1,2.4,0.08,0.12,100.0,120000,0,6,72.8,4800000
-P056,Warren Zaire-Emery,18,French,Midfielder,PSG,Big,Ligue 1,8.5,24,1800,3,4,1.4,2.4,86.8,1.8,1.4,1.1,0.14,0.21,30.0,30000,0,1,72.4,3800000
-P057,Manuel Ugarte,23,Uruguayan,Midfielder,Manchester United,Big,Premier League,9.8,22,1804,0,1,0.4,1.4,87.2,0.8,3.1,2.4,0.02,0.06,50.0,100000,0,8,66.8,3800000
-P058,Nicolo Fagioli,23,Italian,Midfielder,Juventus,Big,Serie A,8.8,24,1872,3,5,1.2,2.8,88.4,1.4,1.6,1.2,0.12,0.24,25.0,50000,0,3,62.4,1800000
-P059,Adrien Rabiot,29,French,Midfielder,Marseille,Medium,Ligue 1,8.5,26,2132,5,4,1.2,2.1,85.4,1.4,1.8,1.4,0.21,0.21,14.0,140000,0,3,70.4,6800000
-P060,Thomas Partey,30,Ghanaian,Midfielder,Arsenal,Big,Premier League,9.8,21,1638,1,2,0.8,1.8,88.4,0.8,2.4,1.8,0.06,0.12,30.0,160000,63,2,72.4,4200000
-P061,Marc-Andre ter Stegen,32,German,GK,Barcelona,Big,La Liga,9.5,26,2340,0,0,0.1,0.8,88.4,0.1,0.2,0.2,0.0,0.0,28.0,240000,56,2,82.1,12000000
-P062,Ederson,30,Brazilian,GK,Manchester City,Big,Premier League,9.8,28,2520,0,1,0.1,1.2,92.4,0.1,0.2,0.1,0.0,0.0,35.0,180000,14,1,80.4,8100000
-P063,Alisson Becker,31,Brazilian,GK,Liverpool,Big,Premier League,9.8,26,2340,0,0,0.1,0.9,88.2,0.1,0.2,0.1,0.0,0.0,35.0,180000,28,3,82.8,14000000
-P064,David Raya,28,Spanish,GK,Arsenal,Big,Premier League,9.8,38,3420,0,0,0.1,0.9,88.8,0.1,0.2,0.2,0.0,0.0,30.0,80000,0,2,74.8,2100000
-P065,Mike Maignan,28,French,GK,AC Milan,Big,Serie A,8.8,27,2430,0,0,0.1,0.8,87.2,0.1,0.2,0.2,0.0,0.0,40.0,140000,14,8,76.8,5400000
-P066,Andre Onana,28,Cameroonian,GK,Manchester United,Big,Premier League,9.8,33,2970,0,0,0.1,0.7,83.4,0.1,0.2,0.1,0.0,0.0,32.0,120000,0,8,72.4,4800000
-P067,Yann Sommer,35,Swiss,GK,Inter Milan,Big,Serie A,8.8,37,3330,0,0,0.1,0.8,89.1,0.1,0.2,0.2,0.0,0.0,8.0,80000,0,1,70.4,2100000
-P068,Gianluigi Donnarumma,25,Italian,GK,PSG,Big,Ligue 1,8.5,30,2700,0,0,0.1,0.8,83.2,0.1,0.2,0.1,0.0,0.0,60.0,140000,0,1,79.4,23000000
-P069,Jan Oblak,31,Slovenian,GK,Atletico Madrid,Big,La Liga,9.5,34,3060,0,0,0.1,0.7,83.1,0.1,0.2,0.2,0.0,0.0,30.0,180000,0,4,78.4,6400000
-P070,Emiliano Martinez,31,Argentine,GK,Aston Villa,Big,Premier League,9.8,35,3150,0,0,0.1,0.8,78.4,0.1,0.2,0.2,0.0,0.0,25.0,120000,0,4,76.8,11000000
-P071,Gregor Kobel,26,Swiss,GK,Borussia Dortmund,Big,Bundesliga,9.2,31,2790,0,0,0.1,0.8,85.2,0.1,0.2,0.2,0.0,0.0,18.0,80000,0,5,66.8,1800000
-P072,Giorgi Mamardashvili,23,Georgian,GK,Valencia,Medium,La Liga,9.5,33,2970,0,0,0.1,0.7,84.8,0.1,0.2,0.2,0.0,0.0,20.0,40000,0,9,64.8,1400000
-P073,Bono,33,Moroccan,GK,Sevilla,Medium,La Liga,9.5,28,2520,0,0,0.1,0.7,84.1,0.1,0.2,0.2,0.0,0.0,6.0,60000,0,11,62.4,1800000
-P074,Jordan Pickford,30,English,GK,Everton,Medium,Premier League,9.8,33,2970,0,0,0.1,0.8,78.8,0.1,0.2,0.2,0.0,0.0,8.0,100000,0,16,72.4,4800000
-P075,Bernd Leno,32,German,GK,Fulham,Medium,Premier League,9.8,38,3420,0,0,0.1,0.8,82.1,0.1,0.2,0.2,0.0,0.0,6.0,80000,0,13,62.4,3200000
-P076,Guglielmo Vicario,27,Italian,GK,Tottenham,Big,Premier League,9.8,38,3420,0,0,0.1,0.8,82.4,0.1,0.2,0.2,0.0,0.0,20.0,80000,0,5,64.4,2800000
-P077,Matz Sels,32,Belgian,GK,Nottingham Forest,Medium,Premier League,9.8,37,3330,0,0,0.1,0.7,75.4,0.1,0.2,0.2,0.0,0.0,8.0,60000,0,7,56.4,980000
-P078,Mark Flekken,30,Dutch,GK,Brentford,Medium,Premier League,9.8,38,3420,0,0,0.1,0.8,80.4,0.1,0.2,0.2,0.0,0.0,10.0,50000,0,16,58.4,1200000
-P079,Unai Simon,27,Spanish,GK,Athletic Club,Medium,La Liga,9.5,38,3420,0,0,0.1,0.8,82.4,0.1,0.2,0.2,0.0,0.0,20.0,80000,0,5,66.8,2800000
-P080,Alex Remiro,28,Spanish,GK,Real Sociedad,Medium,La Liga,9.5,32,2880,0,0,0.1,0.8,82.1,0.1,0.2,0.2,0.0,0.0,18.0,80000,0,6,62.8,1800000
-P081,Diogo Costa,24,Portuguese,GK,Porto,Medium,Primeira Liga,7.8,38,3420,0,0,0.1,0.8,87.4,0.1,0.2,0.2,0.0,0.0,30.0,80000,0,2,66.4,4800000
-P082,Bart Verbruggen,22,Dutch,GK,Brighton,Medium,Premier League,9.8,30,2700,0,0,0.1,0.8,82.4,0.1,0.2,0.2,0.0,0.0,18.0,40000,0,11,60.4,1400000
-P083,Pau Lopez,29,Spanish,GK,Marseille,Medium,Ligue 1,8.5,28,2520,0,0,0.1,0.7,80.4,0.1,0.2,0.2,0.0,0.0,12.0,60000,0,3,58.4,1800000
-P084,Nick Pope,32,English,GK,Newcastle,Big,Premier League,9.8,22,1980,0,0,0.1,0.7,76.4,0.1,0.2,0.2,0.0,0.0,18.0,80000,42,7,64.8,2100000
-P085,Brice Samba,30,French,GK,RC Lens,Medium,Ligue 1,8.5,36,3240,0,0,0.1,0.7,81.4,0.1,0.2,0.2,0.0,0.0,8.0,60000,0,7,60.4,2100000
-P086,Predrag Rajkovic,28,Serbian,GK,Mallorca,Small,La Liga,9.5,37,3330,0,0,0.1,0.7,78.8,0.1,0.2,0.2,0.0,0.0,6.0,40000,0,13,52.4,880000
-P087,Dean Henderson,27,English,GK,Crystal Palace,Medium,Premier League,9.8,35,3150,0,0,0.1,0.7,77.8,0.1,0.2,0.2,0.0,0.0,12.0,60000,0,10,60.4,2100000
-P088,Robert Sanchez,26,Spanish,GK,Chelsea,Big,Premier League,9.8,24,2160,0,0,0.1,0.7,78.4,0.1,0.2,0.2,0.0,0.0,22.0,60000,0,6,58.4,1200000
-P089,Yassine Bounou,32,Moroccan,GK,Al Hilal,Medium,Saudi Pro League,5.5,20,1800,0,0,0.1,0.7,83.4,0.1,0.2,0.2,0.0,0.0,5.0,80000,0,1,62.4,4800000
-P090,Caoimhin Kelleher,25,Irish,GK,Liverpool,Big,Premier League,9.8,12,1080,0,0,0.1,0.8,84.4,0.1,0.2,0.2,0.0,0.0,15.0,60000,0,3,60.4,1800000
-P091,Alessandro Bastoni,25,Italian,Defender,Inter Milan,Big,Serie A,8.8,33,2970,3,6,0.6,2.1,92.1,0.6,1.8,1.6,0.12,0.28,60.0,160000,0,1,78.4,6800000
-P092,Theo Hernandez,26,French,Defender,AC Milan,Big,Serie A,8.8,30,2700,7,8,1.8,2.4,84.1,2.4,1.4,1.1,0.28,0.38,60.0,180000,0,8,79.4,10000000
-P093,Alphonso Davies,23,Canadian,Defender,Bayern Munich,Big,Bundesliga,9.2,26,2184,2,8,0.8,2.1,84.8,2.8,1.6,1.2,0.09,0.38,70.0,120000,14,8,79.8,8400000
-P094,Jules Kounde,25,French,Defender,Barcelona,Big,La Liga,9.5,27,2268,2,5,0.7,1.4,88.9,1.4,1.9,1.6,0.09,0.18,65.0,160000,21,2,76.8,6200000
-P095,Antonio Rudiger,31,German,Defender,Real Madrid,Big,La Liga,9.5,32,2880,1,1,0.5,0.6,88.4,0.3,2.4,2.2,0.06,0.04,35.0,200000,0,1,78.2,11000000
-P096,Marquinhos,30,Brazilian,Defender,PSG,Big,Ligue 1,8.5,28,2520,2,1,0.5,0.8,91.3,0.4,2.1,1.8,0.09,0.06,40.0,200000,0,1,80.8,20000000
-P097,Gabriel Magalhaes,26,Brazilian,Defender,Arsenal,Big,Premier League,9.8,36,3240,5,1,0.8,0.7,88.1,0.4,2.8,2.4,0.18,0.06,55.0,120000,0,2,78.8,4200000
-P098,Josko Gvardiol,22,Croatian,Defender,Manchester City,Big,Premier League,9.8,33,2871,4,4,0.6,0.8,88.4,0.4,2.1,1.8,0.09,0.09,80.0,140000,0,1,76.8,4800000
-P099,Ibrahima Konate,25,French,Defender,Liverpool,Big,Premier League,9.8,28,2352,2,1,0.5,0.5,88.4,0.3,2.4,2.1,0.08,0.04,60.0,100000,0,3,74.8,4100000
-P100,Ronald Araujo,25,Uruguayan,Defender,Barcelona,Big,La Liga,9.5,18,1620,1,0,0.4,0.5,88.2,0.3,2.4,2.1,0.08,0.04,65.0,140000,84,2,76.4,4800000
-P101,Diogo Dalot,25,Portuguese,Defender,Manchester United,Big,Premier League,9.8,36,3096,3,5,1.2,2.1,84.1,1.8,1.8,1.3,0.12,0.28,35.0,100000,0,8,74.8,4200000
-P102,Ben White,26,English,Defender,Arsenal,Big,Premier League,9.8,32,2880,1,5,0.8,1.4,88.4,1.2,2.1,1.8,0.06,0.18,55.0,120000,0,2,78.4,3400000
-P103,Denzel Dumfries,28,Dutch,Defender,Inter Milan,Big,Serie A,8.8,31,2480,4,8,1.2,2.1,82.4,1.8,1.8,1.4,0.18,0.38,32.0,120000,0,1,72.4,5800000
-P104,Ezri Konsa,26,English,Defender,Aston Villa,Big,Premier League,9.8,33,2970,1,2,0.4,0.6,87.4,0.3,2.4,2.1,0.04,0.06,40.0,80000,0,4,68.4,2400000
-P105,Marc Guehi,23,English,Defender,Crystal Palace,Medium,Premier League,9.8,36,3204,2,1,0.5,0.5,87.8,0.3,2.4,2.1,0.06,0.04,35.0,60000,0,10,66.8,2800000
-P106,Jeremie Frimpong,23,Dutch,Defender,Bayer Leverkusen,Big,Bundesliga,9.2,32,2688,5,10,1.4,2.4,83.1,2.8,1.8,1.2,0.21,0.41,40.0,80000,0,1,68.4,3200000
-P107,Castello Lukeba,21,French,Defender,RB Leipzig,Big,Bundesliga,9.2,27,2268,2,2,0.4,0.6,88.2,0.4,2.4,2.1,0.06,0.06,30.0,50000,0,6,66.8,1200000
-P108,Ousmane Diomande,21,Ivorian,Defender,Sporting CP,Medium,Primeira Liga,7.8,29,2610,3,2,0.5,0.6,88.4,0.4,2.8,2.4,0.09,0.06,30.0,40000,0,1,62.4,2400000
-P109,Pedro Porro,24,Spanish,Defender,Tottenham,Big,Premier League,9.8,35,3045,4,8,1.1,2.1,83.4,1.8,1.6,1.2,0.12,0.31,35.0,80000,0,5,68.8,3200000
-P110,Andrew Robertson,30,Scottish,Defender,Liverpool,Big,Premier League,9.8,30,2700,1,6,0.6,2.1,84.4,1.4,1.6,1.2,0.04,0.28,30.0,160000,0,3,76.4,8400000
-P111,Nuno Mendes,22,Portuguese,Defender,PSG,Big,Ligue 1,8.5,23,1932,1,5,0.6,1.8,84.4,1.8,1.4,1.1,0.04,0.21,40.0,80000,42,1,66.8,4800000
-P112,Destiny Udogie,21,Italian,Defender,Tottenham,Big,Premier League,9.8,27,2241,2,4,0.6,1.4,82.8,1.8,1.6,1.2,0.06,0.18,30.0,60000,21,5,64.8,2400000
-P113,Edmond Tapsoba,25,Burkinabe,Defender,Bayer Leverkusen,Big,Bundesliga,9.2,26,2184,1,1,0.3,0.5,87.8,0.3,2.4,2.1,0.04,0.04,30.0,60000,14,1,62.8,2100000
-P114,Malo Gusto,21,French,Defender,Chelsea,Big,Premier League,9.8,31,2635,1,4,0.6,1.4,82.8,1.4,1.6,1.2,0.04,0.18,28.0,50000,0,6,62.4,2100000
-P115,Mats Hummels,35,German,Defender,Roma,Medium,Serie A,8.8,28,2520,2,2,0.5,1.1,89.4,0.3,2.4,2.1,0.08,0.09,3.5,80000,7,8,72.4,10000000
-P116,Kieran Trippier,33,English,Defender,Newcastle,Big,Premier League,9.8,26,2340,3,7,1.1,2.4,87.3,0.8,1.6,1.2,0.12,0.38,20.0,120000,21,7,74.8,4800000
-P117,Jarrad Branthwaite,21,English,Defender,Everton,Medium,Premier League,9.8,32,2736,1,2,0.4,0.5,86.8,0.3,2.4,2.1,0.04,0.04,50.0,50000,7,16,64.8,2100000
-P118,Goncalo Inacio,22,Portuguese,Defender,Sporting CP,Medium,Primeira Liga,7.8,30,2700,3,4,0.5,0.8,89.2,0.4,2.4,2.1,0.09,0.09,40.0,50000,0,1,64.4,3400000
-P119,Riccardo Calafiori,22,Italian,Defender,Arsenal,Big,Premier League,9.8,20,1548,2,3,0.6,1.4,87.8,0.8,2.1,1.8,0.08,0.12,55.0,100000,14,2,68.4,4800000
-P120,Joao Cancelo,30,Portuguese,Defender,Barcelona,Big,La Liga,9.5,25,2025,1,6,0.8,1.8,87.2,1.8,1.4,1.1,0.06,0.28,28.0,160000,0,2,72.4,13000000
-P121,Benjamin Pavard,28,French,Defender,Inter Milan,Big,Serie A,8.8,32,2752,2,4,0.6,0.8,88.4,0.6,2.1,1.8,0.08,0.12,35.0,120000,0,1,70.4,4200000
-P122,Pau Torres,27,Spanish,Defender,Aston Villa,Big,Premier League,9.8,32,2880,1,3,0.5,0.9,89.4,0.3,2.1,1.8,0.04,0.09,40.0,80000,0,4,68.8,5100000
-P123,Kyle Walker,33,English,Defender,Manchester City,Big,Premier League,9.8,28,2380,1,3,0.8,1.6,86.2,1.1,1.4,1.1,0.04,0.18,18.0,160000,0,1,74.8,7800000
-P124,Oleksandr Zinchenko,27,Ukrainian,Defender,Arsenal,Big,Premier League,9.8,26,2028,2,4,0.6,2.1,88.4,1.2,1.4,1.1,0.06,0.21,28.0,100000,0,2,68.4,4200000
-P125,Dayot Upamecano,25,French,Defender,Bayern Munich,Big,Bundesliga,9.2,27,2268,1,1,0.4,0.5,87.8,0.3,2.1,1.8,0.04,0.04,40.0,140000,14,8,68.4,5800000
-P126,Kim Min-jae,27,South Korean,Defender,Bayern Munich,Big,Bundesliga,9.2,28,2380,2,1,0.5,0.5,87.2,0.3,2.4,2.1,0.06,0.04,40.0,140000,7,8,66.4,9800000
-P127,Odilon Kossounou,23,Ivorian,Defender,Bayer Leverkusen,Big,Bundesliga,9.2,31,2635,1,2,0.4,0.6,87.1,0.4,2.4,2.1,0.04,0.06,22.0,50000,0,1,60.4,1400000
-P128,Stefan de Vrij,32,Dutch,Defender,Inter Milan,Big,Serie A,8.8,30,2700,1,2,0.4,0.6,90.4,0.2,2.1,1.8,0.06,0.06,18.0,120000,0,1,68.4,3800000
-P129,Dani Carvajal,32,Spanish,Defender,Real Madrid,Big,La Liga,9.5,30,2700,2,5,0.8,1.8,87.4,1.2,1.4,1.1,0.06,0.21,18.0,200000,0,1,78.4,11000000
-P130,Ferland Mendy,29,French,Defender,Real Madrid,Big,La Liga,9.5,28,2408,1,4,0.6,1.4,85.4,1.8,1.6,1.2,0.04,0.18,35.0,160000,14,1,72.4,5800000
-P131,Fikayo Tomori,26,English,Defender,AC Milan,Big,Serie A,8.8,24,2160,1,0,0.4,0.5,87.4,0.4,2.4,2.1,0.06,0.03,35.0,80000,21,8,68.8,3200000
-P132,Joe Gomez,26,English,Defender,Liverpool,Big,Premier League,9.8,29,2378,0,2,0.3,0.6,87.8,0.3,1.8,1.6,0.02,0.09,22.0,80000,14,3,66.8,3200000
-P133,Lisandro Martinez,26,Argentine,Defender,Manchester United,Big,Premier League,9.8,15,1155,0,0,0.3,0.4,90.2,0.2,2.4,2.1,0.04,0.03,45.0,160000,91,8,74.2,3200000
-P134,Reece James,24,English,Defender,Chelsea,Big,Premier League,9.8,10,738,0,2,0.6,1.8,86.3,1.4,1.6,1.2,0.04,0.18,65.0,160000,154,6,76.8,7200000
-P135,Jonathan Clauss,31,French,Defender,Marseille,Medium,Ligue 1,8.5,26,2184,2,6,0.8,1.8,81.4,1.4,1.6,1.1,0.09,0.28,12.0,60000,0,3,62.4,2400000
-P136,Stefan Savic,33,Montenegrin,Defender,Galatasaray,Medium,Super Lig,7.4,26,2184,1,1,0.4,0.5,86.4,0.2,2.1,1.8,0.04,0.04,3.0,60000,0,1,60.4,1800000
-P137,Frenkie de Jong,26,Dutch,Midfielder,Barcelona,Big,La Liga,9.5,27,2106,3,6,1.2,3.1,91.8,2.1,1.6,1.2,0.12,0.28,80.0,200000,42,2,80.4,7200000
-P138,Ilkay Gundogan,33,German,Midfielder,Barcelona,Big,La Liga,9.5,24,1872,4,7,1.4,2.8,90.4,1.2,1.2,0.9,0.18,0.38,18.0,200000,21,2,78.4,14000000
-P139,Hakan Calhanoglu,30,Turkish,Midfielder,Inter Milan,Big,Serie A,8.8,34,2924,13,12,2.1,3.1,89.4,1.8,2.8,2.1,0.54,0.51,45.0,120000,0,1,74.4,12000000
-P140,Alexis Mac Allister,25,Argentine,Midfielder,Liverpool,Big,Premier League,9.8,37,3182,9,11,1.8,2.8,87.4,1.8,1.8,1.4,0.38,0.48,70.0,160000,0,3,76.4,7200000
-P141,Davide Frattesi,24,Italian,Midfielder,Inter Milan,Big,Serie A,8.8,31,2108,7,4,1.4,1.8,86.4,1.4,2.1,1.6,0.28,0.21,22.0,80000,0,1,64.4,3800000
-P142,Eduardo Camavinga,21,French,Midfielder,Real Madrid,Big,La Liga,9.5,29,2058,2,4,1.1,1.8,88.4,1.8,2.1,1.6,0.09,0.18,80.0,160000,0,1,78.4,7200000
-P143,Aurelien Tchouameni,24,French,Midfielder,Real Madrid,Big,La Liga,9.5,26,2184,3,4,1.1,1.8,88.8,1.2,2.4,1.8,0.12,0.18,80.0,160000,14,1,76.4,8800000
-P144,Vitinha,24,Portuguese,Midfielder,PSG,Big,Ligue 1,8.5,34,2856,5,9,1.4,3.4,90.4,2.1,1.4,1.1,0.21,0.38,60.0,120000,0,1,72.4,5800000
-P145,Joao Neves,19,Portuguese,Midfielder,PSG,Big,Ligue 1,8.5,28,2324,3,5,0.9,2.4,88.4,1.4,2.8,2.1,0.12,0.21,70.0,100000,0,1,72.4,6200000
-P146,Youri Tielemans,27,Belgian,Midfielder,Aston Villa,Big,Premier League,9.8,34,2924,8,9,1.8,2.8,87.8,1.8,1.8,1.4,0.34,0.41,25.0,100000,0,4,68.4,5200000
-P147,Rodrigo De Paul,30,Argentine,Midfielder,Atletico Madrid,Big,La Liga,9.5,30,2520,3,7,1.2,2.4,86.4,1.8,2.1,1.6,0.14,0.31,28.0,120000,0,4,72.4,8800000
-P148,Stanislav Lobotka,29,Slovak,Midfielder,Napoli,Big,Serie A,8.8,31,2728,1,5,0.9,2.8,91.4,1.2,2.8,2.1,0.04,0.21,28.0,100000,0,10,62.4,2800000
-P149,Andre Zambo Anguissa,28,Cameroonian,Midfielder,Napoli,Big,Serie A,8.8,30,2580,4,5,1.1,1.8,85.4,1.4,2.4,1.8,0.18,0.21,28.0,100000,0,10,62.4,3200000
-P150,Morgan Gibbs-White,24,English,Midfielder,Nottingham Forest,Medium,Premier League,9.8,34,2788,6,9,1.4,2.8,82.4,2.4,0.8,0.6,0.28,0.41,45.0,80000,0,7,66.4,2800000
-P151,Mateo Kovacic,30,Croatian,Midfielder,Manchester City,Big,Premier League,9.8,30,2460,4,7,1.1,2.4,90.4,1.8,1.8,1.4,0.18,0.28,28.0,160000,0,1,74.4,9800000
-P152,Pierre-Emile Hojbjerg,28,Danish,Midfielder,Marseille,Medium,Ligue 1,8.5,30,2580,3,5,1.0,1.8,86.4,1.1,2.8,2.1,0.12,0.18,22.0,100000,0,3,66.4,4800000
-P153,Orkun Kokcu,23,Dutch,Midfielder,Benfica,Medium,Primeira Liga,7.8,32,2688,10,14,2.1,3.1,87.4,2.4,1.4,1.1,0.41,0.58,35.0,60000,0,1,66.4,4200000
-P154,Dani Olmo,26,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,26,1976,8,7,2.1,2.8,87.4,2.4,1.2,0.9,0.38,0.38,60.0,120000,0,2,74.4,6200000
-P155,Marcos Llorente,29,Spanish,Midfielder,Atletico Madrid,Big,La Liga,9.5,30,2280,5,6,1.4,2.1,85.8,1.8,2.1,1.6,0.21,0.28,30.0,120000,0,4,68.4,4800000
-P156,Joao Palhinha,28,Portuguese,Midfielder,Bayern Munich,Big,Bundesliga,9.2,27,2376,2,3,0.8,1.6,87.8,0.9,3.4,2.8,0.08,0.12,45.0,120000,0,8,66.4,3800000
-P157,Lucas Paqueta,26,Brazilian,Midfielder,West Ham,Medium,Premier League,9.8,28,2296,7,8,1.8,2.4,85.4,2.4,1.1,0.8,0.31,0.38,55.0,140000,0,14,74.4,11000000
-P158,Oihan Sancet,23,Spanish,Midfielder,Athletic Club,Medium,La Liga,9.5,34,2856,12,9,2.1,2.8,86.8,2.4,1.4,1.1,0.48,0.38,35.0,60000,0,5,68.4,3200000
-P159,Martin Zubimendi,25,Spanish,Midfielder,Arsenal,Big,Premier League,9.8,31,2604,3,5,0.9,2.4,90.8,1.1,2.4,2.1,0.12,0.21,60.0,120000,0,2,68.4,3200000
-P160,Pedri (2nd),21,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,29,2381,4,7,1.9,3.8,92.3,2.6,1.4,1.1,0.21,0.42,90.0,180000,42,2,89.6,11000000
-P161,Conor Gallagher,24,English,Midfielder,Atletico Madrid,Big,La Liga,9.5,28,2240,4,6,1.2,2.1,84.4,1.8,2.8,2.1,0.18,0.28,30.0,80000,0,4,68.4,3400000
-P162,Adam Wharton,20,English,Midfielder,Crystal Palace,Medium,Premier League,9.8,32,2752,1,3,0.8,1.8,87.8,1.2,2.4,1.8,0.04,0.14,20.0,30000,0,10,60.4,1800000
-P163,Sofyan Amrabat,28,Moroccan,Midfielder,Fiorentina,Medium,Serie A,8.8,27,2214,1,3,0.8,1.8,86.4,1.1,2.8,2.1,0.04,0.12,22.0,80000,0,7,64.4,4200000
-P164,Ibrahim Sangare,26,Ivorian,Midfielder,Nottingham Forest,Medium,Premier League,9.8,30,2580,2,3,0.8,1.6,85.4,1.2,2.8,2.1,0.08,0.14,30.0,60000,0,7,60.4,2100000
-P165,Andreas Pereira,28,Brazilian,Midfielder,Fulham,Medium,Premier League,9.8,36,3096,8,8,1.8,2.4,84.4,1.8,1.2,0.9,0.34,0.38,20.0,80000,0,13,64.4,5800000
-P166,Douglas Luiz,26,Brazilian,Midfielder,Juventus,Big,Serie A,8.8,22,1716,3,4,1.2,1.8,86.4,1.4,2.4,1.8,0.12,0.18,50.0,140000,0,3,68.4,4800000
-P167,Fermin Lopez,21,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,28,2016,7,5,1.8,2.4,87.8,2.1,1.2,0.9,0.31,0.28,25.0,40000,0,2,68.4,2800000
-P168,Kristjan Asllani,22,Albanian,Midfielder,Inter Milan,Big,Serie A,8.8,22,1584,2,3,0.8,2.1,88.4,1.2,2.1,1.6,0.08,0.14,15.0,40000,0,1,58.4,1400000
-P169,Elliot Anderson,21,English,Midfielder,Nottingham Forest,Medium,Premier League,9.8,32,2624,4,5,1.2,2.1,83.4,1.8,1.8,1.4,0.18,0.21,25.0,40000,0,7,60.4,1800000
-P170,Iker Muniain,31,Spanish,Midfielder,Athletic Club,Medium,La Liga,9.5,28,2240,4,7,1.4,2.4,86.8,1.8,1.4,1.1,0.18,0.31,8.0,80000,0,5,64.4,4200000
-P171,Mikel Merino,28,Spanish,Midfielder,Arsenal,Big,Premier League,9.8,18,1368,3,4,1.1,2.1,88.4,1.2,2.1,1.6,0.12,0.18,40.0,100000,42,2,64.4,2800000
-P172,Harvey Elliott,21,English,Midfielder,Liverpool,Big,Premier League,9.8,24,1680,3,4,1.2,2.1,84.4,1.8,1.1,0.8,0.12,0.18,22.0,40000,0,3,62.4,2800000
-P173,Weston McKennie,25,American,Midfielder,Juventus,Big,Serie A,8.8,27,2052,4,5,1.2,1.8,84.4,1.6,2.1,1.6,0.18,0.21,20.0,80000,0,3,60.4,4200000
-P174,Yunus Musah,22,American,Midfielder,AC Milan,Big,Serie A,8.8,28,2156,2,3,0.9,1.6,83.8,1.8,2.1,1.6,0.08,0.14,22.0,60000,0,8,60.4,2800000
-P175,Romeo Lavia,20,Belgian,Midfielder,Chelsea,Big,Premier League,9.8,12,864,0,1,0.6,1.4,86.4,0.9,2.4,1.8,0.02,0.06,45.0,80000,84,6,60.4,2800000
-P176,Aleksandar Pavlovic,19,German,Midfielder,Bayern Munich,Big,Bundesliga,9.2,24,1800,2,3,0.8,1.6,87.4,1.2,2.1,1.6,0.08,0.14,20.0,20000,0,8,62.4,1800000
-P177,Viktor Gyokeres,26,Swedish,Forward,Sporting CP,Medium,Primeira Liga,7.8,33,2904,43,15,5.1,1.8,75.4,2.4,0.5,0.3,1.82,0.48,45.0,100000,0,1,78.4,8200000
-P178,Raphinha,27,Brazilian,Forward,Barcelona,Big,La Liga,9.5,34,2822,27,13,3.8,2.8,82.4,3.4,0.6,0.4,1.11,0.58,60.0,160000,0,2,78.4,12000000
-P179,Robert Lewandowski,36,Polish,Forward,Barcelona,Big,La Liga,9.5,34,2958,19,10,4.1,1.8,81.4,1.2,0.3,0.2,0.91,0.41,18.0,320000,0,2,91.4,52000000
-P180,Rodrygo,23,Brazilian,Forward,Real Madrid,Big,La Liga,9.5,32,2496,12,11,2.8,2.4,83.4,2.8,0.5,0.3,0.58,0.48,80.0,200000,0,1,82.4,22000000
-P181,Ousmane Dembele,27,French,Forward,PSG,Big,Ligue 1,8.5,32,2688,8,12,2.8,2.8,82.4,3.8,0.6,0.4,0.48,0.58,70.0,200000,0,1,82.4,14000000
-P182,Bradley Barcola,21,French,Forward,PSG,Big,Ligue 1,8.5,32,2464,14,9,2.8,2.4,80.4,3.4,0.5,0.3,0.62,0.41,35.0,80000,0,1,72.4,5800000
-P183,Goncalo Ramos,23,Portuguese,Forward,PSG,Big,Ligue 1,8.5,28,2016,12,4,3.1,1.2,76.4,1.4,0.4,0.2,0.62,0.21,30.0,100000,0,1,68.4,4800000
-P184,Julian Alvarez,24,Argentine,Forward,Atletico Madrid,Big,La Liga,9.5,35,2940,14,10,3.1,2.1,82.4,2.4,0.6,0.4,0.61,0.41,90.0,200000,0,4,84.4,21000000
-P185,Dominic Solanke,26,English,Forward,Tottenham,Big,Premier League,9.8,38,3240,19,7,3.1,1.4,76.8,1.4,0.5,0.3,0.71,0.31,55.0,100000,0,5,72.4,1800000
-P186,Mateo Retegui,24,Italian,Forward,Atalanta,Medium,Serie A,8.8,34,2788,21,4,3.8,1.2,75.4,1.2,0.4,0.2,0.98,0.22,35.0,80000,0,4,68.4,3200000
-P187,Ademola Lookman,26,Nigerian,Forward,Atalanta,Medium,Serie A,8.8,33,2805,15,6,2.8,2.4,79.4,3.4,0.5,0.3,0.61,0.38,50.0,100000,0,4,71.4,4800000
-P188,Marcus Thuram,26,French,Forward,Inter Milan,Big,Serie A,8.8,34,2788,13,7,2.8,2.1,78.4,2.8,0.5,0.3,0.62,0.38,60.0,160000,0,1,74.8,8200000
-P189,Randal Kolo Muani,25,French,Forward,Juventus,Big,Serie A,8.8,25,1875,6,4,2.4,1.4,78.4,2.4,0.5,0.3,0.38,0.24,50.0,120000,0,3,72.4,7200000
-P190,Paulo Dybala,30,Argentine,Forward,Roma,Medium,Serie A,8.8,30,2340,13,8,2.8,2.8,83.4,2.8,0.5,0.3,0.58,0.41,18.0,200000,14,8,78.4,28000000
-P191,Cody Gakpo,25,Dutch,Forward,Liverpool,Big,Premier League,9.8,33,2706,12,8,2.8,2.1,80.4,2.4,0.5,0.3,0.51,0.38,55.0,120000,0,3,74.4,6200000
-P192,Thomas Muller,34,German,Forward,Bayern Munich,Big,Bundesliga,9.2,31,2232,9,14,1.8,2.8,86.4,1.4,0.6,0.5,0.41,0.58,5.0,240000,0,8,84.4,20000000
-P193,Brahim Diaz,24,Spanish,Forward,Real Madrid,Big,La Liga,9.5,30,2040,11,7,2.8,2.4,83.4,2.8,0.5,0.3,0.48,0.38,30.0,80000,0,1,72.4,7800000
-P194,Endrick,17,Brazilian,Forward,Real Madrid,Big,La Liga,9.5,21,1260,5,2,2.4,1.1,77.4,2.1,0.4,0.2,0.28,0.12,60.0,40000,0,1,78.4,22000000
-P195,Rafael Leao,24,Portuguese,Forward,AC Milan,Big,Serie A,8.8,32,2624,9,8,2.8,2.8,79.4,3.8,0.5,0.3,0.48,0.38,70.0,160000,0,8,78.4,12000000
-P196,Chris Wood,32,New Zealander,Forward,Nottingham Forest,Medium,Premier League,9.8,33,2904,18,4,3.1,0.8,72.4,0.6,0.4,0.2,0.71,0.14,8.0,60000,0,7,64.8,1400000
-P197,Mateus Cunha,25,Brazilian,Forward,Wolves,Medium,Premier League,9.8,32,2688,14,7,3.1,2.1,79.2,2.8,0.6,0.4,0.61,0.41,40.0,80000,0,14,72.4,3200000
-P198,Hwang Hee-chan,28,South Korean,Forward,Wolves,Medium,Premier League,9.8,30,2340,10,5,2.8,1.4,78.4,2.4,0.5,0.3,0.48,0.21,22.0,60000,0,14,64.4,4800000
-P199,Diogo Jota,27,Portuguese,Forward,Liverpool,Big,Premier League,9.8,27,2025,11,5,2.8,1.8,78.4,2.1,0.5,0.3,0.51,0.28,55.0,120000,0,3,76.4,7200000
-P200,Gabriel Jesus,27,Brazilian,Forward,Arsenal,Big,Premier League,9.8,24,1776,5,5,2.4,2.1,79.4,2.4,0.6,0.4,0.31,0.31,40.0,120000,21,2,72.4,12000000
-P201,Nicolas Jackson,22,Senegalese,Forward,Chelsea,Big,Premier League,9.8,35,2800,17,4,3.4,1.4,75.4,1.8,0.5,0.3,0.78,0.21,20.0,80000,14,6,68.4,4200000
-P202,Cole Palmer,22,English,Forward,Chelsea,Big,Premier League,9.8,33,2932,22,11,3.8,3.4,84.3,2.8,0.6,0.4,0.82,0.58,70.0,120000,0,6,84.8,7800000
-P203,Moise Kean,24,Italian,Forward,Fiorentina,Medium,Serie A,8.8,33,2706,13,4,3.1,1.1,74.8,1.8,0.4,0.2,0.62,0.21,22.0,80000,0,7,68.4,6200000
-P204,Boulaye Dia,27,Senegalese,Forward,Lazio,Medium,Serie A,8.8,30,2310,15,4,3.1,1.4,76.2,2.1,0.5,0.3,0.68,0.21,18.0,80000,0,5,64.4,2400000
-P205,Mattia Zaccagni,29,Italian,Forward,Lazio,Medium,Serie A,8.8,33,2805,13,8,2.8,2.4,80.4,2.8,0.5,0.3,0.61,0.38,22.0,80000,0,5,64.4,4200000
-P206,Romelu Lukaku,31,Belgian,Forward,Roma,Medium,Serie A,8.8,31,2604,13,7,2.8,1.2,74.1,1.2,0.4,0.3,0.72,0.31,18.0,240000,21,8,78.4,16000000
-P207,Alvaro Morata,31,Spanish,Forward,Atletico Madrid,Big,La Liga,9.5,27,1917,14,4,3.1,1.4,78.3,1.1,0.5,0.4,0.71,0.24,18.0,140000,21,4,74.8,6700000
-P208,Ferran Torres,24,Spanish,Forward,Barcelona,Big,La Liga,9.5,31,2232,8,6,2.4,1.8,82.4,2.8,0.5,0.3,0.41,0.31,35.0,120000,14,2,72.4,5800000
-P209,Angel Correa,29,Argentine,Forward,Atletico Madrid,Big,La Liga,9.5,29,1972,6,6,2.1,1.8,78.8,2.4,0.6,0.4,0.34,0.31,18.0,100000,0,4,66.4,6400000
-P210,Leandro Trossard,29,Belgian,Forward,Arsenal,Big,Premier League,9.8,34,2346,10,8,2.8,2.4,83.4,2.4,0.8,0.6,0.51,0.41,28.0,100000,0,2,74.4,3100000
-P211,Gabriel Martinelli,22,Brazilian,Forward,Arsenal,Big,Premier League,9.8,27,2025,6,5,2.4,2.1,80.4,2.8,0.7,0.5,0.38,0.31,50.0,100000,14,2,76.8,6200000
-P212,Kaoru Mitoma,26,Japanese,Forward,Brighton,Medium,Premier League,9.8,25,1950,8,6,2.4,2.1,81.2,3.4,0.6,0.4,0.41,0.38,35.0,60000,28,11,72.4,5200000
-P213,Simon Adingra,22,Ivorian,Forward,Brighton,Medium,Premier League,9.8,30,2340,9,6,2.4,1.8,79.8,3.1,0.5,0.3,0.41,0.31,22.0,40000,0,11,60.4,2400000
-P214,Brennan Johnson,22,Welsh,Forward,Tottenham,Big,Premier League,9.8,29,2088,9,4,2.4,1.4,78.1,2.4,0.5,0.3,0.41,0.21,35.0,80000,0,5,68.4,2100000
-P215,Noni Madueke,22,English,Forward,Chelsea,Big,Premier League,9.8,25,1800,8,4,2.8,1.8,78.4,2.8,0.5,0.3,0.41,0.24,30.0,60000,0,6,66.8,2400000
-P216,Bryan Mbeumo,24,Cameroonian,Forward,Brentford,Medium,Premier League,9.8,38,3268,20,9,3.4,2.1,81.2,2.4,0.6,0.4,0.82,0.41,28.0,60000,0,16,71.4,3200000
-P217,Elye Wahi,21,French,Forward,Marseille,Medium,Ligue 1,8.5,28,1960,8,4,2.8,1.2,74.4,2.1,0.4,0.2,0.41,0.21,14.0,40000,0,3,62.4,2800000
-P218,Folarin Balogun,23,American,Forward,Monaco,Medium,Ligue 1,8.5,29,2175,12,4,3.1,1.2,75.4,1.8,0.4,0.2,0.58,0.21,25.0,60000,0,2,64.4,3200000
-P219,Takumi Minamino,29,Japanese,Forward,Monaco,Medium,Ligue 1,8.5,34,2720,14,9,2.8,2.1,80.4,2.8,0.6,0.4,0.58,0.41,18.0,80000,0,2,68.4,9200000
-P220,Wilfried Zaha,31,Ivorian,Forward,Galatasaray,Medium,Super Lig,7.4,28,2184,9,6,2.4,1.8,79.4,3.4,0.5,0.3,0.48,0.31,12.0,120000,0,1,72.4,9200000
-P221,Hakim Ziyech,31,Moroccan,Forward,Galatasaray,Medium,Super Lig,7.4,28,2184,12,10,2.8,2.8,82.4,2.8,0.5,0.3,0.51,0.41,14.0,120000,0,1,72.4,12000000
-P222,Christian Pulisic,25,American,Forward,AC Milan,Big,Serie A,8.8,33,2706,12,7,2.8,2.4,80.4,2.8,0.6,0.4,0.51,0.38,35.0,120000,0,8,72.4,16000000
-P223,Dango Ouattara,22,Burkinabe,Forward,Bournemouth,Medium,Premier League,9.8,25,1800,7,4,2.4,1.4,76.1,2.8,0.5,0.3,0.38,0.21,25.0,40000,0,12,58.4,1200000
-P224,Pedro Neto,24,Portuguese,Forward,Chelsea,Big,Premier League,9.8,22,1716,5,4,2.4,1.8,79.2,2.8,0.5,0.3,0.31,0.28,50.0,80000,28,6,70.4,3800000
-P225,Emile Smith Rowe,23,English,Forward,Fulham,Medium,Premier League,9.8,30,2340,9,5,2.1,2.1,80.4,2.4,0.6,0.4,0.41,0.31,20.0,60000,0,13,66.4,3400000
-P226,Karim Adeyemi,22,German,Forward,Borussia Dortmund,Big,Bundesliga,9.2,24,1728,8,4,2.8,1.4,76.8,2.8,0.5,0.3,0.41,0.21,32.0,80000,42,5,68.4,4100000
-P227,Benjamin Sesko,21,Slovenian,Forward,RB Leipzig,Big,Bundesliga,9.2,29,2030,18,4,3.2,1.1,75.4,1.8,0.4,0.2,0.81,0.22,50.0,80000,0,6,72.1,3100000
-P228,Jamie Bynoe-Gittens,20,English,Forward,Borussia Dortmund,Big,Bundesliga,9.2,24,1728,7,6,2.4,1.8,79.1,3.1,0.5,0.3,0.38,0.31,20.0,30000,0,5,62.8,2400000
-P229,Ansgar Knauff,22,German,Forward,Eintracht Frankfurt,Medium,Bundesliga,9.2,28,2184,7,6,2.1,1.8,78.4,2.8,0.6,0.4,0.34,0.31,15.0,30000,0,6,58.4,1200000
-P230,Rayan Cherki,20,French,Forward,Olympique Lyon,Medium,Ligue 1,8.5,27,2052,9,8,2.4,2.8,83.1,3.4,0.7,0.4,0.41,0.48,35.0,40000,0,4,68.4,3200000
-P231,Evan Ferguson,19,Irish,Forward,Brighton,Medium,Premier League,9.8,22,1386,9,2,3.4,1.2,76.1,1.2,0.4,0.2,0.62,0.18,28.0,30000,35,11,64.8,1400000
-P232,Savinho,20,Brazilian,Forward,Manchester City,Big,Premier League,9.8,23,1449,4,6,2.1,2.4,80.1,3.4,0.5,0.3,0.28,0.38,50.0,80000,0,1,72.4,4800000
-P233,Pedro Goncalves,25,Portuguese,Midfielder,Sporting CP,Medium,Primeira Liga,7.8,32,2720,16,10,2.8,2.8,85.4,2.8,1.1,0.8,0.68,0.48,35.0,80000,0,1,68.4,4800000
-P234,David Neres,27,Brazilian,Forward,Benfica,Medium,Primeira Liga,7.8,29,2466,16,12,2.8,2.4,80.4,3.4,0.5,0.3,0.68,0.51,30.0,60000,0,1,68.4,4800000
-P235,Lee Kang-in,23,South Korean,Midfielder,PSG,Big,Ligue 1,8.5,26,1976,6,8,1.8,2.4,84.8,2.4,1.1,0.8,0.28,0.38,35.0,80000,0,1,68.4,7800000
-P236,Takefusa Kubo,22,Japanese,Forward,Real Sociedad,Medium,La Liga,9.5,34,2788,9,9,2.4,2.8,82.8,3.4,0.6,0.4,0.41,0.41,40.0,60000,0,6,72.4,12000000
-P237,Mikel Oyarzabal,27,Spanish,Forward,Real Sociedad,Medium,La Liga,9.5,28,2352,10,7,2.8,2.4,83.4,2.4,0.6,0.4,0.48,0.38,30.0,100000,0,6,66.4,3200000
-P238,Gorka Guruzeta,27,Spanish,Forward,Athletic Club,Medium,La Liga,9.5,35,2870,14,5,3.1,1.2,76.4,1.4,0.4,0.2,0.58,0.21,25.0,60000,0,5,64.4,2100000
-P239,Inaki Williams,30,Spanish,Forward,Athletic Club,Medium,La Liga,9.5,37,3330,13,7,2.8,1.6,79.4,2.8,0.5,0.3,0.52,0.28,22.0,100000,0,5,68.4,4800000
-P240,Enes Unal,27,Turkish,Forward,Getafe,Small,La Liga,9.5,33,2838,13,3,3.1,0.9,73.4,1.2,0.4,0.2,0.62,0.14,12.0,40000,0,8,56.4,1800000
-P241,Memphis Depay,30,Dutch,Forward,Atletico Madrid,Big,La Liga,9.5,22,1584,7,3,2.8,1.4,80.4,2.8,0.4,0.3,0.38,0.21,12.0,120000,7,4,74.4,17000000
-P242,Kingsley Coman,28,French,Forward,Bayern Munich,Big,Bundesliga,9.2,24,1680,5,6,2.4,1.8,82.4,3.1,0.5,0.3,0.31,0.31,40.0,200000,28,8,74.8,8800000
-P243,Serge Gnabry,28,German,Forward,Bayern Munich,Big,Bundesliga,9.2,22,1628,6,5,2.4,1.8,82.4,2.8,0.5,0.3,0.38,0.31,28.0,200000,42,8,76.4,10000000
-P244,Stephan El Shaarawy,31,Italian,Forward,Roma,Medium,Serie A,8.8,28,2016,8,5,2.4,1.8,79.2,2.8,0.5,0.3,0.38,0.31,10.0,80000,0,8,64.4,8200000
-P245,Amine Gouiri,24,French,Forward,Rennes,Small,Ligue 1,8.5,27,2106,8,5,2.1,2.1,79.4,2.8,0.5,0.3,0.38,0.31,18.0,40000,0,9,62.4,2400000
-P246,Matteo Politano,30,Italian,Forward,Napoli,Big,Serie A,8.8,30,2340,9,7,2.4,2.4,80.4,2.4,0.5,0.3,0.41,0.31,18.0,80000,0,10,60.4,3200000
-P247,Giovanni Simeone,28,Argentine,Forward,Napoli,Big,Serie A,8.8,27,1890,7,3,2.4,0.9,74.8,1.2,0.4,0.2,0.38,0.14,8.0,80000,0,10,58.4,3400000
-P248,Wissam Ben Yedder,33,French,Forward,Monaco,Medium,Ligue 1,8.5,24,1680,9,4,2.8,1.4,79.4,1.8,0.3,0.2,0.48,0.24,8.0,120000,21,2,68.4,7200000
-P249,Dodi Lukebakio,26,Belgian,Forward,Sevilla,Medium,La Liga,9.5,32,2592,10,6,2.4,1.8,78.4,2.8,0.5,0.3,0.48,0.28,22.0,60000,0,11,60.4,2400000
-P250,Hirving Lozano,29,Mexican,Forward,PSV,Medium,Eredivisie,7.2,27,2106,9,6,2.4,1.8,79.4,2.8,0.5,0.3,0.41,0.28,18.0,100000,0,2,66.4,10000000
-P251,Noa Lang,25,Dutch,Forward,PSV,Medium,Eredivisie,7.2,28,2184,9,9,2.4,2.4,79.8,3.4,0.5,0.3,0.41,0.41,22.0,60000,0,2,62.4,3800000
-P252,Brian Brobbey,22,Dutch,Forward,Ajax,Medium,Eredivisie,7.2,28,2240,14,6,3.4,1.2,75.4,2.1,0.4,0.2,0.68,0.21,25.0,60000,0,2,62.4,3200000
-P253,Ricardo Pepi,21,American,Forward,PSV,Medium,Eredivisie,7.2,30,2460,13,6,3.1,1.2,74.8,1.4,0.4,0.2,0.61,0.21,15.0,40000,0,2,58.4,2800000
-P254,Keito Nakamura,22,Japanese,Forward,Reims,Small,Ligue 1,8.5,30,2280,8,7,2.1,1.8,79.4,2.8,0.5,0.3,0.38,0.31,8.0,20000,0,12,52.4,1800000
-P255,Ritsu Doan,25,Japanese,Forward,SC Freiburg,Medium,Bundesliga,9.2,30,2400,8,7,2.1,1.8,79.8,2.8,0.5,0.3,0.38,0.31,18.0,50000,0,9,62.4,4800000
-P256,Ayoze Perez,31,Spanish,Forward,Villarreal,Medium,La Liga,9.5,34,2788,8,7,2.1,1.8,81.4,1.8,0.5,0.3,0.38,0.31,8.0,60000,0,7,60.4,2800000
-P257,Joselu,34,Spanish,Forward,Real Madrid,Big,La Liga,9.5,22,1188,7,2,2.4,0.8,76.4,0.6,0.3,0.2,0.41,0.12,3.0,80000,0,1,62.4,2400000
-P258,Giacomo Bonaventura,34,Italian,Midfielder,Fiorentina,Medium,Serie A,8.8,30,2520,6,6,1.4,2.1,86.2,1.4,1.4,1.1,0.28,0.31,5.0,80000,0,7,62.4,2400000
-P259,Daichi Kamada,27,Japanese,Midfielder,Crystal Palace,Medium,Premier League,9.8,28,2184,3,4,1.2,2.1,84.8,1.8,1.4,1.1,0.12,0.18,20.0,60000,0,10,60.4,3800000
-P260,Noussair Mazraoui,26,Moroccan,Defender,Manchester United,Big,Premier League,9.8,22,1804,1,3,0.8,1.4,84.4,1.4,1.6,1.2,0.04,0.14,28.0,80000,14,8,62.4,3200000
-P261,Levi Colwill,21,English,Defender,Chelsea,Big,Premier League,9.8,25,2025,1,2,0.5,0.7,87.8,0.4,2.1,1.8,0.04,0.06,35.0,50000,0,6,62.4,2400000
-P262,Hiroki Ito,24,Japanese,Defender,Stuttgart,Medium,Bundesliga,9.2,29,2552,1,2,0.4,0.6,87.8,0.4,2.4,2.1,0.04,0.06,22.0,50000,0,5,60.4,2400000
-P263,Jan Paul van Hecke,24,Dutch,Defender,Brighton,Medium,Premier League,9.8,32,2880,2,2,0.5,0.7,88.4,0.4,2.4,2.1,0.06,0.06,25.0,50000,0,11,60.4,1800000
-P264,Lutsharel Geertruida,24,Dutch,Defender,Bayer Leverkusen,Big,Bundesliga,9.2,24,1896,2,4,0.8,1.4,84.8,1.2,1.8,1.4,0.08,0.18,20.0,50000,7,1,60.4,1800000
-P265,Lewis Hall,20,English,Defender,Newcastle,Big,Premier League,9.8,28,2296,0,4,0.5,1.4,83.8,1.2,1.6,1.2,0.02,0.14,18.0,30000,0,7,58.4,1400000
-P266,Tyrick Mitchell,24,English,Defender,Crystal Palace,Medium,Premier League,9.8,33,2904,0,3,0.4,1.4,82.8,1.2,1.6,1.2,0.02,0.14,12.0,40000,0,10,56.4,1400000
-P267,Max Kilman,27,English,Defender,West Ham,Medium,Premier League,9.8,32,2880,1,1,0.4,0.6,87.4,0.3,2.1,1.8,0.04,0.04,25.0,60000,0,14,58.4,1800000
-P268,Timothy Castagne,28,Belgian,Defender,Fulham,Medium,Premier League,9.8,30,2520,2,5,0.8,1.6,83.4,1.4,1.6,1.2,0.08,0.18,14.0,60000,0,13,62.4,2100000
-P269,Aleksandar Dragovic,33,Austrian,Defender,Red Star Belgrade,Small,Serbian SuperLiga,5.8,24,2016,1,1,0.4,0.5,86.4,0.2,2.1,1.8,0.04,0.04,1.5,15000,14,1,48.4,880000
-P270,Konstantinos Mavropanos,26,Greek,Defender,West Ham,Medium,Premier League,9.8,29,2436,1,1,0.4,0.5,85.4,0.3,2.1,1.8,0.04,0.04,18.0,50000,0,14,56.4,1200000
-P271,James Tarkowski,31,English,Defender,Everton,Medium,Premier League,9.8,33,2970,2,1,0.5,0.5,85.2,0.2,2.4,2.1,0.06,0.04,12.0,80000,0,16,62.4,2100000
-P272,Pervis Estupinan,26,Ecuadorian,Defender,Brighton,Medium,Premier League,9.8,15,1200,1,3,0.6,1.4,83.4,1.8,1.4,1.1,0.04,0.14,25.0,60000,42,11,58.4,2800000
-P273,Igor Julio,24,Brazilian,Defender,Fiorentina,Medium,Serie A,8.8,29,2523,2,2,0.5,0.6,87.4,0.4,2.4,2.1,0.06,0.06,18.0,50000,0,7,58.4,1800000
-P274,Manu Kone,23,French,Midfielder,Roma,Medium,Serie A,8.8,28,2352,4,5,1.1,2.1,86.8,1.8,2.4,1.8,0.18,0.21,22.0,50000,0,8,60.4,1800000
-P275,Luca Pellegrini,25,Italian,Defender,Lazio,Medium,Serie A,8.8,27,2106,1,4,0.6,1.6,83.4,1.6,1.6,1.2,0.04,0.18,12.0,50000,0,5,58.4,1200000
-P276,Valentino Lazaro,28,Austrian,Defender,Torino,Small,Serie A,8.8,28,2184,2,5,0.8,1.8,81.2,2.1,1.4,1.1,0.09,0.21,8.0,40000,0,9,54.4,1100000
-P277,Arthur Vermeeren,19,Belgian,Midfielder,Atletico Madrid,Big,La Liga,9.5,20,1440,1,2,0.8,1.8,86.4,1.2,2.4,1.8,0.04,0.09,25.0,30000,0,4,62.4,2400000
-P278,Arne Engels,20,Belgian,Midfielder,Celtic,Medium,Scottish Prem,6.5,31,2604,9,12,1.8,2.8,86.4,2.1,1.8,1.4,0.38,0.51,20.0,30000,0,1,60.4,1800000
-P279,Matt O'Riley,23,Danish,Midfielder,Brighton,Medium,Premier League,9.8,30,2430,5,7,1.4,2.4,85.8,1.8,1.4,1.1,0.21,0.31,30.0,60000,0,11,60.4,2400000
-P280,Georginio Rutter,22,French,Forward,Brighton,Medium,Premier League,9.8,35,2835,8,7,2.4,2.1,79.8,2.8,0.5,0.3,0.38,0.31,28.0,50000,0,11,62.4,2400000
-P281,Guus Til,26,Dutch,Midfielder,PSV,Medium,Eredivisie,7.2,29,2436,7,8,1.6,2.1,85.4,1.8,1.6,1.2,0.31,0.38,18.0,50000,0,2,58.4,1800000
-P282,Ismael Saibari,22,Moroccan,Midfielder,PSV,Medium,Eredivisie,7.2,27,2133,6,8,1.4,2.4,85.8,2.1,1.6,1.2,0.28,0.38,20.0,40000,0,2,60.4,2400000
-P283,Calvin Stengs,25,Dutch,Forward,Feyenoord,Medium,Eredivisie,7.2,30,2460,8,9,2.1,2.4,81.4,2.8,0.5,0.3,0.38,0.41,15.0,40000,0,1,60.4,2400000
-P284,Quinten Timber,22,Dutch,Midfielder,Feyenoord,Medium,Eredivisie,7.2,27,2187,4,6,1.2,2.1,85.4,1.8,1.8,1.4,0.18,0.28,18.0,40000,0,1,60.4,1800000
-P285,Luka Sucic,22,Croatian,Midfielder,RB Salzburg,Small,Austrian Bundesliga,6.8,27,2214,8,11,1.8,2.8,85.8,2.4,1.4,1.1,0.34,0.48,18.0,30000,0,1,60.4,1800000
-P286,Martin Baturina,21,Croatian,Midfielder,Dinamo Zagreb,Small,HNL,5.8,28,2268,9,10,1.8,2.8,84.8,2.8,1.4,1.1,0.38,0.41,20.0,20000,0,1,60.4,1800000
-P287,Azzedine Ounahi,24,Moroccan,Midfielder,Marseille,Medium,Ligue 1,8.5,24,1776,2,4,0.9,1.8,84.4,1.6,1.8,1.4,0.08,0.18,14.0,50000,0,3,58.4,2400000
-P288,Brenden Aaronson,23,American,Midfielder,Leeds United,Small,Championship,6.0,38,3268,8,9,1.8,2.4,79.4,2.4,1.4,1.1,0.34,0.38,18.0,40000,0,3,58.4,2800000
-P289,Luuk de Jong,33,Dutch,Forward,PSV,Medium,Eredivisie,7.2,30,2550,16,7,3.1,1.2,74.4,0.8,0.3,0.2,0.68,0.21,5.0,80000,0,2,58.4,2400000
-P290,Oh Hyeon-gyu,23,South Korean,Forward,Celtic,Medium,Scottish Prem,6.5,29,2175,13,5,3.1,1.1,74.4,1.4,0.4,0.2,0.58,0.21,12.0,30000,0,1,56.4,2800000
-P291,Marcos Leonardo,21,Brazilian,Forward,Benfica,Medium,Primeira Liga,7.8,28,2212,14,4,3.4,1.1,74.4,1.6,0.4,0.2,0.62,0.18,12.0,40000,0,1,58.4,2400000
-P292,Elanga Anthony,22,Swedish,Forward,Nottingham Forest,Medium,Premier League,9.8,34,2720,8,6,2.1,1.6,77.4,2.8,0.5,0.3,0.38,0.28,22.0,40000,0,7,62.4,2400000
-P293,Taiwo Awoniyi,27,Nigerian,Forward,Nottingham Forest,Medium,Premier League,9.8,24,1824,7,3,2.4,0.9,73.4,1.4,0.4,0.2,0.38,0.14,18.0,50000,42,7,58.4,2100000
-P294,Callum Wilson,32,English,Forward,Newcastle,Big,Premier League,9.8,20,1620,11,2,3.4,0.9,74.2,1.2,0.4,0.2,0.62,0.14,42,7,68.4,3200000
-P295,Giovanni Reyna,21,American,Forward,Borussia Dortmund,Big,Bundesliga,9.2,20,1260,5,4,1.8,2.1,82.4,2.4,0.6,0.4,0.28,0.31,30.0,40000,28,5,62.4,3400000
-P296,Konrad Laimer,27,Austrian,Midfielder,Bayern Munich,Big,Bundesliga,9.2,28,2184,3,5,0.8,1.8,86.8,1.4,2.4,1.8,0.12,0.21,28.0,80000,0,8,60.4,1800000
-P297,Leon Goretzka,29,German,Midfielder,Bayern Munich,Big,Bundesliga,9.2,20,1440,3,4,1.1,1.8,87.4,1.2,1.8,1.4,0.14,0.21,35.0,160000,42,8,70.4,7200000
-P298,Matteo Darmian,34,Italian,Defender,Inter Milan,Big,Serie A,8.8,26,2028,1,3,0.5,0.8,85.4,0.8,1.6,1.2,0.04,0.12,4.0,80000,0,1,60.4,2400000
-P299,Carlos Augusto,25,Brazilian,Defender,Inter Milan,Big,Serie A,8.8,29,2320,2,4,0.6,1.1,84.4,1.4,1.6,1.2,0.06,0.18,18.0,60000,0,1,58.4,1400000
-P300,Alexis Mac Allister,25,Argentine,Midfielder,Liverpool,Big,Premier League,9.8,37,3182,9,11,1.8,2.8,87.4,1.8,1.8,1.4,0.38,0.48,70.0,160000,0,3,76.4,7200000
-P301,Phil Jones,32,English,Defender,Manchester United,Big,Premier League,9.8,0,0,0,0,0.2,0.3,82.4,0.1,1.4,1.1,0.01,0.01,1.0,100000,365,8,54.4,2100000
-P302,Yerry Mina,29,Colombian,Defender,Everton,Medium,Premier League,9.8,14,1134,1,0,0.4,0.4,83.4,0.2,1.8,1.4,0.04,0.02,8.0,60000,56,16,58.4,2400000
-P303,Sandro Tonali,24,Italian,Midfielder,Newcastle,Big,Premier League,9.8,14,1092,1,2,0.8,1.8,87.2,1.2,2.4,1.8,0.06,0.12,45.0,80000,77,7,68.8,6200000
-P304,Renato Sanches,26,Portuguese,Midfielder,Roma,Medium,Serie A,8.8,14,980,1,2,0.8,1.8,84.4,1.4,1.8,1.4,0.06,0.12,12.0,80000,84,8,62.4,4200000
-P305,Gavi,20,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,14,1008,1,2,1.2,3.1,90.8,2.2,2.1,1.4,0.09,0.18,80.0,160000,245,2,88.2,12000000
-P306,Ben Chilwell,27,English,Defender,Chelsea,Big,Premier League,9.8,10,756,0,2,0.5,1.4,83.4,1.2,1.4,1.1,0.02,0.14,28.0,120000,112,6,66.4,4200000
-P307,Reece James,24,English,Defender,Chelsea,Big,Premier League,9.8,10,738,0,2,0.6,1.8,86.3,1.4,1.6,1.2,0.04,0.18,65.0,160000,154,6,76.8,7200000
-P308,Kevin De Bruyne,32,Belgian,Midfielder,Manchester City,Big,Premier League,9.8,18,1380,3,10,2.8,4.2,90.3,1.8,0.9,0.7,0.41,0.81,90.0,400000,112,1,91.2,28000000
-P309,Thomas Partey,30,Ghanaian,Midfielder,Arsenal,Big,Premier League,9.8,21,1638,1,2,0.8,1.8,88.4,0.8,2.4,1.8,0.06,0.12,30.0,160000,63,2,72.4,4200000
-P310,Federico Chiesa,26,Italian,Forward,Liverpool,Big,Premier League,9.8,18,1134,3,3,2.1,1.8,79.4,2.8,0.5,0.3,0.18,0.18,35.0,80000,42,3,72.4,8200000
+P001,Erling Haaland,23,Norwegian,Forward,Manchester City,Big,Premier League,9.8,31,2728,27,5,5.1,1.4,79.2,1.8,0.3,0.1,1.52,0.28,180.0,400000,14.0,1,98.5,45000000.0
+P002,Kylian Mbappe,25,French,Forward,Real Madrid,Big,La Liga,9.5,29,2532,27,7,4.8,2.1,81.3,3.2,0.4,0.2,1.41,0.39,180.0,450000,7.0,1,99.2,112000000.0
+P003,Vinicius Junior,23,Brazilian,Forward,Real Madrid,Big,La Liga,9.5,33,2817,24,11,4.2,2.8,82.1,4.1,0.5,0.3,0.98,0.61,150.0,350000,0.0,1,97.8,62000000.0
+P004,Jude Bellingham,20,English,Midfielder,Real Madrid,Big,La Liga,9.5,32,2763,19,11,3.1,2.9,87.4,2.4,1.2,0.9,0.71,0.58,180.0,350000,0.0,1,96.8,33000000.0
+P005,Mohamed Salah,31,Egyptian,Forward,Liverpool,Big,Premier League,9.8,32,2719,18,10,4.3,2.6,80.4,2.6,0.5,0.3,0.89,0.57,80.0,320000,0.0,3,97.1,72000000.0
+P006,Harry Kane,30,English,Forward,Bayern Munich,Big,Bundesliga,9.2,32,2813,36,8,5.3,2.4,82.1,1.2,0.4,0.2,1.68,0.41,100.0,350000,0.0,8,94.2,21000000.0
+P007,Lautaro Martinez,26,Argentine,Forward,Inter Milan,Big,Serie A,8.8,33,2849,24,7,4.1,1.8,79.3,2.1,0.6,0.3,1.12,0.39,90.0,200000,5.0,1,88.7,16000000.0
+P008,Phil Foden,23,English,Midfielder,Manchester City,Big,Premier League,9.8,35,2912,19,8,3.4,3.1,88.2,3.1,0.8,0.6,0.82,0.52,150.0,280000,0.0,1,92.3,16000000.0
+P009,Bukayo Saka,22,English,Forward,Arsenal,Big,Premier League,9.8,35,3024,16,9,3.2,2.9,84.6,3.4,0.9,0.7,0.71,0.58,130.0,220000,0.0,2,93.1,17000000.0
+P010,Florian Wirtz,20,German,Midfielder,Bayer Leverkusen,Big,Bundesliga,9.2,32,2759,18,20,2.8,3.4,89.1,2.9,1.1,0.8,0.68,0.81,130.0,160000,0.0,1,90.4,8200000.0
+P011,Pedri,21,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,29,2381,4,7,1.9,3.8,92.3,2.6,1.4,1.1,0.21,0.42,90.0,180000,42.0,2,89.6,11000000.0
+P012,Declan Rice,25,English,Midfielder,Arsenal,Big,Premier League,9.8,35,3032,7,8,1.4,2.2,89.4,1.3,2.8,1.9,0.29,0.38,100.0,200000,0.0,2,88.9,7200000.0
+P013,Rodri,27,Spanish,Midfielder,Manchester City,Big,Premier League,9.8,34,2931,8,9,1.2,3.1,93.8,0.9,2.4,2.1,0.21,0.41,100.0,220000,0.0,1,88.1,7400000.0
+P014,Virgil van Dijk,32,Dutch,Defender,Liverpool,Big,Premier League,9.8,34,3060,3,2,0.7,0.9,89.2,0.4,2.1,1.8,0.14,0.09,55.0,240000,0.0,3,87.2,12000000.0
+P015,Ruben Dias,26,Portuguese,Defender,Manchester City,Big,Premier League,9.8,31,2790,4,1,0.6,0.8,91.3,0.3,2.3,2.1,0.17,0.06,75.0,200000,7.0,1,85.8,6100000.0
+P016,William Saliba,22,French,Defender,Arsenal,Big,Premier League,9.8,32,2880,3,2,0.5,0.7,89.8,0.4,2.8,2.4,0.11,0.08,70.0,120000,0.0,2,84.1,5400000.0
+P017,Achraf Hakimi,25,Moroccan,Defender,PSG,Big,Ligue 1,8.5,29,2436,4,10,1.2,2.1,85.3,2.4,1.8,1.3,0.18,0.42,70.0,180000,14.0,1,84.6,25000000.0
+P018,Trent Alexander-Arnold,25,English,Defender,Liverpool,Big,Premier League,9.8,30,2700,3,9,1.4,3.8,88.1,1.4,1.3,0.9,0.12,0.48,80.0,200000,0.0,3,86.8,18000000.0
+P019,Antoine Griezmann,32,French,Forward,Atletico Madrid,Big,La Liga,9.5,33,2695,16,9,3.1,2.2,84.1,2.1,1.1,0.7,0.78,0.49,40.0,280000,0.0,4,86.4,31000000.0
+P020,Kevin De Bruyne,32,Belgian,Midfielder,Manchester City,Big,Premier League,9.8,18,1380,3,10,2.8,4.2,90.3,1.8,0.9,0.7,0.41,0.81,90.0,400000,112.0,1,91.2,28000000.0
+P021,Bruno Fernandes,29,Portuguese,Midfielder,Manchester United,Big,Premier League,9.8,35,3063,15,8,3.1,3.2,83.4,1.9,0.9,0.6,0.62,0.51,60.0,240000,0.0,8,87.4,13000000.0
+P022,Martin Odegaard,25,Norwegian,Midfielder,Arsenal,Big,Premier League,9.8,24,1984,8,10,2.4,3.4,90.1,2.1,1.1,0.8,0.38,0.56,90.0,200000,56.0,2,86.9,7800000.0
+P023,Federico Valverde,25,Uruguayan,Midfielder,Real Madrid,Big,La Liga,9.5,36,3021,11,12,2.1,2.4,89.2,2.3,2.1,1.6,0.48,0.41,80.0,200000,0.0,1,83.7,7100000.0
+P024,Jamal Musiala,21,German,Forward,Bayern Munich,Big,Bundesliga,9.2,32,2621,12,14,3.1,2.8,88.4,3.8,0.8,0.5,0.61,0.58,100.0,180000,0.0,8,88.2,12000000.0
+P025,Bernardo Silva,29,Portuguese,Midfielder,Manchester City,Big,Premier League,9.8,38,3192,8,9,2.1,3.1,91.2,2.4,1.2,0.9,0.38,0.48,80.0,280000,0.0,1,86.8,9800000.0
+P026,Toni Kroos,34,German,Midfielder,Real Madrid,Big,La Liga,9.5,31,2697,4,9,1.1,3.8,93.4,0.6,1.1,1.4,0.18,0.41,20.0,280000,0.0,1,86.4,26000000.0
+P027,Joshua Kimmich,29,German,Midfielder,Bayern Munich,Big,Bundesliga,9.2,31,2790,5,12,1.2,3.4,92.8,1.4,2.4,2.1,0.21,0.58,80.0,280000,0.0,8,84.8,14000000.0
+P028,Nicolo Barella,27,Italian,Midfielder,Inter Milan,Big,Serie A,8.8,36,3060,9,12,1.8,3.1,88.4,1.8,2.8,2.1,0.38,0.58,80.0,180000,0.0,1,79.8,9200000.0
+P029,Marcus Rashford,26,English,Forward,Manchester United,Big,Premier League,9.8,31,2548,8,5,2.8,1.8,79.3,2.9,0.5,0.3,0.48,0.31,70.0,280000,7.0,8,84.1,18000000.0
+P030,Heung-min Son,31,South Korean,Forward,Tottenham,Big,Premier League,9.8,33,2850,17,10,3.2,2.1,81.2,2.4,0.4,0.3,0.72,0.48,60.0,200000,0.0,5,86.3,38000000.0
+P031,Alexander Isak,24,Swedish,Forward,Newcastle,Big,Premier League,9.8,27,2268,21,5,4.1,1.6,78.4,2.3,0.4,0.2,0.98,0.31,85.0,140000,21.0,7,82.4,5200000.0
+P032,Ollie Watkins,28,English,Forward,Aston Villa,Big,Premier League,9.8,37,3193,19,13,3.4,2.4,77.2,1.9,0.6,0.4,0.88,0.58,65.0,120000,0.0,4,80.6,2800000.0
+P033,Cole Palmer,22,English,Midfielder,Chelsea,Big,Premier League,9.8,33,2932,22,11,3.8,3.4,84.3,2.8,0.6,0.4,0.82,0.58,70.0,120000,0.0,6,84.8,7800000.0
+P034,Victor Osimhen,25,Nigerian,Forward,Napoli,Big,Serie A,8.8,25,2025,15,3,4.2,1.2,71.3,1.8,0.4,0.2,0.88,0.22,100.0,200000,28.0,10,83.2,7800000.0
+P035,Leroy Sane,28,German,Forward,Bayern Munich,Big,Bundesliga,9.2,28,2184,10,8,3.4,2.3,83.1,3.2,0.6,0.4,0.58,0.41,45.0,220000,21.0,8,82.1,9200000.0
+P036,Dusan Vlahovic,24,Serbian,Forward,Juventus,Big,Serie A,8.8,32,2784,16,4,3.8,1.2,74.2,1.1,0.4,0.2,0.82,0.22,70.0,140000,7.0,3,79.8,9200000.0
+P037,Jonathan David,24,Canadian,Forward,Lille,Medium,Ligue 1,8.5,32,2688,26,5,4.8,1.4,76.3,1.6,0.5,0.3,1.18,0.28,38.0,80000,0.0,4,72.1,3200000.0
+P038,Serhou Guirassy,28,Guinean,Forward,Borussia Dortmund,Big,Bundesliga,9.2,28,2296,28,5,4.9,1.1,73.1,1.1,0.4,0.2,1.21,0.22,48.0,80000,0.0,5,68.4,1800000.0
+P039,Artem Dovbyk,27,Ukrainian,Forward,Girona,Medium,La Liga,9.5,36,2988,24,7,4.1,1.4,75.2,1.2,0.5,0.3,0.98,0.31,20.0,50000,0.0,3,64.1,1100000.0
+P040,Benjamin Sesko,21,Slovenian,Forward,RB Leipzig,Big,Bundesliga,9.2,29,2030,18,4,3.2,1.1,75.4,1.8,0.4,0.2,0.81,0.22,50.0,80000,0.0,6,72.1,3100000.0
+P041,Khvicha Kvaratskhelia,23,Georgian,Forward,PSG,Big,Ligue 1,8.5,29,2262,11,11,3.1,2.8,81.2,3.8,0.6,0.4,0.61,0.58,80.0,160000,14.0,1,81.4,7200000.0
+P042,Lamine Yamal,16,Spanish,Forward,Barcelona,Big,La Liga,9.5,36,2844,7,10,2.4,2.8,82.3,3.2,0.6,0.4,0.32,0.48,90.0,30000,0.0,2,88.1,15000000.0
+P043,Nico Williams,21,Spanish,Forward,Athletic Club,Medium,La Liga,9.5,33,2772,12,13,3.1,2.8,82.4,3.8,0.7,0.5,0.52,0.58,50.0,60000,0.0,5,79.4,6200000.0
+P044,Michael Olise,22,French,Forward,Bayern Munich,Big,Bundesliga,9.2,25,1788,10,6,3.1,2.4,82.3,3.1,0.6,0.4,0.52,0.41,60.0,80000,14.0,8,74.8,4100000.0
+P045,Santiago Gimenez,23,Mexican,Forward,Feyenoord,Medium,Eredivisie,7.2,29,2400,23,6,4.4,1.3,74.1,1.4,0.5,0.3,1.11,0.28,40.0,80000,0.0,1,71.2,4100000.0
+P046,Omar Marmoush,25,Egyptian,Forward,Eintracht Frankfurt,Medium,Bundesliga,9.2,31,2604,26,14,4.1,2.8,79.2,2.8,0.6,0.4,1.18,0.62,12.0,40000,0.0,6,68.4,2100000.0
+P047,Bryan Mbeumo,24,Cameroonian,Forward,Brentford,Medium,Premier League,9.8,38,3268,20,9,3.4,2.1,81.2,2.4,0.6,0.4,0.82,0.41,28.0,60000,0.0,16,71.4,3200000.0
+P048,Antoine Semenyo,24,Ghanaian,Forward,Bournemouth,Medium,Premier League,9.8,35,2748,11,5,2.8,1.4,76.4,2.8,0.6,0.4,0.51,0.24,22.0,40000,0.0,12,60.4,1400000.0
+P049,Xavi Simons,21,Dutch,Midfielder,PSG,Big,Ligue 1,8.5,32,2688,9,12,2.4,3.1,87.4,2.8,1.1,0.8,0.41,0.58,60.0,80000,0.0,1,78.8,9200000.0
+P050,Kobbie Mainoo,19,English,Midfielder,Manchester United,Big,Premier League,9.8,27,2052,3,4,1.2,2.1,86.4,1.6,2.1,1.6,0.12,0.21,30.0,40000,0.0,8,72.8,3100000.0
+P051,Ryan Gravenberch,22,Dutch,Midfielder,Liverpool,Big,Premier League,9.8,35,2870,4,5,1.1,2.1,88.4,1.2,2.4,1.8,0.18,0.24,40.0,80000,0.0,3,72.8,3800000.0
+P052,Tijjani Reijnders,25,Dutch,Midfielder,AC Milan,Big,Serie A,8.8,35,3010,10,5,1.8,2.4,87.8,1.6,2.1,1.6,0.41,0.28,30.0,80000,0.0,8,68.4,3200000.0
+P053,Granit Xhaka,31,Swiss,Midfielder,Bayer Leverkusen,Big,Bundesliga,9.2,30,2613,6,9,1.1,2.8,89.3,1.1,2.8,2.1,0.24,0.41,20.0,100000,7.0,1,74.8,4800000.0
+P054,Enzo Fernandez,23,Argentine,Midfielder,Chelsea,Big,Premier League,9.8,30,2580,4,6,1.4,2.4,85.4,1.4,1.8,1.4,0.18,0.28,80.0,180000,0.0,6,76.4,11000000.0
+P055,Moises Caicedo,22,Ecuadorian,Midfielder,Chelsea,Big,Premier League,9.8,33,2904,2,3,0.8,1.8,86.8,1.1,3.1,2.4,0.08,0.12,100.0,120000,0.0,6,72.8,4800000.0
+P056,Warren Zaire-Emery,18,French,Midfielder,PSG,Big,Ligue 1,8.5,24,1800,3,4,1.4,2.4,86.8,1.8,1.4,1.1,0.14,0.21,30.0,30000,0.0,1,72.4,3800000.0
+P057,Manuel Ugarte,23,Uruguayan,Midfielder,Manchester United,Big,Premier League,9.8,22,1804,0,1,0.4,1.4,87.2,0.8,3.1,2.4,0.02,0.06,50.0,100000,0.0,8,66.8,3800000.0
+P058,Nicolo Fagioli,23,Italian,Midfielder,Juventus,Big,Serie A,8.8,24,1872,3,5,1.2,2.8,88.4,1.4,1.6,1.2,0.12,0.24,25.0,50000,0.0,3,62.4,1800000.0
+P059,Adrien Rabiot,29,French,Midfielder,Marseille,Medium,Ligue 1,8.5,26,2132,5,4,1.2,2.1,85.4,1.4,1.8,1.4,0.21,0.21,14.0,140000,0.0,3,70.4,6800000.0
+P060,Thomas Partey,30,Ghanaian,Midfielder,Arsenal,Big,Premier League,9.8,21,1638,1,2,0.8,1.8,88.4,0.8,2.4,1.8,0.06,0.12,30.0,160000,63.0,2,72.4,4200000.0
+P061,Marc-Andre ter Stegen,32,German,GK,Barcelona,Big,La Liga,9.5,26,2340,0,0,0.1,0.8,88.4,0.1,0.2,0.2,0.0,0.0,28.0,240000,56.0,2,82.1,12000000.0
+P062,Ederson,30,Brazilian,GK,Manchester City,Big,Premier League,9.8,28,2520,0,1,0.1,1.2,92.4,0.1,0.2,0.1,0.0,0.0,35.0,180000,14.0,1,80.4,8100000.0
+P063,Alisson Becker,31,Brazilian,GK,Liverpool,Big,Premier League,9.8,26,2340,0,0,0.1,0.9,88.2,0.1,0.2,0.1,0.0,0.0,35.0,180000,28.0,3,82.8,14000000.0
+P064,David Raya,28,Spanish,GK,Arsenal,Big,Premier League,9.8,38,3420,0,0,0.1,0.9,88.8,0.1,0.2,0.2,0.0,0.0,30.0,80000,0.0,2,74.8,2100000.0
+P065,Mike Maignan,28,French,GK,AC Milan,Big,Serie A,8.8,27,2430,0,0,0.1,0.8,87.2,0.1,0.2,0.2,0.0,0.0,40.0,140000,14.0,8,76.8,5400000.0
+P066,Andre Onana,28,Cameroonian,GK,Manchester United,Big,Premier League,9.8,33,2970,0,0,0.1,0.7,83.4,0.1,0.2,0.1,0.0,0.0,32.0,120000,0.0,8,72.4,4800000.0
+P067,Yann Sommer,35,Swiss,GK,Inter Milan,Big,Serie A,8.8,37,3330,0,0,0.1,0.8,89.1,0.1,0.2,0.2,0.0,0.0,8.0,80000,0.0,1,70.4,2100000.0
+P068,Gianluigi Donnarumma,25,Italian,GK,PSG,Big,Ligue 1,8.5,30,2700,0,0,0.1,0.8,83.2,0.1,0.2,0.1,0.0,0.0,60.0,140000,0.0,1,79.4,23000000.0
+P069,Jan Oblak,31,Slovenian,GK,Atletico Madrid,Big,La Liga,9.5,34,3060,0,0,0.1,0.7,83.1,0.1,0.2,0.2,0.0,0.0,30.0,180000,0.0,4,78.4,6400000.0
+P070,Emiliano Martinez,31,Argentine,GK,Aston Villa,Big,Premier League,9.8,35,3150,0,0,0.1,0.8,78.4,0.1,0.2,0.2,0.0,0.0,25.0,120000,0.0,4,76.8,11000000.0
+P071,Gregor Kobel,26,Swiss,GK,Borussia Dortmund,Big,Bundesliga,9.2,31,2790,0,0,0.1,0.8,85.2,0.1,0.2,0.2,0.0,0.0,18.0,80000,0.0,5,66.8,1800000.0
+P072,Giorgi Mamardashvili,23,Georgian,GK,Valencia,Medium,La Liga,9.5,33,2970,0,0,0.1,0.7,84.8,0.1,0.2,0.2,0.0,0.0,20.0,40000,0.0,9,64.8,1400000.0
+P073,Bono,33,Moroccan,GK,Sevilla,Medium,La Liga,9.5,28,2520,0,0,0.1,0.7,84.1,0.1,0.2,0.2,0.0,0.0,6.0,60000,0.0,11,62.4,1800000.0
+P074,Jordan Pickford,30,English,GK,Everton,Medium,Premier League,9.8,33,2970,0,0,0.1,0.8,78.8,0.1,0.2,0.2,0.0,0.0,8.0,100000,0.0,16,72.4,4800000.0
+P075,Bernd Leno,32,German,GK,Fulham,Medium,Premier League,9.8,38,3420,0,0,0.1,0.8,82.1,0.1,0.2,0.2,0.0,0.0,6.0,80000,0.0,13,62.4,3200000.0
+P076,Guglielmo Vicario,27,Italian,GK,Tottenham,Big,Premier League,9.8,38,3420,0,0,0.1,0.8,82.4,0.1,0.2,0.2,0.0,0.0,20.0,80000,0.0,5,64.4,2800000.0
+P077,Matz Sels,32,Belgian,GK,Nottingham Forest,Medium,Premier League,9.8,37,3330,0,0,0.1,0.7,75.4,0.1,0.2,0.2,0.0,0.0,8.0,60000,0.0,7,56.4,980000.0
+P078,Mark Flekken,30,Dutch,GK,Brentford,Medium,Premier League,9.8,38,3420,0,0,0.1,0.8,80.4,0.1,0.2,0.2,0.0,0.0,10.0,50000,0.0,16,58.4,1200000.0
+P079,Unai Simon,27,Spanish,GK,Athletic Club,Medium,La Liga,9.5,38,3420,0,0,0.1,0.8,82.4,0.1,0.2,0.2,0.0,0.0,20.0,80000,0.0,5,66.8,2800000.0
+P080,Alex Remiro,28,Spanish,GK,Real Sociedad,Medium,La Liga,9.5,32,2880,0,0,0.1,0.8,82.1,0.1,0.2,0.2,0.0,0.0,18.0,80000,0.0,6,62.8,1800000.0
+P081,Diogo Costa,24,Portuguese,GK,Porto,Medium,Primeira Liga,7.8,38,3420,0,0,0.1,0.8,87.4,0.1,0.2,0.2,0.0,0.0,30.0,80000,0.0,2,66.4,4800000.0
+P082,Bart Verbruggen,22,Dutch,GK,Brighton,Medium,Premier League,9.8,30,2700,0,0,0.1,0.8,82.4,0.1,0.2,0.2,0.0,0.0,18.0,40000,0.0,11,60.4,1400000.0
+P083,Pau Lopez,29,Spanish,GK,Marseille,Medium,Ligue 1,8.5,28,2520,0,0,0.1,0.7,80.4,0.1,0.2,0.2,0.0,0.0,12.0,60000,0.0,3,58.4,1800000.0
+P084,Nick Pope,32,English,GK,Newcastle,Big,Premier League,9.8,22,1980,0,0,0.1,0.7,76.4,0.1,0.2,0.2,0.0,0.0,18.0,80000,42.0,7,64.8,2100000.0
+P085,Brice Samba,30,French,GK,RC Lens,Medium,Ligue 1,8.5,36,3240,0,0,0.1,0.7,81.4,0.1,0.2,0.2,0.0,0.0,8.0,60000,0.0,7,60.4,2100000.0
+P086,Predrag Rajkovic,28,Serbian,GK,Mallorca,Small,La Liga,9.5,37,3330,0,0,0.1,0.7,78.8,0.1,0.2,0.2,0.0,0.0,6.0,40000,0.0,13,52.4,880000.0
+P087,Dean Henderson,27,English,GK,Crystal Palace,Medium,Premier League,9.8,35,3150,0,0,0.1,0.7,77.8,0.1,0.2,0.2,0.0,0.0,12.0,60000,0.0,10,60.4,2100000.0
+P088,Robert Sanchez,26,Spanish,GK,Chelsea,Big,Premier League,9.8,24,2160,0,0,0.1,0.7,78.4,0.1,0.2,0.2,0.0,0.0,22.0,60000,0.0,6,58.4,1200000.0
+P089,Yassine Bounou,32,Moroccan,GK,Al Hilal,Medium,Saudi Pro League,5.5,20,1800,0,0,0.1,0.7,83.4,0.1,0.2,0.2,0.0,0.0,5.0,80000,0.0,1,62.4,4800000.0
+P090,Caoimhin Kelleher,25,Irish,GK,Liverpool,Big,Premier League,9.8,12,1080,0,0,0.1,0.8,84.4,0.1,0.2,0.2,0.0,0.0,15.0,60000,0.0,3,60.4,1800000.0
+P091,Alessandro Bastoni,25,Italian,Defender,Inter Milan,Big,Serie A,8.8,33,2970,3,6,0.6,2.1,92.1,0.6,1.8,1.6,0.12,0.28,60.0,160000,0.0,1,78.4,6800000.0
+P092,Theo Hernandez,26,French,Defender,AC Milan,Big,Serie A,8.8,30,2700,7,8,1.8,2.4,84.1,2.4,1.4,1.1,0.28,0.38,60.0,180000,0.0,8,79.4,10000000.0
+P093,Alphonso Davies,23,Canadian,Defender,Bayern Munich,Big,Bundesliga,9.2,26,2184,2,8,0.8,2.1,84.8,2.8,1.6,1.2,0.09,0.38,70.0,120000,14.0,8,79.8,8400000.0
+P094,Jules Kounde,25,French,Defender,Barcelona,Big,La Liga,9.5,27,2268,2,5,0.7,1.4,88.9,1.4,1.9,1.6,0.09,0.18,65.0,160000,21.0,2,76.8,6200000.0
+P095,Antonio Rudiger,31,German,Defender,Real Madrid,Big,La Liga,9.5,32,2880,1,1,0.5,0.6,88.4,0.3,2.4,2.2,0.06,0.04,35.0,200000,0.0,1,78.2,11000000.0
+P096,Marquinhos,30,Brazilian,Defender,PSG,Big,Ligue 1,8.5,28,2520,2,1,0.5,0.8,91.3,0.4,2.1,1.8,0.09,0.06,40.0,200000,0.0,1,80.8,20000000.0
+P097,Gabriel Magalhaes,26,Brazilian,Defender,Arsenal,Big,Premier League,9.8,36,3240,5,1,0.8,0.7,88.1,0.4,2.8,2.4,0.18,0.06,55.0,120000,0.0,2,78.8,4200000.0
+P098,Josko Gvardiol,22,Croatian,Defender,Manchester City,Big,Premier League,9.8,33,2871,4,4,0.6,0.8,88.4,0.4,2.1,1.8,0.09,0.09,80.0,140000,0.0,1,76.8,4800000.0
+P099,Ibrahima Konate,25,French,Defender,Liverpool,Big,Premier League,9.8,28,2352,2,1,0.5,0.5,88.4,0.3,2.4,2.1,0.08,0.04,60.0,100000,0.0,3,74.8,4100000.0
+P100,Ronald Araujo,25,Uruguayan,Defender,Barcelona,Big,La Liga,9.5,18,1620,1,0,0.4,0.5,88.2,0.3,2.4,2.1,0.08,0.04,65.0,140000,84.0,2,76.4,4800000.0
+P101,Diogo Dalot,25,Portuguese,Defender,Manchester United,Big,Premier League,9.8,36,3096,3,5,1.2,2.1,84.1,1.8,1.8,1.3,0.12,0.28,35.0,100000,0.0,8,74.8,4200000.0
+P102,Ben White,26,English,Defender,Arsenal,Big,Premier League,9.8,32,2880,1,5,0.8,1.4,88.4,1.2,2.1,1.8,0.06,0.18,55.0,120000,0.0,2,78.4,3400000.0
+P103,Denzel Dumfries,28,Dutch,Defender,Inter Milan,Big,Serie A,8.8,31,2480,4,8,1.2,2.1,82.4,1.8,1.8,1.4,0.18,0.38,32.0,120000,0.0,1,72.4,5800000.0
+P104,Ezri Konsa,26,English,Defender,Aston Villa,Big,Premier League,9.8,33,2970,1,2,0.4,0.6,87.4,0.3,2.4,2.1,0.04,0.06,40.0,80000,0.0,4,68.4,2400000.0
+P105,Marc Guehi,23,English,Defender,Crystal Palace,Medium,Premier League,9.8,36,3204,2,1,0.5,0.5,87.8,0.3,2.4,2.1,0.06,0.04,35.0,60000,0.0,10,66.8,2800000.0
+P106,Jeremie Frimpong,23,Dutch,Defender,Bayer Leverkusen,Big,Bundesliga,9.2,32,2688,5,10,1.4,2.4,83.1,2.8,1.8,1.2,0.21,0.41,40.0,80000,0.0,1,68.4,3200000.0
+P107,Castello Lukeba,21,French,Defender,RB Leipzig,Big,Bundesliga,9.2,27,2268,2,2,0.4,0.6,88.2,0.4,2.4,2.1,0.06,0.06,30.0,50000,0.0,6,66.8,1200000.0
+P108,Ousmane Diomande,21,Ivorian,Defender,Sporting CP,Medium,Primeira Liga,7.8,29,2610,3,2,0.5,0.6,88.4,0.4,2.8,2.4,0.09,0.06,30.0,40000,0.0,1,62.4,2400000.0
+P109,Pedro Porro,24,Spanish,Defender,Tottenham,Big,Premier League,9.8,35,3045,4,8,1.1,2.1,83.4,1.8,1.6,1.2,0.12,0.31,35.0,80000,0.0,5,68.8,3200000.0
+P110,Andrew Robertson,30,Scottish,Defender,Liverpool,Big,Premier League,9.8,30,2700,1,6,0.6,2.1,84.4,1.4,1.6,1.2,0.04,0.28,30.0,160000,0.0,3,76.4,8400000.0
+P111,Nuno Mendes,22,Portuguese,Defender,PSG,Big,Ligue 1,8.5,23,1932,1,5,0.6,1.8,84.4,1.8,1.4,1.1,0.04,0.21,40.0,80000,42.0,1,66.8,4800000.0
+P112,Destiny Udogie,21,Italian,Defender,Tottenham,Big,Premier League,9.8,27,2241,2,4,0.6,1.4,82.8,1.8,1.6,1.2,0.06,0.18,30.0,60000,21.0,5,64.8,2400000.0
+P113,Edmond Tapsoba,25,Burkinabe,Defender,Bayer Leverkusen,Big,Bundesliga,9.2,26,2184,1,1,0.3,0.5,87.8,0.3,2.4,2.1,0.04,0.04,30.0,60000,14.0,1,62.8,2100000.0
+P114,Malo Gusto,21,French,Defender,Chelsea,Big,Premier League,9.8,31,2635,1,4,0.6,1.4,82.8,1.4,1.6,1.2,0.04,0.18,28.0,50000,0.0,6,62.4,2100000.0
+P115,Mats Hummels,35,German,Defender,Roma,Medium,Serie A,8.8,28,2520,2,2,0.5,1.1,89.4,0.3,2.4,2.1,0.08,0.09,3.5,80000,7.0,8,72.4,10000000.0
+P116,Kieran Trippier,33,English,Defender,Newcastle,Big,Premier League,9.8,26,2340,3,7,1.1,2.4,87.3,0.8,1.6,1.2,0.12,0.38,20.0,120000,21.0,7,74.8,4800000.0
+P117,Jarrad Branthwaite,21,English,Defender,Everton,Medium,Premier League,9.8,32,2736,1,2,0.4,0.5,86.8,0.3,2.4,2.1,0.04,0.04,50.0,50000,7.0,16,64.8,2100000.0
+P118,Goncalo Inacio,22,Portuguese,Defender,Sporting CP,Medium,Primeira Liga,7.8,30,2700,3,4,0.5,0.8,89.2,0.4,2.4,2.1,0.09,0.09,40.0,50000,0.0,1,64.4,3400000.0
+P119,Riccardo Calafiori,22,Italian,Defender,Arsenal,Big,Premier League,9.8,20,1548,2,3,0.6,1.4,87.8,0.8,2.1,1.8,0.08,0.12,55.0,100000,14.0,2,68.4,4800000.0
+P120,Joao Cancelo,30,Portuguese,Defender,Barcelona,Big,La Liga,9.5,25,2025,1,6,0.8,1.8,87.2,1.8,1.4,1.1,0.06,0.28,28.0,160000,0.0,2,72.4,13000000.0
+P121,Benjamin Pavard,28,French,Defender,Inter Milan,Big,Serie A,8.8,32,2752,2,4,0.6,0.8,88.4,0.6,2.1,1.8,0.08,0.12,35.0,120000,0.0,1,70.4,4200000.0
+P122,Pau Torres,27,Spanish,Defender,Aston Villa,Big,Premier League,9.8,32,2880,1,3,0.5,0.9,89.4,0.3,2.1,1.8,0.04,0.09,40.0,80000,0.0,4,68.8,5100000.0
+P123,Kyle Walker,33,English,Defender,Manchester City,Big,Premier League,9.8,28,2380,1,3,0.8,1.6,86.2,1.1,1.4,1.1,0.04,0.18,18.0,160000,0.0,1,74.8,7800000.0
+P124,Oleksandr Zinchenko,27,Ukrainian,Defender,Arsenal,Big,Premier League,9.8,26,2028,2,4,0.6,2.1,88.4,1.2,1.4,1.1,0.06,0.21,28.0,100000,0.0,2,68.4,4200000.0
+P125,Dayot Upamecano,25,French,Defender,Bayern Munich,Big,Bundesliga,9.2,27,2268,1,1,0.4,0.5,87.8,0.3,2.1,1.8,0.04,0.04,40.0,140000,14.0,8,68.4,5800000.0
+P126,Kim Min-jae,27,South Korean,Defender,Bayern Munich,Big,Bundesliga,9.2,28,2380,2,1,0.5,0.5,87.2,0.3,2.4,2.1,0.06,0.04,40.0,140000,7.0,8,66.4,9800000.0
+P127,Odilon Kossounou,23,Ivorian,Defender,Bayer Leverkusen,Big,Bundesliga,9.2,31,2635,1,2,0.4,0.6,87.1,0.4,2.4,2.1,0.04,0.06,22.0,50000,0.0,1,60.4,1400000.0
+P128,Stefan de Vrij,32,Dutch,Defender,Inter Milan,Big,Serie A,8.8,30,2700,1,2,0.4,0.6,90.4,0.2,2.1,1.8,0.06,0.06,18.0,120000,0.0,1,68.4,3800000.0
+P129,Dani Carvajal,32,Spanish,Defender,Real Madrid,Big,La Liga,9.5,30,2700,2,5,0.8,1.8,87.4,1.2,1.4,1.1,0.06,0.21,18.0,200000,0.0,1,78.4,11000000.0
+P130,Ferland Mendy,29,French,Defender,Real Madrid,Big,La Liga,9.5,28,2408,1,4,0.6,1.4,85.4,1.8,1.6,1.2,0.04,0.18,35.0,160000,14.0,1,72.4,5800000.0
+P131,Fikayo Tomori,26,English,Defender,AC Milan,Big,Serie A,8.8,24,2160,1,0,0.4,0.5,87.4,0.4,2.4,2.1,0.06,0.03,35.0,80000,21.0,8,68.8,3200000.0
+P132,Joe Gomez,26,English,Defender,Liverpool,Big,Premier League,9.8,29,2378,0,2,0.3,0.6,87.8,0.3,1.8,1.6,0.02,0.09,22.0,80000,14.0,3,66.8,3200000.0
+P133,Lisandro Martinez,26,Argentine,Defender,Manchester United,Big,Premier League,9.8,15,1155,0,0,0.3,0.4,90.2,0.2,2.4,2.1,0.04,0.03,45.0,160000,91.0,8,74.2,3200000.0
+P134,Reece James,24,English,Defender,Chelsea,Big,Premier League,9.8,10,738,0,2,0.6,1.8,86.3,1.4,1.6,1.2,0.04,0.18,65.0,160000,154.0,6,76.8,7200000.0
+P135,Jonathan Clauss,31,French,Defender,Marseille,Medium,Ligue 1,8.5,26,2184,2,6,0.8,1.8,81.4,1.4,1.6,1.1,0.09,0.28,12.0,60000,0.0,3,62.4,2400000.0
+P136,Stefan Savic,33,Montenegrin,Defender,Galatasaray,Medium,Super Lig,7.4,26,2184,1,1,0.4,0.5,86.4,0.2,2.1,1.8,0.04,0.04,3.0,60000,0.0,1,60.4,1800000.0
+P137,Frenkie de Jong,26,Dutch,Midfielder,Barcelona,Big,La Liga,9.5,27,2106,3,6,1.2,3.1,91.8,2.1,1.6,1.2,0.12,0.28,80.0,200000,42.0,2,80.4,7200000.0
+P138,Ilkay Gundogan,33,German,Midfielder,Barcelona,Big,La Liga,9.5,24,1872,4,7,1.4,2.8,90.4,1.2,1.2,0.9,0.18,0.38,18.0,200000,21.0,2,78.4,14000000.0
+P139,Hakan Calhanoglu,30,Turkish,Midfielder,Inter Milan,Big,Serie A,8.8,34,2924,13,12,2.1,3.1,89.4,1.8,2.8,2.1,0.54,0.51,45.0,120000,0.0,1,74.4,12000000.0
+P140,Alexis Mac Allister,25,Argentine,Midfielder,Liverpool,Big,Premier League,9.8,37,3182,9,11,1.8,2.8,87.4,1.8,1.8,1.4,0.38,0.48,70.0,160000,0.0,3,76.4,7200000.0
+P141,Davide Frattesi,24,Italian,Midfielder,Inter Milan,Big,Serie A,8.8,31,2108,7,4,1.4,1.8,86.4,1.4,2.1,1.6,0.28,0.21,22.0,80000,0.0,1,64.4,3800000.0
+P142,Eduardo Camavinga,21,French,Midfielder,Real Madrid,Big,La Liga,9.5,29,2058,2,4,1.1,1.8,88.4,1.8,2.1,1.6,0.09,0.18,80.0,160000,0.0,1,78.4,7200000.0
+P143,Aurelien Tchouameni,24,French,Midfielder,Real Madrid,Big,La Liga,9.5,26,2184,3,4,1.1,1.8,88.8,1.2,2.4,1.8,0.12,0.18,80.0,160000,14.0,1,76.4,8800000.0
+P144,Vitinha,24,Portuguese,Midfielder,PSG,Big,Ligue 1,8.5,34,2856,5,9,1.4,3.4,90.4,2.1,1.4,1.1,0.21,0.38,60.0,120000,0.0,1,72.4,5800000.0
+P145,Joao Neves,19,Portuguese,Midfielder,PSG,Big,Ligue 1,8.5,28,2324,3,5,0.9,2.4,88.4,1.4,2.8,2.1,0.12,0.21,70.0,100000,0.0,1,72.4,6200000.0
+P146,Youri Tielemans,27,Belgian,Midfielder,Aston Villa,Big,Premier League,9.8,34,2924,8,9,1.8,2.8,87.8,1.8,1.8,1.4,0.34,0.41,25.0,100000,0.0,4,68.4,5200000.0
+P147,Rodrigo De Paul,30,Argentine,Midfielder,Atletico Madrid,Big,La Liga,9.5,30,2520,3,7,1.2,2.4,86.4,1.8,2.1,1.6,0.14,0.31,28.0,120000,0.0,4,72.4,8800000.0
+P148,Stanislav Lobotka,29,Slovak,Midfielder,Napoli,Big,Serie A,8.8,31,2728,1,5,0.9,2.8,91.4,1.2,2.8,2.1,0.04,0.21,28.0,100000,0.0,10,62.4,2800000.0
+P149,Andre Zambo Anguissa,28,Cameroonian,Midfielder,Napoli,Big,Serie A,8.8,30,2580,4,5,1.1,1.8,85.4,1.4,2.4,1.8,0.18,0.21,28.0,100000,0.0,10,62.4,3200000.0
+P150,Morgan Gibbs-White,24,English,Midfielder,Nottingham Forest,Medium,Premier League,9.8,34,2788,6,9,1.4,2.8,82.4,2.4,0.8,0.6,0.28,0.41,45.0,80000,0.0,7,66.4,2800000.0
+P151,Mateo Kovacic,30,Croatian,Midfielder,Manchester City,Big,Premier League,9.8,30,2460,4,7,1.1,2.4,90.4,1.8,1.8,1.4,0.18,0.28,28.0,160000,0.0,1,74.4,9800000.0
+P152,Pierre-Emile Hojbjerg,28,Danish,Midfielder,Marseille,Medium,Ligue 1,8.5,30,2580,3,5,1.0,1.8,86.4,1.1,2.8,2.1,0.12,0.18,22.0,100000,0.0,3,66.4,4800000.0
+P153,Orkun Kokcu,23,Dutch,Midfielder,Benfica,Medium,Primeira Liga,7.8,32,2688,10,14,2.1,3.1,87.4,2.4,1.4,1.1,0.41,0.58,35.0,60000,0.0,1,66.4,4200000.0
+P154,Dani Olmo,26,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,26,1976,8,7,2.1,2.8,87.4,2.4,1.2,0.9,0.38,0.38,60.0,120000,0.0,2,74.4,6200000.0
+P155,Marcos Llorente,29,Spanish,Midfielder,Atletico Madrid,Big,La Liga,9.5,30,2280,5,6,1.4,2.1,85.8,1.8,2.1,1.6,0.21,0.28,30.0,120000,0.0,4,68.4,4800000.0
+P156,Joao Palhinha,28,Portuguese,Midfielder,Bayern Munich,Big,Bundesliga,9.2,27,2376,2,3,0.8,1.6,87.8,0.9,3.4,2.8,0.08,0.12,45.0,120000,0.0,8,66.4,3800000.0
+P157,Lucas Paqueta,26,Brazilian,Midfielder,West Ham,Medium,Premier League,9.8,28,2296,7,8,1.8,2.4,85.4,2.4,1.1,0.8,0.31,0.38,55.0,140000,0.0,14,74.4,11000000.0
+P158,Oihan Sancet,23,Spanish,Midfielder,Athletic Club,Medium,La Liga,9.5,34,2856,12,9,2.1,2.8,86.8,2.4,1.4,1.1,0.48,0.38,35.0,60000,0.0,5,68.4,3200000.0
+P159,Martin Zubimendi,25,Spanish,Midfielder,Arsenal,Big,Premier League,9.8,31,2604,3,5,0.9,2.4,90.8,1.1,2.4,2.1,0.12,0.21,60.0,120000,0.0,2,68.4,3200000.0
+P161,Conor Gallagher,24,English,Midfielder,Atletico Madrid,Big,La Liga,9.5,28,2240,4,6,1.2,2.1,84.4,1.8,2.8,2.1,0.18,0.28,30.0,80000,0.0,4,68.4,3400000.0
+P162,Adam Wharton,20,English,Midfielder,Crystal Palace,Medium,Premier League,9.8,32,2752,1,3,0.8,1.8,87.8,1.2,2.4,1.8,0.04,0.14,20.0,30000,0.0,10,60.4,1800000.0
+P163,Sofyan Amrabat,28,Moroccan,Midfielder,Fiorentina,Medium,Serie A,8.8,27,2214,1,3,0.8,1.8,86.4,1.1,2.8,2.1,0.04,0.12,22.0,80000,0.0,7,64.4,4200000.0
+P164,Ibrahim Sangare,26,Ivorian,Midfielder,Nottingham Forest,Medium,Premier League,9.8,30,2580,2,3,0.8,1.6,85.4,1.2,2.8,2.1,0.08,0.14,30.0,60000,0.0,7,60.4,2100000.0
+P165,Andreas Pereira,28,Brazilian,Midfielder,Fulham,Medium,Premier League,9.8,36,3096,8,8,1.8,2.4,84.4,1.8,1.2,0.9,0.34,0.38,20.0,80000,0.0,13,64.4,5800000.0
+P166,Douglas Luiz,26,Brazilian,Midfielder,Juventus,Big,Serie A,8.8,22,1716,3,4,1.2,1.8,86.4,1.4,2.4,1.8,0.12,0.18,50.0,140000,0.0,3,68.4,4800000.0
+P167,Fermin Lopez,21,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,28,2016,7,5,1.8,2.4,87.8,2.1,1.2,0.9,0.31,0.28,25.0,40000,0.0,2,68.4,2800000.0
+P168,Kristjan Asllani,22,Albanian,Midfielder,Inter Milan,Big,Serie A,8.8,22,1584,2,3,0.8,2.1,88.4,1.2,2.1,1.6,0.08,0.14,15.0,40000,0.0,1,58.4,1400000.0
+P169,Elliot Anderson,21,English,Midfielder,Nottingham Forest,Medium,Premier League,9.8,32,2624,4,5,1.2,2.1,83.4,1.8,1.8,1.4,0.18,0.21,25.0,40000,0.0,7,60.4,1800000.0
+P170,Iker Muniain,31,Spanish,Midfielder,Athletic Club,Medium,La Liga,9.5,28,2240,4,7,1.4,2.4,86.8,1.8,1.4,1.1,0.18,0.31,8.0,80000,0.0,5,64.4,4200000.0
+P171,Mikel Merino,28,Spanish,Midfielder,Arsenal,Big,Premier League,9.8,18,1368,3,4,1.1,2.1,88.4,1.2,2.1,1.6,0.12,0.18,40.0,100000,42.0,2,64.4,2800000.0
+P172,Harvey Elliott,21,English,Midfielder,Liverpool,Big,Premier League,9.8,24,1680,3,4,1.2,2.1,84.4,1.8,1.1,0.8,0.12,0.18,22.0,40000,0.0,3,62.4,2800000.0
+P173,Weston McKennie,25,American,Midfielder,Juventus,Big,Serie A,8.8,27,2052,4,5,1.2,1.8,84.4,1.6,2.1,1.6,0.18,0.21,20.0,80000,0.0,3,60.4,4200000.0
+P174,Yunus Musah,22,American,Midfielder,AC Milan,Big,Serie A,8.8,28,2156,2,3,0.9,1.6,83.8,1.8,2.1,1.6,0.08,0.14,22.0,60000,0.0,8,60.4,2800000.0
+P175,Romeo Lavia,20,Belgian,Midfielder,Chelsea,Big,Premier League,9.8,12,864,0,1,0.6,1.4,86.4,0.9,2.4,1.8,0.02,0.06,45.0,80000,84.0,6,60.4,2800000.0
+P176,Aleksandar Pavlovic,19,German,Midfielder,Bayern Munich,Big,Bundesliga,9.2,24,1800,2,3,0.8,1.6,87.4,1.2,2.1,1.6,0.08,0.14,20.0,20000,0.0,8,62.4,1800000.0
+P177,Viktor Gyokeres,26,Swedish,Forward,Sporting CP,Medium,Primeira Liga,7.8,33,2904,43,15,5.1,1.8,75.4,2.4,0.5,0.3,1.82,0.48,45.0,100000,0.0,1,78.4,8200000.0
+P178,Raphinha,27,Brazilian,Forward,Barcelona,Big,La Liga,9.5,34,2822,27,13,3.8,2.8,82.4,3.4,0.6,0.4,1.11,0.58,60.0,160000,0.0,2,78.4,12000000.0
+P179,Robert Lewandowski,36,Polish,Forward,Barcelona,Big,La Liga,9.5,34,2958,19,10,4.1,1.8,81.4,1.2,0.3,0.2,0.91,0.41,18.0,320000,0.0,2,91.4,52000000.0
+P180,Rodrygo,23,Brazilian,Forward,Real Madrid,Big,La Liga,9.5,32,2496,12,11,2.8,2.4,83.4,2.8,0.5,0.3,0.58,0.48,80.0,200000,0.0,1,82.4,22000000.0
+P181,Ousmane Dembele,27,French,Forward,PSG,Big,Ligue 1,8.5,32,2688,8,12,2.8,2.8,82.4,3.8,0.6,0.4,0.48,0.58,70.0,200000,0.0,1,82.4,14000000.0
+P182,Bradley Barcola,21,French,Forward,PSG,Big,Ligue 1,8.5,32,2464,14,9,2.8,2.4,80.4,3.4,0.5,0.3,0.62,0.41,35.0,80000,0.0,1,72.4,5800000.0
+P183,Goncalo Ramos,23,Portuguese,Forward,PSG,Big,Ligue 1,8.5,28,2016,12,4,3.1,1.2,76.4,1.4,0.4,0.2,0.62,0.21,30.0,100000,0.0,1,68.4,4800000.0
+P184,Julian Alvarez,24,Argentine,Forward,Atletico Madrid,Big,La Liga,9.5,35,2940,14,10,3.1,2.1,82.4,2.4,0.6,0.4,0.61,0.41,90.0,200000,0.0,4,84.4,21000000.0
+P185,Dominic Solanke,26,English,Forward,Tottenham,Big,Premier League,9.8,38,3240,19,7,3.1,1.4,76.8,1.4,0.5,0.3,0.71,0.31,55.0,100000,0.0,5,72.4,1800000.0
+P186,Mateo Retegui,24,Italian,Forward,Atalanta,Medium,Serie A,8.8,34,2788,21,4,3.8,1.2,75.4,1.2,0.4,0.2,0.98,0.22,35.0,80000,0.0,4,68.4,3200000.0
+P187,Ademola Lookman,26,Nigerian,Forward,Atalanta,Medium,Serie A,8.8,33,2805,15,6,2.8,2.4,79.4,3.4,0.5,0.3,0.61,0.38,50.0,100000,0.0,4,71.4,4800000.0
+P188,Marcus Thuram,26,French,Forward,Inter Milan,Big,Serie A,8.8,34,2788,13,7,2.8,2.1,78.4,2.8,0.5,0.3,0.62,0.38,60.0,160000,0.0,1,74.8,8200000.0
+P189,Randal Kolo Muani,25,French,Forward,Juventus,Big,Serie A,8.8,25,1875,6,4,2.4,1.4,78.4,2.4,0.5,0.3,0.38,0.24,50.0,120000,0.0,3,72.4,7200000.0
+P190,Paulo Dybala,30,Argentine,Forward,Roma,Medium,Serie A,8.8,30,2340,13,8,2.8,2.8,83.4,2.8,0.5,0.3,0.58,0.41,18.0,200000,14.0,8,78.4,28000000.0
+P191,Cody Gakpo,25,Dutch,Forward,Liverpool,Big,Premier League,9.8,33,2706,12,8,2.8,2.1,80.4,2.4,0.5,0.3,0.51,0.38,55.0,120000,0.0,3,74.4,6200000.0
+P192,Thomas Muller,34,German,Forward,Bayern Munich,Big,Bundesliga,9.2,31,2232,9,14,1.8,2.8,86.4,1.4,0.6,0.5,0.41,0.58,5.0,240000,0.0,8,84.4,20000000.0
+P193,Brahim Diaz,24,Spanish,Forward,Real Madrid,Big,La Liga,9.5,30,2040,11,7,2.8,2.4,83.4,2.8,0.5,0.3,0.48,0.38,30.0,80000,0.0,1,72.4,7800000.0
+P194,Endrick,17,Brazilian,Forward,Real Madrid,Big,La Liga,9.5,21,1260,5,2,2.4,1.1,77.4,2.1,0.4,0.2,0.28,0.12,60.0,40000,0.0,1,78.4,22000000.0
+P195,Rafael Leao,24,Portuguese,Forward,AC Milan,Big,Serie A,8.8,32,2624,9,8,2.8,2.8,79.4,3.8,0.5,0.3,0.48,0.38,70.0,160000,0.0,8,78.4,12000000.0
+P196,Chris Wood,32,New Zealander,Forward,Nottingham Forest,Medium,Premier League,9.8,33,2904,18,4,3.1,0.8,72.4,0.6,0.4,0.2,0.71,0.14,8.0,60000,0.0,7,64.8,1400000.0
+P197,Mateus Cunha,25,Brazilian,Forward,Wolves,Medium,Premier League,9.8,32,2688,14,7,3.1,2.1,79.2,2.8,0.6,0.4,0.61,0.41,40.0,80000,0.0,14,72.4,3200000.0
+P198,Hwang Hee-chan,28,South Korean,Forward,Wolves,Medium,Premier League,9.8,30,2340,10,5,2.8,1.4,78.4,2.4,0.5,0.3,0.48,0.21,22.0,60000,0.0,14,64.4,4800000.0
+P199,Diogo Jota,27,Portuguese,Forward,Liverpool,Big,Premier League,9.8,27,2025,11,5,2.8,1.8,78.4,2.1,0.5,0.3,0.51,0.28,55.0,120000,0.0,3,76.4,7200000.0
+P200,Gabriel Jesus,27,Brazilian,Forward,Arsenal,Big,Premier League,9.8,24,1776,5,5,2.4,2.1,79.4,2.4,0.6,0.4,0.31,0.31,40.0,120000,21.0,2,72.4,12000000.0
+P201,Nicolas Jackson,22,Senegalese,Forward,Chelsea,Big,Premier League,9.8,35,2800,17,4,3.4,1.4,75.4,1.8,0.5,0.3,0.78,0.21,20.0,80000,14.0,6,68.4,4200000.0
+P203,Moise Kean,24,Italian,Forward,Fiorentina,Medium,Serie A,8.8,33,2706,13,4,3.1,1.1,74.8,1.8,0.4,0.2,0.62,0.21,22.0,80000,0.0,7,68.4,6200000.0
+P204,Boulaye Dia,27,Senegalese,Forward,Lazio,Medium,Serie A,8.8,30,2310,15,4,3.1,1.4,76.2,2.1,0.5,0.3,0.68,0.21,18.0,80000,0.0,5,64.4,2400000.0
+P205,Mattia Zaccagni,29,Italian,Forward,Lazio,Medium,Serie A,8.8,33,2805,13,8,2.8,2.4,80.4,2.8,0.5,0.3,0.61,0.38,22.0,80000,0.0,5,64.4,4200000.0
+P206,Romelu Lukaku,31,Belgian,Forward,Roma,Medium,Serie A,8.8,31,2604,13,7,2.8,1.2,74.1,1.2,0.4,0.3,0.72,0.31,18.0,240000,21.0,8,78.4,16000000.0
+P207,Alvaro Morata,31,Spanish,Forward,Atletico Madrid,Big,La Liga,9.5,27,1917,14,4,3.1,1.4,78.3,1.1,0.5,0.4,0.71,0.24,18.0,140000,21.0,4,74.8,6700000.0
+P208,Ferran Torres,24,Spanish,Forward,Barcelona,Big,La Liga,9.5,31,2232,8,6,2.4,1.8,82.4,2.8,0.5,0.3,0.41,0.31,35.0,120000,14.0,2,72.4,5800000.0
+P209,Angel Correa,29,Argentine,Forward,Atletico Madrid,Big,La Liga,9.5,29,1972,6,6,2.1,1.8,78.8,2.4,0.6,0.4,0.34,0.31,18.0,100000,0.0,4,66.4,6400000.0
+P210,Leandro Trossard,29,Belgian,Forward,Arsenal,Big,Premier League,9.8,34,2346,10,8,2.8,2.4,83.4,2.4,0.8,0.6,0.51,0.41,28.0,100000,0.0,2,74.4,3100000.0
+P211,Gabriel Martinelli,22,Brazilian,Forward,Arsenal,Big,Premier League,9.8,27,2025,6,5,2.4,2.1,80.4,2.8,0.7,0.5,0.38,0.31,50.0,100000,14.0,2,76.8,6200000.0
+P212,Kaoru Mitoma,26,Japanese,Forward,Brighton,Medium,Premier League,9.8,25,1950,8,6,2.4,2.1,81.2,3.4,0.6,0.4,0.41,0.38,35.0,60000,28.0,11,72.4,5200000.0
+P213,Simon Adingra,22,Ivorian,Forward,Brighton,Medium,Premier League,9.8,30,2340,9,6,2.4,1.8,79.8,3.1,0.5,0.3,0.41,0.31,22.0,40000,0.0,11,60.4,2400000.0
+P214,Brennan Johnson,22,Welsh,Forward,Tottenham,Big,Premier League,9.8,29,2088,9,4,2.4,1.4,78.1,2.4,0.5,0.3,0.41,0.21,35.0,80000,0.0,5,68.4,2100000.0
+P215,Noni Madueke,22,English,Forward,Chelsea,Big,Premier League,9.8,25,1800,8,4,2.8,1.8,78.4,2.8,0.5,0.3,0.41,0.24,30.0,60000,0.0,6,66.8,2400000.0
+P217,Elye Wahi,21,French,Forward,Marseille,Medium,Ligue 1,8.5,28,1960,8,4,2.8,1.2,74.4,2.1,0.4,0.2,0.41,0.21,14.0,40000,0.0,3,62.4,2800000.0
+P218,Folarin Balogun,23,American,Forward,Monaco,Medium,Ligue 1,8.5,29,2175,12,4,3.1,1.2,75.4,1.8,0.4,0.2,0.58,0.21,25.0,60000,0.0,2,64.4,3200000.0
+P219,Takumi Minamino,29,Japanese,Forward,Monaco,Medium,Ligue 1,8.5,34,2720,14,9,2.8,2.1,80.4,2.8,0.6,0.4,0.58,0.41,18.0,80000,0.0,2,68.4,9200000.0
+P220,Wilfried Zaha,31,Ivorian,Forward,Galatasaray,Medium,Super Lig,7.4,28,2184,9,6,2.4,1.8,79.4,3.4,0.5,0.3,0.48,0.31,12.0,120000,0.0,1,72.4,9200000.0
+P221,Hakim Ziyech,31,Moroccan,Forward,Galatasaray,Medium,Super Lig,7.4,28,2184,12,10,2.8,2.8,82.4,2.8,0.5,0.3,0.51,0.41,14.0,120000,0.0,1,72.4,12000000.0
+P222,Christian Pulisic,25,American,Forward,AC Milan,Big,Serie A,8.8,33,2706,12,7,2.8,2.4,80.4,2.8,0.6,0.4,0.51,0.38,35.0,120000,0.0,8,72.4,16000000.0
+P223,Dango Ouattara,22,Burkinabe,Forward,Bournemouth,Medium,Premier League,9.8,25,1800,7,4,2.4,1.4,76.1,2.8,0.5,0.3,0.38,0.21,25.0,40000,0.0,12,58.4,1200000.0
+P224,Pedro Neto,24,Portuguese,Forward,Chelsea,Big,Premier League,9.8,22,1716,5,4,2.4,1.8,79.2,2.8,0.5,0.3,0.31,0.28,50.0,80000,28.0,6,70.4,3800000.0
+P225,Emile Smith Rowe,23,English,Forward,Fulham,Medium,Premier League,9.8,30,2340,9,5,2.1,2.1,80.4,2.4,0.6,0.4,0.41,0.31,20.0,60000,0.0,13,66.4,3400000.0
+P226,Karim Adeyemi,22,German,Forward,Borussia Dortmund,Big,Bundesliga,9.2,24,1728,8,4,2.8,1.4,76.8,2.8,0.5,0.3,0.41,0.21,32.0,80000,42.0,5,68.4,4100000.0
+P228,Jamie Bynoe-Gittens,20,English,Forward,Borussia Dortmund,Big,Bundesliga,9.2,24,1728,7,6,2.4,1.8,79.1,3.1,0.5,0.3,0.38,0.31,20.0,30000,0.0,5,62.8,2400000.0
+P229,Ansgar Knauff,22,German,Forward,Eintracht Frankfurt,Medium,Bundesliga,9.2,28,2184,7,6,2.1,1.8,78.4,2.8,0.6,0.4,0.34,0.31,15.0,30000,0.0,6,58.4,1200000.0
+P230,Rayan Cherki,20,French,Forward,Olympique Lyon,Medium,Ligue 1,8.5,27,2052,9,8,2.4,2.8,83.1,3.4,0.7,0.4,0.41,0.48,35.0,40000,0.0,4,68.4,3200000.0
+P231,Evan Ferguson,19,Irish,Forward,Brighton,Medium,Premier League,9.8,22,1386,9,2,3.4,1.2,76.1,1.2,0.4,0.2,0.62,0.18,28.0,30000,35.0,11,64.8,1400000.0
+P232,Savinho,20,Brazilian,Forward,Manchester City,Big,Premier League,9.8,23,1449,4,6,2.1,2.4,80.1,3.4,0.5,0.3,0.28,0.38,50.0,80000,0.0,1,72.4,4800000.0
+P233,Pedro Goncalves,25,Portuguese,Midfielder,Sporting CP,Medium,Primeira Liga,7.8,32,2720,16,10,2.8,2.8,85.4,2.8,1.1,0.8,0.68,0.48,35.0,80000,0.0,1,68.4,4800000.0
+P234,David Neres,27,Brazilian,Forward,Benfica,Medium,Primeira Liga,7.8,29,2466,16,12,2.8,2.4,80.4,3.4,0.5,0.3,0.68,0.51,30.0,60000,0.0,1,68.4,4800000.0
+P235,Lee Kang-in,23,South Korean,Midfielder,PSG,Big,Ligue 1,8.5,26,1976,6,8,1.8,2.4,84.8,2.4,1.1,0.8,0.28,0.38,35.0,80000,0.0,1,68.4,7800000.0
+P236,Takefusa Kubo,22,Japanese,Forward,Real Sociedad,Medium,La Liga,9.5,34,2788,9,9,2.4,2.8,82.8,3.4,0.6,0.4,0.41,0.41,40.0,60000,0.0,6,72.4,12000000.0
+P237,Mikel Oyarzabal,27,Spanish,Forward,Real Sociedad,Medium,La Liga,9.5,28,2352,10,7,2.8,2.4,83.4,2.4,0.6,0.4,0.48,0.38,30.0,100000,0.0,6,66.4,3200000.0
+P238,Gorka Guruzeta,27,Spanish,Forward,Athletic Club,Medium,La Liga,9.5,35,2870,14,5,3.1,1.2,76.4,1.4,0.4,0.2,0.58,0.21,25.0,60000,0.0,5,64.4,2100000.0
+P239,Inaki Williams,30,Spanish,Forward,Athletic Club,Medium,La Liga,9.5,37,3330,13,7,2.8,1.6,79.4,2.8,0.5,0.3,0.52,0.28,22.0,100000,0.0,5,68.4,4800000.0
+P240,Enes Unal,27,Turkish,Forward,Getafe,Small,La Liga,9.5,33,2838,13,3,3.1,0.9,73.4,1.2,0.4,0.2,0.62,0.14,12.0,40000,0.0,8,56.4,1800000.0
+P241,Memphis Depay,30,Dutch,Forward,Atletico Madrid,Big,La Liga,9.5,22,1584,7,3,2.8,1.4,80.4,2.8,0.4,0.3,0.38,0.21,12.0,120000,7.0,4,74.4,17000000.0
+P242,Kingsley Coman,28,French,Forward,Bayern Munich,Big,Bundesliga,9.2,24,1680,5,6,2.4,1.8,82.4,3.1,0.5,0.3,0.31,0.31,40.0,200000,28.0,8,74.8,8800000.0
+P243,Serge Gnabry,28,German,Forward,Bayern Munich,Big,Bundesliga,9.2,22,1628,6,5,2.4,1.8,82.4,2.8,0.5,0.3,0.38,0.31,28.0,200000,42.0,8,76.4,10000000.0
+P244,Stephan El Shaarawy,31,Italian,Forward,Roma,Medium,Serie A,8.8,28,2016,8,5,2.4,1.8,79.2,2.8,0.5,0.3,0.38,0.31,10.0,80000,0.0,8,64.4,8200000.0
+P245,Amine Gouiri,24,French,Forward,Rennes,Small,Ligue 1,8.5,27,2106,8,5,2.1,2.1,79.4,2.8,0.5,0.3,0.38,0.31,18.0,40000,0.0,9,62.4,2400000.0
+P246,Matteo Politano,30,Italian,Forward,Napoli,Big,Serie A,8.8,30,2340,9,7,2.4,2.4,80.4,2.4,0.5,0.3,0.41,0.31,18.0,80000,0.0,10,60.4,3200000.0
+P247,Giovanni Simeone,28,Argentine,Forward,Napoli,Big,Serie A,8.8,27,1890,7,3,2.4,0.9,74.8,1.2,0.4,0.2,0.38,0.14,8.0,80000,0.0,10,58.4,3400000.0
+P248,Wissam Ben Yedder,33,French,Forward,Monaco,Medium,Ligue 1,8.5,24,1680,9,4,2.8,1.4,79.4,1.8,0.3,0.2,0.48,0.24,8.0,120000,21.0,2,68.4,7200000.0
+P249,Dodi Lukebakio,26,Belgian,Forward,Sevilla,Medium,La Liga,9.5,32,2592,10,6,2.4,1.8,78.4,2.8,0.5,0.3,0.48,0.28,22.0,60000,0.0,11,60.4,2400000.0
+P250,Hirving Lozano,29,Mexican,Forward,PSV,Medium,Eredivisie,7.2,27,2106,9,6,2.4,1.8,79.4,2.8,0.5,0.3,0.41,0.28,18.0,100000,0.0,2,66.4,10000000.0
+P251,Noa Lang,25,Dutch,Forward,PSV,Medium,Eredivisie,7.2,28,2184,9,9,2.4,2.4,79.8,3.4,0.5,0.3,0.41,0.41,22.0,60000,0.0,2,62.4,3800000.0
+P252,Brian Brobbey,22,Dutch,Forward,Ajax,Medium,Eredivisie,7.2,28,2240,14,6,3.4,1.2,75.4,2.1,0.4,0.2,0.68,0.21,25.0,60000,0.0,2,62.4,3200000.0
+P253,Ricardo Pepi,21,American,Forward,PSV,Medium,Eredivisie,7.2,30,2460,13,6,3.1,1.2,74.8,1.4,0.4,0.2,0.61,0.21,15.0,40000,0.0,2,58.4,2800000.0
+P254,Keito Nakamura,22,Japanese,Forward,Reims,Small,Ligue 1,8.5,30,2280,8,7,2.1,1.8,79.4,2.8,0.5,0.3,0.38,0.31,8.0,20000,0.0,12,52.4,1800000.0
+P255,Ritsu Doan,25,Japanese,Forward,SC Freiburg,Medium,Bundesliga,9.2,30,2400,8,7,2.1,1.8,79.8,2.8,0.5,0.3,0.38,0.31,18.0,50000,0.0,9,62.4,4800000.0
+P256,Ayoze Perez,31,Spanish,Forward,Villarreal,Medium,La Liga,9.5,34,2788,8,7,2.1,1.8,81.4,1.8,0.5,0.3,0.38,0.31,8.0,60000,0.0,7,60.4,2800000.0
+P257,Joselu,34,Spanish,Forward,Real Madrid,Big,La Liga,9.5,22,1188,7,2,2.4,0.8,76.4,0.6,0.3,0.2,0.41,0.12,3.0,80000,0.0,1,62.4,2400000.0
+P258,Giacomo Bonaventura,34,Italian,Midfielder,Fiorentina,Medium,Serie A,8.8,30,2520,6,6,1.4,2.1,86.2,1.4,1.4,1.1,0.28,0.31,5.0,80000,0.0,7,62.4,2400000.0
+P259,Daichi Kamada,27,Japanese,Midfielder,Crystal Palace,Medium,Premier League,9.8,28,2184,3,4,1.2,2.1,84.8,1.8,1.4,1.1,0.12,0.18,20.0,60000,0.0,10,60.4,3800000.0
+P260,Noussair Mazraoui,26,Moroccan,Defender,Manchester United,Big,Premier League,9.8,22,1804,1,3,0.8,1.4,84.4,1.4,1.6,1.2,0.04,0.14,28.0,80000,14.0,8,62.4,3200000.0
+P261,Levi Colwill,21,English,Defender,Chelsea,Big,Premier League,9.8,25,2025,1,2,0.5,0.7,87.8,0.4,2.1,1.8,0.04,0.06,35.0,50000,0.0,6,62.4,2400000.0
+P262,Hiroki Ito,24,Japanese,Defender,Stuttgart,Medium,Bundesliga,9.2,29,2552,1,2,0.4,0.6,87.8,0.4,2.4,2.1,0.04,0.06,22.0,50000,0.0,5,60.4,2400000.0
+P263,Jan Paul van Hecke,24,Dutch,Defender,Brighton,Medium,Premier League,9.8,32,2880,2,2,0.5,0.7,88.4,0.4,2.4,2.1,0.06,0.06,25.0,50000,0.0,11,60.4,1800000.0
+P264,Lutsharel Geertruida,24,Dutch,Defender,Bayer Leverkusen,Big,Bundesliga,9.2,24,1896,2,4,0.8,1.4,84.8,1.2,1.8,1.4,0.08,0.18,20.0,50000,7.0,1,60.4,1800000.0
+P265,Lewis Hall,20,English,Defender,Newcastle,Big,Premier League,9.8,28,2296,0,4,0.5,1.4,83.8,1.2,1.6,1.2,0.02,0.14,18.0,30000,0.0,7,58.4,1400000.0
+P266,Tyrick Mitchell,24,English,Defender,Crystal Palace,Medium,Premier League,9.8,33,2904,0,3,0.4,1.4,82.8,1.2,1.6,1.2,0.02,0.14,12.0,40000,0.0,10,56.4,1400000.0
+P267,Max Kilman,27,English,Defender,West Ham,Medium,Premier League,9.8,32,2880,1,1,0.4,0.6,87.4,0.3,2.1,1.8,0.04,0.04,25.0,60000,0.0,14,58.4,1800000.0
+P268,Timothy Castagne,28,Belgian,Defender,Fulham,Medium,Premier League,9.8,30,2520,2,5,0.8,1.6,83.4,1.4,1.6,1.2,0.08,0.18,14.0,60000,0.0,13,62.4,2100000.0
+P269,Aleksandar Dragovic,33,Austrian,Defender,Red Star Belgrade,Small,Serbian SuperLiga,5.8,24,2016,1,1,0.4,0.5,86.4,0.2,2.1,1.8,0.04,0.04,1.5,15000,14.0,1,48.4,880000.0
+P270,Konstantinos Mavropanos,26,Greek,Defender,West Ham,Medium,Premier League,9.8,29,2436,1,1,0.4,0.5,85.4,0.3,2.1,1.8,0.04,0.04,18.0,50000,0.0,14,56.4,1200000.0
+P271,James Tarkowski,31,English,Defender,Everton,Medium,Premier League,9.8,33,2970,2,1,0.5,0.5,85.2,0.2,2.4,2.1,0.06,0.04,12.0,80000,0.0,16,62.4,2100000.0
+P272,Pervis Estupinan,26,Ecuadorian,Defender,Brighton,Medium,Premier League,9.8,15,1200,1,3,0.6,1.4,83.4,1.8,1.4,1.1,0.04,0.14,25.0,60000,42.0,11,58.4,2800000.0
+P273,Igor Julio,24,Brazilian,Defender,Fiorentina,Medium,Serie A,8.8,29,2523,2,2,0.5,0.6,87.4,0.4,2.4,2.1,0.06,0.06,18.0,50000,0.0,7,58.4,1800000.0
+P274,Manu Kone,23,French,Midfielder,Roma,Medium,Serie A,8.8,28,2352,4,5,1.1,2.1,86.8,1.8,2.4,1.8,0.18,0.21,22.0,50000,0.0,8,60.4,1800000.0
+P275,Luca Pellegrini,25,Italian,Defender,Lazio,Medium,Serie A,8.8,27,2106,1,4,0.6,1.6,83.4,1.6,1.6,1.2,0.04,0.18,12.0,50000,0.0,5,58.4,1200000.0
+P276,Valentino Lazaro,28,Austrian,Defender,Torino,Small,Serie A,8.8,28,2184,2,5,0.8,1.8,81.2,2.1,1.4,1.1,0.09,0.21,8.0,40000,0.0,9,54.4,1100000.0
+P277,Arthur Vermeeren,19,Belgian,Midfielder,Atletico Madrid,Big,La Liga,9.5,20,1440,1,2,0.8,1.8,86.4,1.2,2.4,1.8,0.04,0.09,25.0,30000,0.0,4,62.4,2400000.0
+P278,Arne Engels,20,Belgian,Midfielder,Celtic,Medium,Scottish Prem,6.5,31,2604,9,12,1.8,2.8,86.4,2.1,1.8,1.4,0.38,0.51,20.0,30000,0.0,1,60.4,1800000.0
+P279,Matt O'Riley,23,Danish,Midfielder,Brighton,Medium,Premier League,9.8,30,2430,5,7,1.4,2.4,85.8,1.8,1.4,1.1,0.21,0.31,30.0,60000,0.0,11,60.4,2400000.0
+P280,Georginio Rutter,22,French,Forward,Brighton,Medium,Premier League,9.8,35,2835,8,7,2.4,2.1,79.8,2.8,0.5,0.3,0.38,0.31,28.0,50000,0.0,11,62.4,2400000.0
+P281,Guus Til,26,Dutch,Midfielder,PSV,Medium,Eredivisie,7.2,29,2436,7,8,1.6,2.1,85.4,1.8,1.6,1.2,0.31,0.38,18.0,50000,0.0,2,58.4,1800000.0
+P282,Ismael Saibari,22,Moroccan,Midfielder,PSV,Medium,Eredivisie,7.2,27,2133,6,8,1.4,2.4,85.8,2.1,1.6,1.2,0.28,0.38,20.0,40000,0.0,2,60.4,2400000.0
+P283,Calvin Stengs,25,Dutch,Forward,Feyenoord,Medium,Eredivisie,7.2,30,2460,8,9,2.1,2.4,81.4,2.8,0.5,0.3,0.38,0.41,15.0,40000,0.0,1,60.4,2400000.0
+P284,Quinten Timber,22,Dutch,Midfielder,Feyenoord,Medium,Eredivisie,7.2,27,2187,4,6,1.2,2.1,85.4,1.8,1.8,1.4,0.18,0.28,18.0,40000,0.0,1,60.4,1800000.0
+P285,Luka Sucic,22,Croatian,Midfielder,RB Salzburg,Small,Austrian Bundesliga,6.8,27,2214,8,11,1.8,2.8,85.8,2.4,1.4,1.1,0.34,0.48,18.0,30000,0.0,1,60.4,1800000.0
+P286,Martin Baturina,21,Croatian,Midfielder,Dinamo Zagreb,Small,HNL,5.8,28,2268,9,10,1.8,2.8,84.8,2.8,1.4,1.1,0.38,0.41,20.0,20000,0.0,1,60.4,1800000.0
+P287,Azzedine Ounahi,24,Moroccan,Midfielder,Marseille,Medium,Ligue 1,8.5,24,1776,2,4,0.9,1.8,84.4,1.6,1.8,1.4,0.08,0.18,14.0,50000,0.0,3,58.4,2400000.0
+P288,Brenden Aaronson,23,American,Midfielder,Leeds United,Small,Championship,6.0,38,3268,8,9,1.8,2.4,79.4,2.4,1.4,1.1,0.34,0.38,18.0,40000,0.0,3,58.4,2800000.0
+P289,Luuk de Jong,33,Dutch,Forward,PSV,Medium,Eredivisie,7.2,30,2550,16,7,3.1,1.2,74.4,0.8,0.3,0.2,0.68,0.21,5.0,80000,0.0,2,58.4,2400000.0
+P290,Oh Hyeon-gyu,23,South Korean,Forward,Celtic,Medium,Scottish Prem,6.5,29,2175,13,5,3.1,1.1,74.4,1.4,0.4,0.2,0.58,0.21,12.0,30000,0.0,1,56.4,2800000.0
+P291,Marcos Leonardo,21,Brazilian,Forward,Benfica,Medium,Primeira Liga,7.8,28,2212,14,4,3.4,1.1,74.4,1.6,0.4,0.2,0.62,0.18,12.0,40000,0.0,1,58.4,2400000.0
+P292,Elanga Anthony,22,Swedish,Forward,Nottingham Forest,Medium,Premier League,9.8,34,2720,8,6,2.1,1.6,77.4,2.8,0.5,0.3,0.38,0.28,22.0,40000,0.0,7,62.4,2400000.0
+P293,Taiwo Awoniyi,27,Nigerian,Forward,Nottingham Forest,Medium,Premier League,9.8,24,1824,7,3,2.4,0.9,73.4,1.4,0.4,0.2,0.38,0.14,18.0,50000,42.0,7,58.4,2100000.0
+P294,Callum Wilson,32,English,Forward,Newcastle,Big,Premier League,9.8,20,1620,11,2,3.4,0.9,74.2,1.2,0.4,0.2,0.62,0.14,42.0,7,68.4,3200000,,
+P295,Giovanni Reyna,21,American,Forward,Borussia Dortmund,Big,Bundesliga,9.2,20,1260,5,4,1.8,2.1,82.4,2.4,0.6,0.4,0.28,0.31,30.0,40000,28.0,5,62.4,3400000.0
+P296,Konrad Laimer,27,Austrian,Midfielder,Bayern Munich,Big,Bundesliga,9.2,28,2184,3,5,0.8,1.8,86.8,1.4,2.4,1.8,0.12,0.21,28.0,80000,0.0,8,60.4,1800000.0
+P297,Leon Goretzka,29,German,Midfielder,Bayern Munich,Big,Bundesliga,9.2,20,1440,3,4,1.1,1.8,87.4,1.2,1.8,1.4,0.14,0.21,35.0,160000,42.0,8,70.4,7200000.0
+P298,Matteo Darmian,34,Italian,Defender,Inter Milan,Big,Serie A,8.8,26,2028,1,3,0.5,0.8,85.4,0.8,1.6,1.2,0.04,0.12,4.0,80000,0.0,1,60.4,2400000.0
+P299,Carlos Augusto,25,Brazilian,Defender,Inter Milan,Big,Serie A,8.8,29,2320,2,4,0.6,1.1,84.4,1.4,1.6,1.2,0.06,0.18,18.0,60000,0.0,1,58.4,1400000.0
+P301,Phil Jones,32,English,Defender,Manchester United,Big,Premier League,9.8,0,0,0,0,0.2,0.3,82.4,0.1,1.4,1.1,0.01,0.01,1.0,100000,365.0,8,54.4,2100000.0
+P302,Yerry Mina,29,Colombian,Defender,Everton,Medium,Premier League,9.8,14,1134,1,0,0.4,0.4,83.4,0.2,1.8,1.4,0.04,0.02,8.0,60000,56.0,16,58.4,2400000.0
+P303,Sandro Tonali,24,Italian,Midfielder,Newcastle,Big,Premier League,9.8,14,1092,1,2,0.8,1.8,87.2,1.2,2.4,1.8,0.06,0.12,45.0,80000,77.0,7,68.8,6200000.0
+P304,Renato Sanches,26,Portuguese,Midfielder,Roma,Medium,Serie A,8.8,14,980,1,2,0.8,1.8,84.4,1.4,1.8,1.4,0.06,0.12,12.0,80000,84.0,8,62.4,4200000.0
+P305,Gavi,20,Spanish,Midfielder,Barcelona,Big,La Liga,9.5,14,1008,1,2,1.2,3.1,90.8,2.2,2.1,1.4,0.09,0.18,80.0,160000,245.0,2,88.2,12000000.0
+P306,Ben Chilwell,27,English,Defender,Chelsea,Big,Premier League,9.8,10,756,0,2,0.5,1.4,83.4,1.2,1.4,1.1,0.02,0.14,28.0,120000,112.0,6,66.4,4200000.0
+P310,Federico Chiesa,26,Italian,Forward,Liverpool,Big,Premier League,9.8,18,1134,3,3,2.1,1.8,79.4,2.8,0.5,0.3,0.18,0.18,35.0,80000,42.0,3,72.4,8200000.0
