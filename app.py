@@ -1,7 +1,4 @@
-"""
-Football Analytics Startup — Streamlit Dashboard
-Run:  streamlit run app.py
-"""
+"""FootballIQ — Streamlit Dashboard  |  streamlit run app.py"""
 
 import os
 import pandas as pd
@@ -10,541 +7,482 @@ import streamlit as st
 import plotly.express as px
 import plotly.graph_objects as go
 
-from generate_data   import generate_football_dataset
-from data_cleaning   import clean_data, engineer_features
-from transfer_model  import (compute_transfer_score, quadrant_analysis,
-                              top_recommendations, best_young_talents,
-                              best_value_signings)
-from eda_analysis    import (plot_correlation_heatmap, plot_value_vs_performance,
-                              plot_goals_vs_assists, plot_age_performance_curve,
-                              plot_position_performance, plot_club_size_value,
-                              plot_value_for_money_dist, plot_transfer_score_dist,
-                              plot_quadrant_chart, plot_age_group_pie)
-from radar_charts    import build_radar, build_position_comparison
+from generate_data  import generate_football_dataset
+from data_cleaning  import clean_data, engineer_features
+from transfer_model import (compute_transfer_score, quadrant_analysis,
+                             top_recommendations, best_young_talents,
+                             best_value_signings)
+from eda_analysis   import (plot_correlation_heatmap, plot_value_vs_performance,
+                             plot_goals_vs_assists, plot_age_performance_curve,
+                             plot_position_performance, plot_club_size_value,
+                             plot_value_for_money_dist, plot_transfer_score_dist,
+                             plot_quadrant_chart, plot_age_group_pie,
+                             plot_league_distribution)
+from radar_charts   import build_two_player_radar, build_position_comparison
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
-    page_title='⚽ Football Analytics Startup',
+    page_title='⚽ FootballIQ Analytics',
     page_icon='⚽',
     layout='wide',
     initial_sidebar_state='expanded',
 )
 
-# ── Custom CSS ────────────────────────────────────────────────────────────────
+# ── Dark theme CSS ────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-    .main-header {
-        font-size: 2.4rem;
-        font-weight: 800;
-        background: linear-gradient(90deg, #1e3a5f, #45B7D1);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        margin-bottom: 0.2rem;
-    }
-    .sub-header { color: #888; font-size: 1.05rem; margin-bottom: 1.5rem; }
-    .metric-card {
-        background: linear-gradient(135deg, #1e3a5f, #2d5a8e);
-        border-radius: 12px;
-        padding: 1.2rem 1.5rem;
-        color: white;
-        text-align: center;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    .metric-card .metric-value { font-size: 2rem; font-weight: 700; }
-    .metric-card .metric-label { font-size: 0.85rem; opacity: 0.85; margin-top: 0.2rem; }
-    .insight-box {
-        background: #f0f8ff;
-        border-left: 4px solid #45B7D1;
-        padding: 0.8rem 1rem;
-        border-radius: 4px;
-        margin: 0.5rem 0 1rem 0;
-        font-size: 0.92rem;
-        color: #1e3a5f;
-    }
-    section[data-testid="stSidebar"] { background-color: #0d1b2a; }
-    section[data-testid="stSidebar"] .css-1d391kg { color: white; }
+  /* ── Global dark base ── */
+  html, body, [data-testid="stAppViewContainer"] {
+      background-color: #0a0e1a !important;
+      color: #e2e8f0 !important;
+  }
+  [data-testid="stSidebar"] {
+      background: linear-gradient(180deg, #0d1117 0%, #111827 100%) !important;
+      border-right: 1px solid #1e293b;
+  }
+  [data-testid="stHeader"] { background: #0a0e1a !important; }
+
+  /* ── KPI cards ── */
+  .kpi-card {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+      border: 1px solid #334155;
+      border-radius: 12px;
+      padding: 1.2rem 1.4rem;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(0,212,255,0.08);
+  }
+  .kpi-card .kpi-val  { font-size: 2rem; font-weight: 800; color: #00d4ff; }
+  .kpi-card .kpi-lab  { font-size: 0.82rem; color: #94a3b8; margin-top: 0.3rem; }
+
+  /* ── Section heading ── */
+  .page-title {
+      font-size: 2.2rem; font-weight: 800;
+      background: linear-gradient(90deg, #00d4ff, #a78bfa);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      margin-bottom: 0.1rem;
+  }
+  .page-sub { color: #64748b; font-size: 1rem; margin-bottom: 1.5rem; }
+
+  /* ── Insight box ── */
+  .insight {
+      background: #0f172a;
+      border-left: 3px solid #00d4ff;
+      padding: 0.75rem 1rem;
+      border-radius: 6px;
+      font-size: 0.91rem;
+      color: #94a3b8;
+      margin: 0.4rem 0 1rem 0;
+  }
+  .insight strong { color: #00d4ff; }
+
+  /* ── Tier badges ── */
+  .tier-elite    { color: #4ade80; font-weight: 700; }
+  .tier-strong   { color: #00d4ff; font-weight: 700; }
+  .tier-moderate { color: #fbbf24; font-weight: 700; }
+  .tier-low      { color: #f87171; font-weight: 700; }
+
+  /* ── Tables ── */
+  [data-testid="stDataFrame"] { border-radius: 8px; overflow: hidden; }
 </style>
 """, unsafe_allow_html=True)
 
 
-# ── Data loading (cached) ─────────────────────────────────────────────────────
+# ── Plotly dark defaults ───────────────────────────────────────────────────────
+import plotly.io as pio
+pio.templates.default = "plotly_dark"
+
+
+# ── Data pipeline ─────────────────────────────────────────────────────────────
 @st.cache_data(show_spinner='Loading dataset…')
 def load_data():
     script_dir = os.path.dirname(os.path.abspath(__file__))
-    csv_path = os.path.join(script_dir, 'players_dataset.csv')
-    if os.path.exists(csv_path):
-        df_raw = pd.read_csv(csv_path)
-    else:
-        df_raw = generate_football_dataset(1000)
-
+    csv_path   = os.path.join(script_dir, 'players_dataset.csv')
+    df_raw = pd.read_csv(csv_path) if os.path.exists(csv_path) \
+             else generate_football_dataset(150)
     df = clean_data(df_raw)
     df = engineer_features(df)
     df = compute_transfer_score(df)
     df = quadrant_analysis(df)
     return df_raw, df
 
-
 df_raw, df = load_data()
 
-
-# ── Sidebar navigation ────────────────────────────────────────────────────────
+# ── Sidebar ───────────────────────────────────────────────────────────────────
 with st.sidebar:
     st.markdown("## ⚽ FootballIQ")
-    st.markdown("*Analytics-Driven Transfer Intelligence*")
+    st.markdown("<span style='color:#64748b;font-size:0.85rem'>Analytics-Driven Transfer Intelligence</span>",
+                unsafe_allow_html=True)
     st.divider()
-    page = st.radio(
-        'Navigate',
-        [
-            '🏠 Startup Overview',
-            '📊 Dataset Explorer',
-            '🧹 Data Cleaning',
-            '📈 EDA Visualisations',
-            '🔍 Player Scouting Tool',
-            '🎯 Player Radar Chart',
-            '🤖 AI Transfer Recommendations',
-        ],
-    )
+    page = st.radio('Navigate', [
+        '🏠  Overview',
+        '📊  Dataset Explorer',
+        '🧹  Data Cleaning',
+        '📈  EDA Visualisations',
+        '🔍  Player Scouting',
+        '🎯  Player Comparison',
+        '🤖  Transfer Rankings',
+    ])
     st.divider()
-    st.caption(f"Dataset: **{len(df):,}** players across **{df['Nationality'].nunique()}** nationalities")
+    st.caption(f"**{len(df)}** players · **{df['Nationality'].nunique()}** nationalities · **{df['League'].nunique()}** leagues")
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# PAGE 1 — STARTUP OVERVIEW
-# ═══════════════════════════════════════════════════════════════════════════════
-if page == '🏠 Startup Overview':
-    st.markdown('<p class="main-header">⚽ FootballIQ Analytics</p>', unsafe_allow_html=True)
-    st.markdown('<p class="sub-header">Helping clubs identify undervalued players using data-driven scouting</p>',
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 1 — OVERVIEW
+# ─────────────────────────────────────────────────────────────────────────────
+if page == '🏠  Overview':
+    st.markdown('<p class="page-title">⚽ FootballIQ Analytics</p>', unsafe_allow_html=True)
+    st.markdown('<p class="page-sub">Helping clubs find undervalued players through data science</p>',
                 unsafe_allow_html=True)
 
-    col1, col2, col3, col4 = st.columns(4)
+    # KPIs
+    c1,c2,c3,c4 = st.columns(4)
     kpis = [
-        (f"{len(df):,}", "Players Analysed"),
-        (f"{df['Nationality'].nunique()}", "Nationalities"),
-        (f"€{df['Market_Value_Million_Euros'].mean():.1f}M", "Avg Market Value"),
-        (f"{(df['Transfer_Score'] >= 80).sum()}", "Elite Targets Identified"),
+        (f"{len(df)}", "Players in Database"),
+        (f"{df['League'].nunique()}", "Leagues Covered"),
+        (f"€{df['Market_Value_Million_Euros'].median():.0f}M", "Median Market Value"),
+        (f"{(df['Transfer_Score'] >= 60).sum()}", "Recommended Targets"),
     ]
-    for col, (val, label) in zip([col1, col2, col3, col4], kpis):
-        col.markdown(
-            f'<div class="metric-card"><div class="metric-value">{val}</div>'
-            f'<div class="metric-label">{label}</div></div>',
-            unsafe_allow_html=True,
-        )
+    for col,(val,lab) in zip([c1,c2,c3,c4], kpis):
+        col.markdown(f'<div class="kpi-card"><div class="kpi-val">{val}</div>'
+                     f'<div class="kpi-lab">{lab}</div></div>', unsafe_allow_html=True)
 
     st.markdown("---")
-    c1, c2 = st.columns([1.3, 1])
-    with c1:
-        st.subheader("🎯 The Business Problem")
-        st.write("""
-Football clubs spend hundreds of millions of euros in transfer windows, yet many overpay for
-**high-profile players** while overlooking hidden talent in smaller leagues.  
-This creates a structural market inefficiency:
+    left, right = st.columns([1.3, 1])
 
-- **Big clubs** overspend on brand names, inflating the market.
-- **Small clubs** lose their best players for below-market fees due to poor data.
-- **Scouts** rely on subjective observation rather than objective metrics.
-
-**FootballIQ** solves this by aggregating 25+ player metrics and applying quantitative scoring
-models to surface the best **value-for-money transfers** on the market.
-        """)
-
-        st.subheader("💡 How It Works")
+    with left:
+        st.subheader("🎯 The Problem")
         st.markdown("""
-| Step | Description |
-|------|-------------|
-| **1. Data Collection** | 25 performance & market metrics per player |
-| **2. Feature Engineering** | Composite scores: Performance, Availability, Potential |
-| **3. AI Scoring** | Min-Max weighted Transfer Score (0–100) |
-| **4. Scouting Dashboard** | Interactive filters, radar charts, ranked lists |
+Clubs routinely overpay for famous names while elite performers in smaller leagues go unnoticed.
+**FootballIQ** quantifies 27 metrics per player and produces a single **Transfer Score (0–100)**
+so scouts can compare across positions, leagues, and club contexts objectively.
+
+| Step | What we do |
+|------|------------|
+| **Data** | 150 real players, 27 metrics, 2023/24 season |
+| **Engineering** | Performance, Value-for-Money, Availability, Potential indexes |
+| **Scoring** | Weighted min-max Transfer Score |
+| **Dashboard** | Interactive scouting, radar comparisons, ranked shortlists |
         """)
 
-    with c2:
-        st.subheader("📊 Dataset Snapshot")
-        pos_dist = df['Position'].value_counts().reset_index()
-        pos_dist.columns = ['Position', 'Count']
-        fig_pos = px.pie(pos_dist, names='Position', values='Count',
-                         color_discrete_sequence=px.colors.qualitative.Bold,
-                         hole=0.45)
-        fig_pos.update_layout(height=320, margin=dict(t=20, b=10))
+    with right:
+        fig_pos = px.pie(df['Position'].value_counts().reset_index(),
+                         names='Position', values='count', hole=0.5,
+                         color='Position',
+                         color_discrete_map={'GK':'#f97316','Defender':'#22d3ee',
+                                             'Midfielder':'#a78bfa','Forward':'#4ade80'})
+        fig_pos.update_layout(height=300, margin=dict(t=20,b=10),
+                              paper_bgcolor='#111827', font_color='#e2e8f0',
+                              legend=dict(bgcolor='#0f172a'))
         st.plotly_chart(fig_pos, use_container_width=True)
 
-        tier_counts = df['Transfer_Tier'].value_counts().reset_index()
-        tier_counts.columns = ['Tier', 'Count']
-        fig_tier = px.bar(tier_counts, x='Tier', y='Count',
-                          color='Tier', title='Players by Transfer Tier',
-                          color_discrete_sequence=px.colors.qualitative.Pastel)
-        fig_tier.update_layout(height=280, showlegend=False, margin=dict(t=40))
+        tier_df = df['Transfer_Tier'].value_counts().reset_index()
+        tier_df.columns = ['Tier','Count']
+        fig_tier = px.bar(tier_df, x='Count', y='Tier', orientation='h',
+                          color='Count', color_continuous_scale='Blues',
+                          title='Players by Transfer Tier')
+        fig_tier.update_layout(height=260, paper_bgcolor='#111827',
+                               plot_bgcolor='#0f172a', font_color='#e2e8f0',
+                               yaxis={'categoryorder':'total ascending'},
+                               showlegend=False, coloraxis_showscale=False,
+                               margin=dict(t=40))
         st.plotly_chart(fig_tier, use_container_width=True)
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# ─────────────────────────────────────────────────────────────────────────────
 # PAGE 2 — DATASET EXPLORER
-# ═══════════════════════════════════════════════════════════════════════════════
-elif page == '📊 Dataset Explorer':
+# ─────────────────────────────────────────────────────────────────────────────
+elif page == '📊  Dataset Explorer':
     st.header('📊 Dataset Explorer')
+    tab_raw, tab_feat, tab_stats = st.tabs(['Raw Data','Engineered Features','Summary Stats'])
 
-    tab1, tab2, tab3 = st.tabs(['Raw Data', 'Engineered Features', 'Summary Statistics'])
+    with tab_raw:
+        c1,c2,c3 = st.columns(3)
+        pos_f  = c1.multiselect('Position', df['Position'].unique(), default=list(df['Position'].unique()))
+        size_f = c2.multiselect('Club Size', ['Small','Medium','Big'], default=['Small','Medium','Big'])
+        league_f = c3.multiselect('League', sorted(df['League'].unique()), default=list(df['League'].unique()))
+        view = df[(df['Position'].isin(pos_f)) & (df['Club_Size'].isin(size_f)) & (df['League'].isin(league_f))]
+        st.dataframe(view.reset_index(drop=True), use_container_width=True, height=480)
+        st.caption(f"Showing **{len(view)}** of **{len(df)}** players")
 
-    with tab1:
-        st.subheader('Raw Dataset')
-        pos_f  = st.multiselect('Filter by Position', df_raw['Position'].unique(),
-                                 default=list(df_raw['Position'].unique()))
-        size_f = st.multiselect('Filter by Club Size', df_raw['Club_Size'].unique(),
-                                 default=list(df_raw['Club_Size'].unique()))
-        raw_view = df_raw[(df_raw['Position'].isin(pos_f)) & (df_raw['Club_Size'].isin(size_f))]
-        st.dataframe(raw_view, use_container_width=True, height=450)
-        st.caption(f"Showing {len(raw_view):,} of {len(df_raw):,} rows")
+    with tab_feat:
+        feat_cols = ['Player_Name','Age','Position','Club','League',
+                     'Performance_Index','Value_for_Money','Availability_Index',
+                     'Potential_Index','Scouting_Score','Transfer_Score','Transfer_Tier']
+        st.dataframe(df[feat_cols].reset_index(drop=True), use_container_width=True, height=480)
 
-    with tab2:
-        st.subheader('Engineered Features')
-        feature_cols = ['Player_Name', 'Age', 'Position', 'Club_Size',
-                         'Performance_Index', 'Value_for_Money', 'Availability_Index',
-                         'Potential_Index', 'Scouting_Score', 'Transfer_Score', 'Transfer_Tier']
-        st.dataframe(df[feature_cols], use_container_width=True, height=450)
-
-    with tab3:
-        st.subheader('Summary Statistics')
-        numeric_cols = df.select_dtypes(include='number').columns.tolist()
-        st.dataframe(df[numeric_cols].describe().T.round(2), use_container_width=True, height=520)
+    with tab_stats:
+        num_cols = df.select_dtypes('number').columns.tolist()
+        st.dataframe(df[num_cols].describe().T.round(3), use_container_width=True, height=520)
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
+# ─────────────────────────────────────────────────────────────────────────────
 # PAGE 3 — DATA CLEANING
-# ═══════════════════════════════════════════════════════════════════════════════
-elif page == '🧹 Data Cleaning':
-    st.header('🧹 Data Cleaning & Transformation')
+# ─────────────────────────────────────────────────────────────────────────────
+elif page == '🧹  Data Cleaning':
+    st.header('🧹 Data Cleaning & Feature Engineering')
 
-    st.markdown("""
-### Why Data Cleaning?
-Raw data from diverse sources often contains **missing values**, **duplicates**, and
-**inconsistent formats**. Without cleaning, analytical results are unreliable.
-    """)
-
-    steps = [
-        ('1. Remove Duplicates', 
-         'Duplicate Player_IDs skew aggregations. We drop rows with repeated IDs.',
-         'pandas `drop_duplicates()`'),
-        ('2. Handle Missing Values',
-         'Pass_Accuracy, Key_Passes_per_Game, and Fan_Popularity_Index have ~3% missing values. '
-         'We impute with **position-group medians** to preserve distributional integrity.',
-         'pandas `groupby().transform("median")`'),
-        ('3. Standardise Column Names',
-         'Whitespace trimmed; snake_case enforced for consistent programmatic access.',
-         'pandas `str.strip()`'),
-        ('4. Age Group Categorisation',
-         'Continuous age is binned into strategic groups: Young Talent (≤23), '
-         'Prime Player (24-29), Veteran (≥30). These align with typical club strategies.',
-         'pandas `pd.cut()`'),
-    ]
-
-    for title, explanation, method in steps:
+    for title, body, code in [
+        ('1 · Duplicate Removal',
+         'Player_ID is the unique key. Duplicates inflate aggregates.',
+         "df = df.drop_duplicates(subset=['Player_ID']).reset_index(drop=True)"),
+        ('2 · Missing Value Imputation',
+         'Pass_Accuracy, Key_Passes_per_Game, Fan_Popularity_Index have ~3% missing values.\n'
+         'We fill with **position-group medians** to preserve distributional integrity.',
+         "df[col] = df[col].fillna(df.groupby('Position')[col].transform('median'))"),
+        ('3 · Age Group Categorisation',
+         'Continuous age → three strategic buckets aligned with recruitment philosophy.',
+         "df['Age_Group'] = pd.cut(df['Age'], bins=[0,23,29,99],\n"
+         "    labels=['Young Talent','Prime Player','Veteran']).astype(str)"),
+        ('4 · Feature Engineering',
+         'Four composite indexes derived from raw metrics — see formulae below.',
+         "df['Performance_Index'] = Σ (position_weight × metric)"),
+    ]:
         with st.expander(title, expanded=True):
-            st.write(explanation)
-            st.code(method, language='python')
+            st.write(body)
+            st.code(code, language='python')
+
+    st.subheader('Formulae')
+    st.latex(r"\text{Value for Money} = \frac{\text{Performance Index}}{\text{Market Value}}")
+    st.latex(r"\text{Availability} = \frac{\text{Minutes Played}}{\text{Minutes}+\text{Injury Days}\times 90}")
+    st.latex(r"\text{Transfer Score} = 0.35\,P + 0.30\,V + 0.20\,A + 0.15\,\text{Pot}")
 
     st.divider()
-    st.subheader('Missing Values Before Cleaning')
-    missing = df_raw.isnull().sum()
-    missing = missing[missing > 0].reset_index()
-    missing.columns = ['Column', 'Missing Count']
-    missing['Missing %'] = (missing['Missing Count'] / len(df_raw) * 100).round(2)
-    st.dataframe(missing, use_container_width=True)
-
-    st.subheader('Age Group Distribution After Cleaning')
+    st.subheader('Age Group Distribution')
     st.plotly_chart(plot_age_group_pie(df), use_container_width=True)
 
-    st.subheader('Feature Engineering Formulae')
-    st.latex(r"\text{Performance Index} = \sum_i w_i \cdot \text{metric}_i \quad (\text{position-specific weights})")
-    st.latex(r"\text{Value for Money} = \frac{\text{Performance Index}}{\text{Market Value (€M)}}")
-    st.latex(r"\text{Availability Index} = \frac{\text{Minutes Played}}{\text{Minutes Played} + \text{Injury Days} \times 90}")
-    st.latex(r"\text{Potential Index} = \begin{cases} 1.0 & \text{age} \le 22 \\ 1 - 0.04(\text{age}-22) & 23 \le \text{age} \le 29 \\ 0.72 - 0.06(\text{age}-29) & \text{age} > 29 \end{cases}")
 
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# PAGE 4 — EDA VISUALISATIONS
-# ═══════════════════════════════════════════════════════════════════════════════
-elif page == '📈 EDA Visualisations':
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 4 — EDA
+# ─────────────────────────────────────────────────────────────────────────────
+elif page == '📈  EDA Visualisations':
     st.header('📈 Exploratory Data Analysis')
 
-    vis_choice = st.selectbox(
-        'Select Visualisation',
-        [
-            'Correlation Heatmap',
-            'Market Value vs Performance',
-            'Goals vs Assists',
-            'Age Performance Curve',
-            'Position vs Performance',
-            'Club Size vs Market Value',
-            'Value-for-Money Distribution',
-            'Transfer Score Distribution',
-            'Quadrant Analysis',
-            'Position Radar Comparison',
-        ],
-    )
-
-    insights = {
-        'Correlation Heatmap':
-            "Goals, xG, and Performance_Index show strong positive correlations. "
-            "Market value is moderately correlated with performance but also depends on age and club size.",
-        'Market Value vs Performance':
-            "Players in small clubs frequently exhibit strong performance at a fraction of the market value "
-            "of equivalent big-club players — a clear scouting opportunity.",
-        'Goals vs Assists':
-            "Forwards cluster in the high-goals/low-assists quadrant; midfielders exhibit a balanced spread. "
-            "Top midfielders are especially valuable for dual contributions.",
-        'Age Performance Curve':
-            "Performance peaks between ages 24–27. Young players (18–23) show high variance — "
-            "some breakout performers offer exceptional value before their market price rises.",
-        'Position vs Performance':
-            "Forwards and Midfielders score highest on the Performance Index due to direct goal contributions. "
-            "Defenders and GKs require alternative metrics (tackles, clean sheets) to assess accurately.",
-        'Club Size vs Market Value':
-            "Big-club players command significantly higher market values regardless of performance, "
-            "indicating a brand/exposure premium. Small-club players are structurally underpriced.",
-        'Value-for-Money Distribution':
-            "Defenders and Midfielders in smaller clubs often provide the highest value-for-money ratios, "
-            "suggesting clubs should prioritise these positions in budget transfer windows.",
-        'Transfer Score Distribution':
-            "Only ~15% of players reach the Elite tier (score ≥ 80). The majority sit in the Moderate band, "
-            "offering room for clubs to uncover bargains in the 60-80 range.",
-        'Quadrant Analysis':
-            "Undervalued Gems (high performance, low market value) represent the highest-priority targets. "
-            "These players deliver top-tier output at below-market cost.",
-        'Position Radar Comparison':
-            "Positional radars confirm distinct skill profiles. Midfielders are the most versatile. "
-            "Forwards dominate attacking metrics while defenders lead in defensive duels.",
+    VIS = {
+        'Correlation Heatmap':           (plot_correlation_heatmap,
+            "Goals, xG and Performance Index are tightly correlated. "
+            "Market Value correlates only moderately (~0.5) — confirming the brand premium."),
+        'Market Value vs Performance':   (plot_value_vs_performance,
+            "Small-club players (smaller bubbles) with high Performance Index sit far below "
+            "the market value of equivalent big-club players — clear scouting opportunities."),
+        'Goals vs Assists':              (plot_goals_vs_assists,
+            "Forwards cluster top-left (goals-heavy). Elite midfielders balance both axes. "
+            "Players above both medians are dual-threat match-winners."),
+        'Age Performance Curve':         (plot_age_performance_curve,
+            "Peak performance lands between 24–27. Players 18–22 show high variance — "
+            "some break out early before the market re-prices them."),
+        'Position vs Performance':       (plot_position_performance,
+            "Forwards lead on Performance Index due to goal weighting. "
+            "Defenders with high scores are rare and extremely valuable."),
+        'Club Size vs Market Value':     (plot_club_size_value,
+            "Big-club players command 3–5× the market value of statistically similar "
+            "small/medium-club players — the core inefficiency FootballIQ targets."),
+        'Value-for-Money Distribution':  (plot_value_for_money_dist,
+            "Medium-club midfielders and forwards dominate the high-VfM tail — "
+            "these are the profiles most frequently overlooked by top-club scouts."),
+        'Transfer Score Distribution':   (plot_transfer_score_dist,
+            "The Elite tier (≥80) is intentionally rare — a strict quality filter. "
+            "The 60–80 band offers the richest pool of actionable, affordable targets."),
+        'Quadrant Analysis':             (plot_quadrant_chart,
+            "Undervalued Gems (green) — high performance, low value — are the primary "
+            "transfer targets. Declining Veterans (amber) should be avoided."),
+        'League Distribution':           (plot_league_distribution,
+            "Premier League dominates the dataset; Bundesliga and La Liga follow. "
+            "Underrepresented leagues hide the best value-for-money players."),
     }
 
-    fig_map = {
-        'Correlation Heatmap':          plot_correlation_heatmap(df),
-        'Market Value vs Performance':  plot_value_vs_performance(df),
-        'Goals vs Assists':             plot_goals_vs_assists(df),
-        'Age Performance Curve':        plot_age_performance_curve(df),
-        'Position vs Performance':      plot_position_performance(df),
-        'Club Size vs Market Value':    plot_club_size_value(df),
-        'Value-for-Money Distribution': plot_value_for_money_dist(df),
-        'Transfer Score Distribution':  plot_transfer_score_dist(df),
-        'Quadrant Analysis':            plot_quadrant_chart(df),
-        'Position Radar Comparison':    build_position_comparison(df),
-    }
-
-    st.plotly_chart(fig_map[vis_choice], use_container_width=True)
-    st.markdown(
-        f'<div class="insight-box">💡 <strong>Business Insight:</strong> {insights[vis_choice]}</div>',
-        unsafe_allow_html=True,
-    )
+    choice = st.selectbox('Select chart', list(VIS.keys()))
+    fn, insight = VIS[choice]
+    st.plotly_chart(fn(df), use_container_width=True)
+    st.markdown(f'<div class="insight"><strong>💡 Insight:</strong> {insight}</div>',
+                unsafe_allow_html=True)
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# PAGE 5 — PLAYER SCOUTING TOOL
-# ═══════════════════════════════════════════════════════════════════════════════
-elif page == '🔍 Player Scouting Tool':
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 5 — SCOUTING TOOL
+# ─────────────────────────────────────────────────────────────────────────────
+elif page == '🔍  Player Scouting':
     st.header('🔍 Player Scouting Tool')
-    st.write('Filter players and surface the best undervalued targets.')
 
-    with st.form('scouting_form'):
-        col1, col2, col3 = st.columns(3)
-        with col1:
-            pos_sel   = st.selectbox('Position', ['All'] + sorted(df['Position'].unique().tolist()))
-            size_sel  = st.multiselect('Club Size', ['Small', 'Medium', 'Big'],
-                                        default=['Small', 'Medium', 'Big'])
-        with col2:
-            age_range = st.slider('Age Range', 17, 38, (18, 30))
-            max_val   = st.slider('Max Market Value (€M)', 1.0, 120.0, 30.0, step=0.5)
-        with col3:
-            min_perf  = st.slider('Min Performance Index', 0.0,
-                                   float(df['Performance_Index'].max()), 0.0, step=1.0)
-            top_n     = st.slider('Number of Results', 5, 50, 15)
+    with st.form('scout'):
+        c1,c2,c3 = st.columns(3)
+        pos_s   = c1.selectbox('Position', ['All']+sorted(df['Position'].unique().tolist()))
+        size_s  = c1.multiselect('Club Size', ['Small','Medium','Big'], default=['Small','Medium','Big'])
+        age_r   = c2.slider('Age Range', 16, 40, (18, 30))
+        max_v   = c2.slider('Max Market Value (€M)', 0.5, 200.0, 50.0, step=0.5)
+        min_p   = c3.slider('Min Performance Index', 0.0, float(df['Performance_Index'].max()), 0.0, step=1.0)
+        top_n   = c3.slider('Results to show', 5, 50, 15)
+        go_btn  = st.form_submit_button('🔍 Find Players', use_container_width=True)
 
-        submitted = st.form_submit_button('🔍 Find Players', use_container_width=True)
+    if go_btn:
+        mask = ((df['Age'] >= age_r[0]) & (df['Age'] <= age_r[1]) &
+                (df['Market_Value_Million_Euros'] <= max_v) &
+                (df['Performance_Index'] >= min_p) &
+                (df['Club_Size'].isin(size_s)))
+        if pos_s != 'All':
+            mask &= df['Position'] == pos_s
+        res = df[mask].sort_values('Transfer_Score', ascending=False).head(top_n)
 
-    if submitted:
-        mask = (
-            (df['Age'] >= age_range[0]) &
-            (df['Age'] <= age_range[1]) &
-            (df['Market_Value_Million_Euros'] <= max_val) &
-            (df['Performance_Index'] >= min_perf) &
-            (df['Club_Size'].isin(size_sel))
+        st.success(f"**{len(res)}** players match your criteria")
+
+        cols = ['Player_Name','Age','Position','Club','League','Nationality',
+                'Market_Value_Million_Euros','Performance_Index','Transfer_Score','Transfer_Tier']
+
+        display = res[cols].copy().reset_index(drop=True)
+        display.index = display.index + 1   # start at 1
+
+        st.dataframe(
+            display.style
+            .format({'Market_Value_Million_Euros':'€{:.1f}M',
+                     'Performance_Index':'{:.1f}',
+                     'Transfer_Score':'{:.1f}'})
+            .background_gradient(subset=['Transfer_Score'], cmap='Blues'),
+            use_container_width=True, height=460
         )
-        if pos_sel != 'All':
-            mask &= df['Position'] == pos_sel
 
-        results = df[mask].sort_values('Transfer_Score', ascending=False).head(top_n)
-
-        st.success(f"Found **{len(results)}** players matching your criteria")
-
-        display_cols = ['Player_Name', 'Age', 'Position', 'Nationality', 'Club_Size',
-                         'Market_Value_Million_Euros', 'Performance_Index',
-                         'Value_for_Money', 'Transfer_Score', 'Transfer_Tier']
-
-        def colour_tier(val):
-            if 'Elite' in str(val):      return 'background-color: #d4edda; color: #155724'
-            elif 'Strong' in str(val):   return 'background-color: #cce5ff; color: #004085'
-            elif 'Moderate' in str(val): return 'background-color: #fff3cd; color: #856404'
-            else:                         return 'background-color: #f8d7da; color: #721c24'
-
-        styled = (
-            results[display_cols]
-            .reset_index(drop=True)
-            .style
-            .map(colour_tier, subset=['Transfer_Tier'])
-            .format({'Market_Value_Million_Euros': '€{:.1f}M',
-                     'Performance_Index': '{:.1f}',
-                     'Value_for_Money': '{:.3f}',
-                     'Transfer_Score': '{:.1f}'})
-        )
-        st.dataframe(styled, use_container_width=True, height=450)
-
-        # Quick bar chart
-        fig = px.bar(
-            results.head(10),
-            x='Player_Name', y='Transfer_Score',
-            color='Transfer_Tier',
-            title='Top 10 Scouting Results by Transfer Score',
-            color_discrete_sequence=px.colors.qualitative.Bold,
-        )
-        fig.update_layout(xaxis_tickangle=-30, height=400)
+        fig = px.bar(res.head(10), x='Player_Name', y='Transfer_Score',
+                     color='Position',
+                     color_discrete_map={'GK':'#f97316','Defender':'#22d3ee',
+                                         'Midfielder':'#a78bfa','Forward':'#4ade80'},
+                     title='Top 10 Scouting Results')
+        fig.update_layout(xaxis_tickangle=-30, height=420,
+                          paper_bgcolor='#111827', plot_bgcolor='#0f172a',
+                          font_color='#e2e8f0')
         st.plotly_chart(fig, use_container_width=True)
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# PAGE 6 — PLAYER RADAR CHART
-# ═══════════════════════════════════════════════════════════════════════════════
-elif page == '🎯 Player Radar Chart':
-    st.header('🎯 Player Radar Chart')
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 6 — PLAYER COMPARISON RADAR
+# ─────────────────────────────────────────────────────────────────────────────
+elif page == '🎯  Player Comparison':
+    st.header('🎯 Player Comparison — Radar Chart')
+    st.markdown("Select **two players** to compare their normalised stats head-to-head.")
 
-    col1, col2 = st.columns([1, 2])
-    with col1:
-        player_names = sorted(df['Player_Name'].tolist())
-        selected_player = st.selectbox('Select a Player', player_names)
-        compare_avg = st.checkbox('Compare vs Position Average', value=True)
+    all_names = sorted(df['Player_Name'].tolist())
+    c1, c2 = st.columns(2)
 
-        if selected_player:
-            player_row = df[df['Player_Name'] == selected_player].iloc[0]
+    with c1:
+        p1 = st.selectbox('Player 1', all_names, index=0)
+        if p1:
+            r1 = df[df['Player_Name'] == p1].iloc[0]
             st.markdown(f"""
-**Position:** {player_row['Position']}  
-**Age:** {player_row['Age']}  
-**Nationality:** {player_row['Nationality']}  
-**Club Size:** {player_row['Club_Size']}  
-**Market Value:** €{player_row['Market_Value_Million_Euros']}M  
-**Transfer Score:** {player_row['Transfer_Score']} — {player_row['Transfer_Tier']}  
-**Performance Index:** {player_row['Performance_Index']}  
-**Scouting Score:** {player_row['Scouting_Score']}
-            """)
+<div style="background:#111827;border:1px solid #1e293b;border-radius:8px;padding:1rem;">
+<p style="color:#00d4ff;font-weight:700;font-size:1.1rem;">{r1['Player_Name']}</p>
+<p style="color:#94a3b8;margin:0">🏟 {r1['Club']} · {r1['League']}</p>
+<p style="color:#94a3b8;margin:0">📍 {r1['Position']} · Age {r1['Age']} · {r1['Nationality']}</p>
+<p style="color:#94a3b8;margin:0">💶 €{r1['Market_Value_Million_Euros']}M</p>
+<p style="margin:0"><span style="color:#00d4ff;font-weight:700">Transfer Score: {r1['Transfer_Score']}</span>
+ — <span style="color:#94a3b8">{r1['Transfer_Tier']}</span></p>
+</div>""", unsafe_allow_html=True)
 
-    with col2:
-        if selected_player:
-            try:
-                fig_radar = build_radar(df, selected_player, compare_avg)
-                st.plotly_chart(fig_radar, use_container_width=True)
-            except Exception as e:
-                st.error(f"Error: {e}")
+    with c2:
+        default_p2 = all_names[1] if len(all_names) > 1 else all_names[0]
+        p2 = st.selectbox('Player 2', all_names, index=1)
+        if p2:
+            r2 = df[df['Player_Name'] == p2].iloc[0]
+            st.markdown(f"""
+<div style="background:#111827;border:1px solid #1e293b;border-radius:8px;padding:1rem;">
+<p style="color:#4ade80;font-weight:700;font-size:1.1rem;">{r2['Player_Name']}</p>
+<p style="color:#94a3b8;margin:0">🏟 {r2['Club']} · {r2['League']}</p>
+<p style="color:#94a3b8;margin:0">📍 {r2['Position']} · Age {r2['Age']} · {r2['Nationality']}</p>
+<p style="color:#94a3b8;margin:0">💶 €{r2['Market_Value_Million_Euros']}M</p>
+<p style="margin:0"><span style="color:#4ade80;font-weight:700">Transfer Score: {r2['Transfer_Score']}</span>
+ — <span style="color:#94a3b8">{r2['Transfer_Tier']}</span></p>
+</div>""", unsafe_allow_html=True)
+
+    if p1 and p2:
+        try:
+            st.plotly_chart(build_two_player_radar(df, p1, p2), use_container_width=True)
+        except Exception as e:
+            st.error(f"Radar error: {e}")
 
     st.divider()
-    st.subheader('Position Performance Comparison')
+    st.subheader('Position Averages Comparison')
     st.plotly_chart(build_position_comparison(df), use_container_width=True)
 
 
-# ═══════════════════════════════════════════════════════════════════════════════
-# PAGE 7 — AI TRANSFER RECOMMENDATIONS
-# ═══════════════════════════════════════════════════════════════════════════════
-elif page == '🤖 AI Transfer Recommendations':
+# ─────────────────────────────────────────────────────────────────────────────
+# PAGE 7 — TRANSFER RANKINGS
+# ─────────────────────────────────────────────────────────────────────────────
+elif page == '🤖  Transfer Rankings':
     st.header('🤖 AI Transfer Recommendation Panel')
-    st.markdown(
-        "Players are ranked using a **weighted Transfer Score** combining Performance, "
-        "Value-for-Money, Availability, and Potential."
-    )
+    st.markdown("Ranked by **weighted Transfer Score**: Performance 35% · Value-for-Money 30% · Availability 20% · Potential 15%")
 
-    tab1, tab2, tab3, tab4 = st.tabs(
-        ['🏆 Top 10 Overall', '🌟 Best Young Talents', '💰 Best Value Signings', '📋 Full Rankings']
-    )
+    t1,t2,t3,t4 = st.tabs(['🏆 Top 10 Overall','🌟 Young Talents','💰 Best Value','📋 Full Rankings'])
 
-    with tab1:
-        st.subheader('🏆 Top 10 Transfer Targets')
-        top10 = top_recommendations(df, n=10)
-        st.dataframe(
-            top10.reset_index(drop=True)
-            .style.format({'Market_Value_Million_Euros': '€{:.1f}M',
-                           'Performance_Index': '{:.1f}',
-                           'Value_for_Money': '{:.3f}',
-                           'Transfer_Score': '{:.1f}'}),
-            use_container_width=True,
-        )
-        fig = px.bar(
-            top10, x='Player_Name', y='Transfer_Score',
-            color='Position',
-            color_discrete_sequence=px.colors.qualitative.Bold,
-            title='Top 10 Transfer Targets — Transfer Score',
-        )
-        fig.update_layout(xaxis_tickangle=-30, height=420)
+    FMT = {'Market_Value_Million_Euros':'€{:.1f}M',
+           'Performance_Index':'{:.1f}',
+           'Value_for_Money':'{:.3f}',
+           'Transfer_Score':'{:.1f}',
+           'Potential_Index':'{:.3f}'}
+
+    with t1:
+        top10 = top_recommendations(df, n=10).reset_index(drop=True)
+        top10.index = top10.index + 1
+        st.dataframe(top10.style.format(FMT)
+                     .background_gradient(subset=['Transfer_Score'], cmap='Blues'),
+                     use_container_width=True)
+        fig = px.bar(top10.reset_index().rename(columns={'index':'Rank'}),
+                     x='Player_Name', y='Transfer_Score', color='Position',
+                     color_discrete_map={'GK':'#f97316','Defender':'#22d3ee',
+                                         'Midfielder':'#a78bfa','Forward':'#4ade80'},
+                     title='Top 10 Transfer Targets')
+        fig.update_layout(xaxis_tickangle=-30, height=420,
+                          paper_bgcolor='#111827', plot_bgcolor='#0f172a', font_color='#e2e8f0')
         st.plotly_chart(fig, use_container_width=True)
 
-    with tab2:
-        st.subheader('🌟 Best Young Talents (≤ 23)')
-        young = best_young_talents(df, n=10)
-        st.dataframe(
-            young.reset_index(drop=True)
-            .style.format({'Market_Value_Million_Euros': '€{:.1f}M',
-                           'Transfer_Score': '{:.1f}',
-                           'Potential_Index': '{:.3f}'}),
-            use_container_width=True,
-        )
-        fig2 = px.scatter(
-            young, x='Market_Value_Million_Euros', y='Transfer_Score',
-            size='Potential_Index', color='Position',
-            hover_data=['Player_Name', 'Age'],
-            title='Young Talents: Market Value vs Transfer Score',
-            color_discrete_sequence=px.colors.qualitative.Pastel,
-        )
+    with t2:
+        young = best_young_talents(df, n=10).reset_index(drop=True)
+        young.index = young.index + 1
+        st.dataframe(young.style.format(FMT)
+                     .background_gradient(subset=['Transfer_Score'], cmap='Purples'),
+                     use_container_width=True)
+        fig2 = px.scatter(young.reset_index(), x='Market_Value_Million_Euros',
+                          y='Transfer_Score', size='Potential_Index', color='Position',
+                          hover_data=['Player_Name','Age'],
+                          color_discrete_map={'GK':'#f97316','Defender':'#22d3ee',
+                                              'Midfielder':'#a78bfa','Forward':'#4ade80'},
+                          title='Young Talents: Value vs Score')
+        fig2.update_layout(paper_bgcolor='#111827', plot_bgcolor='#0f172a', font_color='#e2e8f0')
         st.plotly_chart(fig2, use_container_width=True)
 
-    with tab3:
-        st.subheader('💰 Best Value Signings')
-        value = best_value_signings(df, n=10)
-        st.dataframe(
-            value.reset_index(drop=True)
-            .style.format({'Market_Value_Million_Euros': '€{:.1f}M',
-                           'Performance_Index': '{:.1f}',
-                           'Value_for_Money': '{:.3f}',
-                           'Transfer_Score': '{:.1f}'}),
-            use_container_width=True,
-        )
-        fig3 = px.bar(
-            value, x='Player_Name', y='Value_for_Money',
-            color='Position',
-            title='Best Value Signings — Value-for-Money Index',
-            color_discrete_sequence=px.colors.qualitative.Safe,
-        )
-        fig3.update_layout(xaxis_tickangle=-30, height=420)
+    with t3:
+        val = best_value_signings(df, n=10).reset_index(drop=True)
+        val.index = val.index + 1
+        st.dataframe(val.style.format(FMT)
+                     .background_gradient(subset=['Value_for_Money'], cmap='Greens'),
+                     use_container_width=True)
+        fig3 = px.bar(val.reset_index(), x='Player_Name', y='Value_for_Money',
+                      color='Position',
+                      color_discrete_map={'GK':'#f97316','Defender':'#22d3ee',
+                                          'Midfielder':'#a78bfa','Forward':'#4ade80'},
+                      title='Best Value Signings')
+        fig3.update_layout(xaxis_tickangle=-30, height=420,
+                           paper_bgcolor='#111827', plot_bgcolor='#0f172a', font_color='#e2e8f0')
         st.plotly_chart(fig3, use_container_width=True)
 
-    with tab4:
-        st.subheader('📋 Full Transfer Rankings')
-        pos_f  = st.selectbox('Filter Position', ['All'] + sorted(df['Position'].unique().tolist()),
-                               key='full_pos')
-        size_f = st.multiselect('Filter Club Size', ['Small', 'Medium', 'Big'],
-                                 default=['Small', 'Medium', 'Big'], key='full_size')
-        max_v  = st.slider('Max Market Value (€M)', 1.0, 200.0, 200.0, key='full_val')
+    with t4:
+        fc1,fc2 = st.columns(2)
+        pos_f  = fc1.selectbox('Position', ['All']+sorted(df['Position'].unique().tolist()), key='rk_pos')
+        size_f = fc2.multiselect('Club Size', ['Small','Medium','Big'],
+                                  default=['Small','Medium','Big'], key='rk_size')
+        max_v  = st.slider('Max Market Value (€M)', 0.5, 200.0, 200.0, key='rk_val')
 
-        mask = (
-            df['Club_Size'].isin(size_f) &
-            (df['Market_Value_Million_Euros'] <= max_v)
-        )
+        mask = df['Club_Size'].isin(size_f) & (df['Market_Value_Million_Euros'] <= max_v)
         if pos_f != 'All':
             mask &= df['Position'] == pos_f
 
-        full_ranked = df[mask].sort_values('Transfer_Score', ascending=False)[
-            ['Player_Name', 'Age', 'Position', 'Nationality', 'Club_Size',
-             'Market_Value_Million_Euros', 'Performance_Index',
-             'Transfer_Score', 'Transfer_Tier']
-        ].reset_index(drop=True)
+        ranked = (df[mask]
+                  .sort_values('Transfer_Score', ascending=False)
+                  [['Player_Name','Age','Position','Club','League','Nationality',
+                    'Market_Value_Million_Euros','Performance_Index',
+                    'Transfer_Score','Transfer_Tier']]
+                  .reset_index(drop=True))
+        ranked.index = ranked.index + 1   # start at 1
 
         st.dataframe(
-            full_ranked.style.format(
-                {'Market_Value_Million_Euros': '€{:.1f}M',
-                 'Performance_Index': '{:.1f}',
-                 'Transfer_Score': '{:.1f}'}
-            ),
-            use_container_width=True,
-            height=500,
-        )
-        st.caption(f"Showing {len(full_ranked):,} players")
+            ranked.style.format({'Market_Value_Million_Euros':'€{:.1f}M',
+                                  'Performance_Index':'{:.1f}',
+                                  'Transfer_Score':'{:.1f}'})
+            .background_gradient(subset=['Transfer_Score'], cmap='Blues'),
+            use_container_width=True, height=520)
+        st.caption(f"**{len(ranked)}** players shown")
