@@ -4,117 +4,73 @@ from sklearn.preprocessing import MinMaxScaler
 
 
 def compute_transfer_score(df: pd.DataFrame) -> pd.DataFrame:
-    """
-    Build the AI Transfer Recommendation Score (0-100).
-
-    Components
-    ----------
-    Performance_Index   — how good the player is (weight 0.35)
-    Value_for_Money     — output per € spent (weight 0.30)
-    Availability_Index  — fitness / availability (weight 0.20)
-    Potential_Index     — future ceiling, age-adjusted (weight 0.15)
-    """
     df = df.copy()
-
-    required = ['Performance_Index', 'Value_for_Money',
-                'Availability_Index', 'Potential_Index']
+    required = ['Performance_Index','Value_for_Money','Availability_Index','Potential_Index']
     for col in required:
         if col not in df.columns:
-            raise ValueError(f"Missing column: {col}. Run data_cleaning.py first.")
-
+            raise ValueError(f"Missing column: {col}")
     scaler = MinMaxScaler()
     scaled = scaler.fit_transform(df[required])
+    df['Transfer_Score'] = ((scaled @ np.array([0.35, 0.30, 0.20, 0.15])) * 100).round(1)
 
-    weights = np.array([0.35, 0.30, 0.20, 0.15])
-    df['Transfer_Score'] = (scaled @ weights) * 100
-    df['Transfer_Score'] = df['Transfer_Score'].round(1)
-
-    # Human-readable tier
-    def _tier(score):
-        if score >= 80:
-            return '🏆 Elite Transfer Target'
-        elif score >= 60:
-            return '✅ Strong Signing Opportunity'
-        elif score >= 40:
-            return '⚠️ Moderate Value'
-        else:
-            return '❌ Low Priority'
+    def _tier(s):
+        if s >= 80:   return '🏆 Elite Transfer Target'
+        elif s >= 60: return '✅ Strong Signing Opportunity'
+        elif s >= 40: return '⚠️ Moderate Value'
+        else:         return '❌ Low Priority'
 
     df['Transfer_Tier'] = df['Transfer_Score'].apply(_tier)
     return df
 
 
-def top_recommendations(df: pd.DataFrame,
-                         n: int = 20,
-                         position: str = None,
-                         max_age: int = None,
-                         max_value: float = None) -> pd.DataFrame:
-    """Return top-n players sorted by Transfer_Score with optional filters."""
-    filtered = df.copy()
+def _base_cols(df):
+    """Return whichever of Club/League exist alongside core cols."""
+    extra = [c for c in ['Club','League','Club_Size'] if c in df.columns]
+    return ['Player_Name','Age','Position','Nationality'] + extra + \
+           ['Market_Value_Million_Euros','Performance_Index',
+            'Value_for_Money','Transfer_Score','Transfer_Tier']
+
+
+def top_recommendations(df, n=20, position=None, max_age=None, max_value=None):
+    f = df.copy()
     if position and position != 'All':
-        filtered = filtered[filtered['Position'] == position]
+        f = f[f['Position'] == position]
     if max_age:
-        filtered = filtered[filtered['Age'] <= max_age]
+        f = f[f['Age'] <= max_age]
     if max_value:
-        filtered = filtered[filtered['Market_Value_Million_Euros'] <= max_value]
-
-    cols = ['Player_Name', 'Age', 'Position', 'Nationality', 'Club_Size',
-            'Market_Value_Million_Euros', 'Performance_Index',
-            'Value_for_Money', 'Transfer_Score', 'Transfer_Tier']
-    return filtered[cols].sort_values('Transfer_Score', ascending=False).head(n)
+        f = f[f['Market_Value_Million_Euros'] <= max_value]
+    return f[_base_cols(f)].sort_values('Transfer_Score', ascending=False).head(n)
 
 
-def best_young_talents(df: pd.DataFrame, n: int = 10) -> pd.DataFrame:
+def best_young_talents(df, n=10):
+    extra = [c for c in ['Club','League'] if c in df.columns]
+    cols = ['Player_Name','Age','Position','Nationality'] + extra + \
+           ['Market_Value_Million_Euros','Potential_Index','Transfer_Score','Transfer_Tier']
     return (df[df['Age'] <= 23]
             .sort_values('Transfer_Score', ascending=False)
-            .head(n)[['Player_Name', 'Age', 'Position', 'Nationality',
-                       'Market_Value_Million_Euros', 'Potential_Index',
-                       'Transfer_Score', 'Transfer_Tier']])
+            .head(n)[cols])
 
 
-def best_value_signings(df: pd.DataFrame, n: int = 10) -> pd.DataFrame:
-    return (df.sort_values('Value_for_Money', ascending=False)
-            .head(n)[['Player_Name', 'Age', 'Position', 'Nationality',
-                       'Market_Value_Million_Euros', 'Performance_Index',
-                       'Value_for_Money', 'Transfer_Score', 'Transfer_Tier']])
+def best_value_signings(df, n=10):
+    extra = [c for c in ['Club','League'] if c in df.columns]
+    cols = ['Player_Name','Age','Position','Nationality'] + extra + \
+           ['Market_Value_Million_Euros','Performance_Index',
+            'Value_for_Money','Transfer_Score','Transfer_Tier']
+    return (df.sort_values('Value_for_Money', ascending=False).head(n)[cols])
 
 
 def quadrant_analysis(df: pd.DataFrame) -> pd.DataFrame:
-    """Categorise players into four scouting quadrants."""
     df = df.copy()
-    med_perf  = df['Performance_Index'].median()
-    med_value = df['Market_Value_Million_Euros'].median()
+    med_p = df['Performance_Index'].median()
+    med_v = df['Market_Value_Million_Euros'].median()
 
-    def _quad(row):
-        hi_perf  = row['Performance_Index']         >= med_perf
-        hi_value = row['Market_Value_Million_Euros'] >= med_value
-        if hi_perf and not hi_value:
-            return 'Undervalued Gems'
-        elif hi_perf and hi_value:
-            return 'Overpriced Stars'
-        elif not hi_perf and hi_value:
-            return 'Declining Veterans'
-        else:
-            return 'Average Players'
+    def _q(row):
+        hp = row['Performance_Index']         >= med_p
+        hv = row['Market_Value_Million_Euros'] >= med_v
+        if hp and not hv:  return 'Undervalued Gems'
+        if hp and hv:      return 'Overpriced Stars'
+        if not hp and hv:  return 'Declining Veterans'
+        return 'Average Players'
 
-    df['Quadrant'] = df.apply(_quad, axis=1)
+    df['Quadrant'] = df.apply(_q, axis=1)
     return df
-
-
-if __name__ == '__main__':
-    from data_cleaning import full_pipeline
-    df = full_pipeline()
-    df = compute_transfer_score(df)
-    df = quadrant_analysis(df)
-
-    print("\n── Top 10 Transfer Targets ──")
-    print(top_recommendations(df, n=10).to_string(index=False))
-
-    print("\n── Best Young Talents ──")
-    print(best_young_talents(df).to_string(index=False))
-
-    print("\n── Best Value Signings ──")
-    print(best_value_signings(df).to_string(index=False))
-
-    print("\n── Quadrant Distribution ──")
-    print(df['Quadrant'].value_counts())
