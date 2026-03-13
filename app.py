@@ -22,6 +22,7 @@ from eda_analysis   import (plot_correlation_heatmap, plot_value_vs_performance,
                              plot_quadrant_chart, plot_age_group_pie,
                              plot_league_distribution)
 from radar_charts   import build_two_player_radar, build_position_comparison
+from sklearn.metrics import confusion_matrix
 from ml_models      import (
     # K-Means
     run_kmeans, plot_kmeans_pca, plot_archetype_radar,
