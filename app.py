@@ -22,11 +22,20 @@ from eda_analysis   import (plot_correlation_heatmap, plot_value_vs_performance,
                              plot_quadrant_chart, plot_age_group_pie,
                              plot_league_distribution)
 from radar_charts   import build_two_player_radar, build_position_comparison
-from ml_models      import (run_kmeans, plot_kmeans_pca, plot_archetype_radar,
-                             plot_cluster_composition, plot_elbow,
-                             train_market_value_model, plot_mv_actual_vs_predicted,
-                             plot_feature_importance, predict_single_player,
-                             compute_club_fit, plot_club_fit, MV_FEATURES)
+from ml_models      import (
+    # K-Means
+    run_kmeans, plot_kmeans_pca, plot_archetype_radar,
+    plot_cluster_composition, plot_elbow,
+    # Classification
+    train_classifiers, plot_clf_comparison, plot_confusion_matrix,
+    plot_clf_feature_importance, CLF_FEATURES, STRONG_SIGNING_THRESHOLD,
+    # Regression
+    train_regressors, plot_regression_comparison, plot_reg_actual_vs_predicted,
+    plot_residuals, plot_reg_feature_importance, predict_player_value,
+    MV_FEATURES, REGRESSORS,
+    # Club Fit
+    compute_club_fit, plot_club_fit,
+)
 
 # ── Page config ───────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -113,9 +122,15 @@ def load_data():
 
 @st.cache_resource(show_spinner='Training ML models…')
 def load_ml(df):
+    # K-Means archetypes
     df_cl, km, scaler_km, arch_map, centers = run_kmeans(df, n_clusters=6)
-    rf, gb, scaler_mv, metrics = train_market_value_model(df)
-    return df_cl, km, scaler_km, arch_map, rf, gb, scaler_mv, metrics
+    # Classification — Strong Signing prediction
+    clf_results, clf_fitted, clf_scaler, pos_frac, X_tr, X_te, y_tr, y_te = train_classifiers(df)
+    # Regression — Market Value prediction
+    reg_results, reg_fitted, reg_scaler, X_te_reg, y_te_reg = train_regressors(df)
+    return (df_cl, km, scaler_km, arch_map,
+            clf_results, clf_fitted, clf_scaler, pos_frac,
+            reg_results, reg_fitted, reg_scaler)
 
 df_raw, df = load_data()
 N = len(df)
@@ -655,130 +670,242 @@ elif page == '🤖  Transfer Rankings':
 # ═════════════════════════════════════════════════════════════════════════════
 elif page == '🧠  Machine Learning':
     st.header('🧠 Machine Learning Models')
-    st.markdown("Three ML models: **Player Archetypes** (K-Means), **Market Value Prediction** (Random Forest + Gradient Boosting), and **Club Fit Scoring** (Cosine Similarity).")
+    st.markdown("""
+Four ML modules covering **unsupervised learning**, **classification**, **regression**, and **similarity scoring** —
+each with multi-algorithm comparison, evaluation metrics, and visualisations.
+    """)
 
-    # Load models (cached)
-    with st.spinner('Training models on dataset…'):
-        df_cl, km, scaler_km, arch_map, rf, gb, scaler_mv, mv_metrics = load_ml(df)
+    with st.spinner('Training all models on dataset…'):
+        (df_cl, km, scaler_km, arch_map,
+         clf_results, clf_fitted, clf_scaler, pos_frac,
+         reg_results, reg_fitted, reg_scaler) = load_ml(df)
 
-    ml_tab1, ml_tab2, ml_tab3 = st.tabs([
+    ml_tab1, ml_tab2, ml_tab3, ml_tab4 = st.tabs([
         '🎨 Player Archetypes (K-Means)',
-        '💰 Market Value Prediction',
+        '🏆 Signing Prediction (Classification)',
+        '💶 Market Value (Regression)',
         '🏟 Club Fit Score',
     ])
 
-    # ── TAB 1: K-MEANS ─────────────────────────────────────────────────────
+    # ── TAB 1: K-MEANS ───────────────────────────────────────────────────────
     with ml_tab1:
         st.subheader('🎨 Player Archetype Profiling — K-Means Clustering')
         st.markdown("""
-K-Means groups players into **tactical archetypes** based on 9 performance features.
+**Algorithm:** K-Means unsupervised clustering groups players by 9 on-pitch features
+(goals, assists, shots, key passes, pass accuracy, dribbles, tackles, interceptions, minutes).
 Each cluster is automatically labelled by its dominant statistical trait.
         """)
 
         col_info, col_k = st.columns([2,1])
         with col_k:
-            n_k = st.slider('Number of Archetypes (k)', 3, 8, 6, key='km_k')
-            if st.button('Re-run Clustering', use_container_width=True):
+            st.metric('Optimal k (Elbow)', '6')
+            if st.button('↺ Re-run Clustering', use_container_width=True):
                 st.cache_resource.clear()
                 st.rerun()
-
         with col_info:
             archetypes_found = df_cl['Archetype'].value_counts()
             st.markdown('**Archetypes discovered:**')
             arch_cols = st.columns(min(len(archetypes_found), 4))
             for i,(arch,cnt) in enumerate(archetypes_found.items()):
-                arch_cols[i % 4].metric(arch, f"{cnt} players")
+                arch_cols[i % 4].metric(arch, f'{cnt} players')
 
-        st.markdown('---')
-        st.subheader('PCA Visualisation')
-        st.markdown('_Each point is a player. Colours = archetype. Axes are the first two principal components._')
+        st.divider()
+        st.subheader('PCA Scatter — Player Archetypes')
+        st.caption('Each point is a player. Axes = first two principal components of the 9 clustering features.')
         st.plotly_chart(plot_kmeans_pca(df_cl), use_container_width=True)
 
-        st.markdown('---')
         col_a, col_b = st.columns(2)
         with col_a:
             st.subheader('Elbow Method')
-            st.markdown('_Use this to justify your choice of k._')
+            st.caption('Inertia drops sharply until k=6, then plateaus — justifying our choice.')
             st.plotly_chart(plot_elbow(df), use_container_width=True)
-
         with col_b:
             st.subheader('Position Composition per Archetype')
             st.plotly_chart(plot_cluster_composition(df_cl), use_container_width=True)
 
-        st.markdown('---')
+        st.divider()
         st.subheader('Archetype Deep Dive')
-        arch_list = sorted(df_cl['Archetype'].unique().tolist())
-        chosen_arch = st.selectbox('Select Archetype to inspect', arch_list)
+        arch_list   = sorted(df_cl['Archetype'].unique().tolist())
+        chosen_arch = st.selectbox('Select Archetype to inspect', arch_list, key='km_arch')
         col_r, col_t = st.columns([1,1])
         with col_r:
             st.plotly_chart(plot_archetype_radar(df_cl, chosen_arch), use_container_width=True)
         with col_t:
-            arch_players = df_cl[df_cl['Archetype'] == chosen_arch][
-                ['Player_Name','Age','Position','Club','League','Transfer_Score']
-            ].sort_values('Transfer_Score', ascending=False).reset_index(drop=True)
+            arch_players = (df_cl[df_cl['Archetype']==chosen_arch]
+                            [['Player_Name','Age','Position','Club','League','Transfer_Score']]
+                            .sort_values('Transfer_Score', ascending=False).reset_index(drop=True))
             arch_players.index = arch_players.index + 1
             st.dataframe(arch_players, use_container_width=True, height=380)
 
-    # ── TAB 2: MARKET VALUE PREDICTION ─────────────────────────────────────
+    # ── TAB 2: CLASSIFICATION ────────────────────────────────────────────────
     with ml_tab2:
-        st.subheader('💰 Market Value Prediction — Random Forest & Gradient Boosting')
-        st.markdown("""
-Two ensemble models trained on **15 player attributes** to predict market value (€M).
-Evaluated with 5-fold cross-validation.
+        st.subheader('🏆 Strong Signing Prediction — Classification')
+        st.markdown(f"""
+**Problem:** Predict whether a player is a **Strong Signing** (binary classification).
+
+**Target variable:** `Strong_Signing = 1` if `Transfer_Score ≥ {STRONG_SIGNING_THRESHOLD}`, else `0`
+
+**Class balance:** {pos_frac*100:.1f}% positive (strong signings) · {(1-pos_frac)*100:.1f}% negative
+
+**Features used ({len(CLF_FEATURES)}):** Age, Goals, Assists, xG, xA, Key Passes, Dribbles, Tackles, Interceptions, Pass Accuracy, Minutes, Market Value, Injury Days, League Quality Index
+
+**Evaluation:** Stratified 80/20 train-test split
         """)
-
-        m1,m2,m3,m4 = st.columns(4)
-        m1.metric('RF — R²', f"{mv_metrics['RF']['R²']:.3f}")
-        m2.metric('RF — MAE', f"€{mv_metrics['RF']['MAE']:.1f}M")
-        m3.metric('GB — R²', f"{mv_metrics['GB']['R²']:.3f}")
-        m4.metric('GB — MAE', f"€{mv_metrics['GB']['MAE']:.1f}M")
-        st.markdown('<div class="insight">💡 R² closer to 1.0 = better fit. MAE = average prediction error in €M.</div>',
+        st.markdown('<div class="insight">💡 <strong>Why compare models?</strong> Logistic Regression is the linear baseline; Decision Tree is interpretable; Random Forest and Gradient Boosting capture non-linear patterns via ensembles. Comparing all four identifies the most robust approach for this dataset.</div>',
                     unsafe_allow_html=True)
 
-        st.markdown('---')
-        model_choice = st.radio('Select model to visualise', ['Random Forest','Gradient Boosting'],
-                                 horizontal=True)
-        preds = mv_metrics['RF']['preds'] if model_choice == 'Random Forest' else mv_metrics['GB']['preds']
-        st.plotly_chart(plot_mv_actual_vs_predicted(df, preds, model_choice), use_container_width=True)
+        # ── Model comparison table ──────────────────────────────────────────
+        st.divider()
+        st.subheader('Model Comparison Table')
+        clf_table = pd.DataFrame({
+            'Model':     list(clf_results.keys()),
+            'Accuracy':  [clf_results[m]['Accuracy']  for m in clf_results],
+            'Precision': [clf_results[m]['Precision'] for m in clf_results],
+            'Recall':    [clf_results[m]['Recall']    for m in clf_results],
+            'F1 Score':  [clf_results[m]['F1 Score']  for m in clf_results],
+        }).sort_values('F1 Score', ascending=False).reset_index(drop=True)
+        clf_table.index = clf_table.index + 1
 
-        st.markdown('---')
-        st.subheader('Feature Importance (Random Forest)')
-        st.plotly_chart(plot_feature_importance(rf, MV_FEATURES), use_container_width=True)
+        st.dataframe(
+            clf_table.style
+            .format({'Accuracy':'{:.3f}','Precision':'{:.3f}','Recall':'{:.3f}','F1 Score':'{:.3f}'})
+            .background_gradient(subset=['Accuracy','Precision','Recall','F1 Score'], cmap='Blues')
+            .highlight_max(subset=['Accuracy','Precision','Recall','F1 Score'],
+                           props='font-weight:bold;color:#16a34a'),
+            use_container_width=True,
+        )
 
-        st.markdown('---')
-        st.subheader('🔮 Predict a Player\'s Market Value')
-        all_names_mv = sorted(df['Player_Name'].unique().tolist())
-        chosen_player = st.selectbox('Select player', all_names_mv, key='mv_player')
-        p_row = df[df['Player_Name'] == chosen_player].iloc[0]
-        rf_pred, gb_pred = predict_single_player(rf, gb, scaler_mv, p_row)
-        actual_val = p_row['Market_Value_Million_Euros']
+        best_model = clf_table.iloc[0]['Model']
+        best_f1    = clf_table.iloc[0]['F1 Score']
+        st.success(f"**Best model:** {best_model} — F1 Score: **{best_f1:.3f}**")
 
-        pa, pb, pc = st.columns(3)
-        pa.metric('Actual Market Value', f"€{actual_val:.1f}M")
-        pb.metric('RF Prediction', f"€{rf_pred:.1f}M",
-                  delta=f"€{rf_pred-actual_val:+.1f}M")
-        pc.metric('GB Prediction', f"€{gb_pred:.1f}M",
-                  delta=f"€{gb_pred-actual_val:+.1f}M")
-        st.markdown(f'<div class="insight">💡 A positive delta means the model thinks this player is <strong>undervalued</strong> vs their actual market price.</div>',
-                    unsafe_allow_html=True)
+        # ── Bar chart ──────────────────────────────────────────────────────
+        st.subheader('Visual Comparison')
+        st.plotly_chart(plot_clf_comparison(clf_results), use_container_width=True)
 
-    # ── TAB 3: CLUB FIT ─────────────────────────────────────────────────────
+        # ── Confusion matrix + feature importance ─────────────────────────
+        st.divider()
+        st.subheader('Confusion Matrix & Feature Importance')
+        cm_col, fi_col = st.columns(2)
+        with cm_col:
+            cm_model = st.selectbox('Select model', list(clf_results.keys()), key='cm_model')
+            st.plotly_chart(plot_confusion_matrix(clf_results, cm_model), use_container_width=True)
+            r = clf_results[cm_model]
+            tn,fp,fn,tp = confusion_matrix(r['y_te'], r['y_pred']).ravel()
+            st.caption(f"TP={tp}  FP={fp}  FN={fn}  TN={tn} — "
+                       f"**True Positives** = correctly identified strong signings")
+        with fi_col:
+            fi_model = st.selectbox('Feature importance for', list(clf_results.keys()), key='fi_clf')
+            st.plotly_chart(plot_clf_feature_importance(clf_fitted, fi_model), use_container_width=True)
+
+    # ── TAB 3: REGRESSION ────────────────────────────────────────────────────
     with ml_tab3:
+        st.subheader('💶 Market Value Prediction — Regression')
+        st.markdown(f"""
+**Problem:** Predict a player's **Market Value (€M)** from their statistics.
+
+**Target variable:** `Market_Value_Million_Euros`
+
+**Features used ({len(MV_FEATURES)}):** Age, Goals, Assists, Shots, Key Passes, Pass Accuracy, Dribbles, Tackles, Interceptions, xG, xA, Matches Played, Minutes, League Quality, Fan Popularity
+
+**Models compared:** Linear, Ridge, Lasso (linear), Random Forest, Gradient Boosting (ensemble)
+
+**Evaluation:** 80/20 train-test split · Metrics: R², MAE (€M), RMSE (€M)
+        """)
+        st.markdown('<div class="insight">💡 <strong>Why compare models?</strong> Linear models assume a straight-line relationship between features and value. Ridge and Lasso add regularisation to reduce overfitting. Ensemble methods capture complex non-linear patterns — useful because market value depends on many interacting factors.</div>',
+                    unsafe_allow_html=True)
+
+        # ── Model comparison table ──────────────────────────────────────────
+        st.divider()
+        st.subheader('Model Comparison Table')
+        reg_table = pd.DataFrame({
+            'Model': list(reg_results.keys()),
+            'R²':    [reg_results[m]['R²']   for m in reg_results],
+            'MAE':   [reg_results[m]['MAE']  for m in reg_results],
+            'RMSE':  [reg_results[m]['RMSE'] for m in reg_results],
+        }).sort_values('R²', ascending=False).reset_index(drop=True)
+        reg_table.index = reg_table.index + 1
+
+        st.dataframe(
+            reg_table.style
+            .format({'R²':'{:.3f}','MAE':'€{:.2f}M','RMSE':'€{:.2f}M'})
+            .background_gradient(subset=['R²'], cmap='Blues')
+            .background_gradient(subset=['MAE','RMSE'], cmap='Reds_r')
+            .highlight_max(subset=['R²'], props='font-weight:bold;color:#16a34a')
+            .highlight_min(subset=['MAE','RMSE'], props='font-weight:bold;color:#16a34a'),
+            use_container_width=True,
+        )
+
+        best_reg_name = reg_table.iloc[0]['Model']
+        best_r2       = reg_table.iloc[0]['R²']
+        best_mae      = reg_table.iloc[0]['MAE']
+        st.success(f"**Best model:** {best_reg_name} — R²: **{best_r2:.3f}** · MAE: **€{best_mae:.1f}M**")
+
+        # ── Visual comparison ──────────────────────────────────────────────
+        st.subheader('Metric Comparison Charts')
+        st.plotly_chart(plot_regression_comparison(reg_results), use_container_width=True)
+
+        # ── Per-model deep dive ─────────────────────────────────────────────
+        st.divider()
+        st.subheader('Model Deep Dive')
+        reg_model_choice = st.selectbox('Select model to inspect', list(reg_results.keys()), key='reg_model')
+
+        dv1, dv2 = st.columns(2)
+        with dv1:
+            st.plotly_chart(plot_reg_actual_vs_predicted(reg_results, reg_model_choice),
+                            use_container_width=True)
+        with dv2:
+            st.plotly_chart(plot_residuals(reg_results, reg_model_choice), use_container_width=True)
+            st.caption('Ideal residuals: symmetric, centred at zero, no skew.')
+
+        st.plotly_chart(plot_reg_feature_importance(reg_fitted, reg_model_choice),
+                        use_container_width=True)
+
+        # ── Per-player predictions ─────────────────────────────────────────
+        st.divider()
+        st.subheader('🔮 Predict a Player\'s Market Value — All Models')
+        all_names_mv = sorted(df['Player_Name'].unique().tolist())
+        chosen_player = st.selectbox('Select player', all_names_mv, key='reg_player')
+
+        preds_all  = predict_player_value(reg_fitted, reg_scaler, df, chosen_player)
+        actual_val = float(df[df['Player_Name']==chosen_player].iloc[0]['Market_Value_Million_Euros'])
+
+        pred_df = pd.DataFrame({
+            'Model':    list(preds_all.keys()),
+            'Predicted (€M)': list(preds_all.values()),
+        })
+        pred_df['Delta vs Actual'] = (pred_df['Predicted (€M)'] - actual_val).round(1)
+        pred_df['Verdict'] = pred_df['Delta vs Actual'].apply(
+            lambda d: '🟢 Undervalued' if d > 5 else ('🔴 Overvalued' if d < -5 else '⚪ Fair Value')
+        )
+
+        st.metric('Actual Market Value', f'€{actual_val:.1f}M')
+        st.dataframe(pred_df.style
+                     .format({'Predicted (€M)':'€{:.1f}M','Delta vs Actual':'{:+.1f}M'})
+                     .background_gradient(subset=['Predicted (€M)'], cmap='Blues'),
+                     use_container_width=True, hide_index=True)
+        st.markdown('<div class="insight">💡 A positive delta means the model thinks this player is <strong>undervalued</strong> relative to their current market price.</div>',
+                    unsafe_allow_html=True)
+
+    # ── TAB 4: CLUB FIT ──────────────────────────────────────────────────────
+    with ml_tab4:
         st.subheader('🏟 Club Fit Score — Cosine Similarity')
         st.markdown("""
-For a selected player, this model computes **cosine similarity** between the player's
-statistical profile and the average profile of every club in the database.
-A high fit score means the player's playing style aligns with the club's typical output.
+**Algorithm:** Cosine similarity computes the angle between a player's statistical vector
+and the mean vector of each club's existing squad.
+A score of 100% means the player's profile is identical to the club's average output.
+
+**Features used:** Goals, Assists, Key Passes, Pass Accuracy, Dribbles, Tackles, Interceptions, Shots, xG
         """)
 
         all_names_fit = sorted(df['Player_Name'].unique().tolist())
         fit_player = st.selectbox('Select player to find best club fits', all_names_fit, key='fit_player')
-        top_n_fit  = st.slider('Top N clubs to show', 5, 20, 10)
+        top_n_fit  = st.slider('Top N clubs to show', 5, 20, 10, key='fit_topn')
 
         fit_df = compute_club_fit(df, fit_player, top_n=top_n_fit)
         if not fit_df.empty:
             current = df[df['Player_Name']==fit_player].iloc[0]
-            st.markdown(f"**Current club:** {current['Club']} ({current['League']}) — excluded from results")
+            st.info(f"**Current club:** {current['Club']} ({current['League']}) — excluded from results")
             col_chart, col_table = st.columns([1.4,1])
             with col_chart:
                 st.plotly_chart(plot_club_fit(fit_df, fit_player), use_container_width=True)
@@ -787,7 +914,7 @@ A high fit score means the player's playing style aligns with the club's typical
                 st.dataframe(fit_df.style.format({'Fit_Score':'{:.1f}%'})
                              .background_gradient(subset=['Fit_Score'], cmap='Blues'),
                              use_container_width=True, height=400)
-            st.markdown('<div class="insight">💡 <strong>Interpretation:</strong> A Fit Score ≥ 80% suggests stylistic compatibility. This does not account for tactical system, budget, or squad need.</div>',
+            st.markdown('<div class="insight">💡 <strong>Interpretation:</strong> A Fit Score ≥ 80% indicates strong stylistic compatibility. This is a data-driven indicator only and does not account for tactical system, squad needs, or transfer budget.</div>',
                         unsafe_allow_html=True)
         else:
             st.warning('Player not found in dataset.')
